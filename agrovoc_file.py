@@ -60,8 +60,8 @@ def agrovoc_type_instance():
     df_type_instance = pd.DataFrame([row for row in qres], columns = column_names)
     df_type_instance.to_csv("agrovoc-type-instance.tsv",sep="\t", index=False, header=None) 
 
-#agrovoc_entity()
-#agrovoc_triples()
-#agrovoc_types()
-#agrovoc_type_instance()
+agrovoc_entity()
+agrovoc_triples()
+agrovoc_types()
+agrovoc_type_instance()
 
