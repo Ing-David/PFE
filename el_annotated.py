@@ -85,13 +85,14 @@ def fichier_json (text_string, name_file_json, limited_line):
                                 list_neg_can.append(n)
                     dict_mention["negatives"] = list_neg_can
                 dict_phrase["mentions"].append(dict_mention)
-        with open(name_file_json, 'a') as f:
-            num = sum(1 for line in open(name_file_json))
-            if num < limited_line:
-                json.dump(dict_phrase, f)
-                f.write('\n')
-            else:
-                break
+        if len(dict_phrase["mentions"]) > 0:
+            with open(name_file_json, 'a') as f:
+                num = sum(1 for line in open(name_file_json))
+                if num < limited_line:
+                    json.dump(dict_phrase, f)
+                    f.write('\n')
+                else:
+                    break
 
 '''
 integral_text = ("Mechanical properties studies of wood usually involve destructive wood assessments, with time-consuming tests that use large amounts of resource (wood). Although this is not a limiting factor, it could be attenuated by the use of a nondestructive technique known as near infrared spectroscopy (NIRS). This technique has been applied to evaluate compounds containing C-H, N-H, S-H or O-H bonds, and involves quick analyses and can be applied to process control tasks. The objective of this work is to use the NIRS technique to obtain calibrations for mechanical properties of Eucalyptus sp. wood. A natural E. urophylla hybrid at age 7 was used as obtained from V&M Florestal crops. Spectra were measured directly in solid wood (radial, tangential and transverse faces) and in ground wood, in diffuse reflectance mode, using a Bruker spectrometer in the 800 to 1,500 nm range. The NIRS technique proved suitable to estimate modulus of elasticity in solid wood, with values r=0.91 and RPD=2.6, and in ground wood, with values r=0.87 and RPD=2.0. Modulus of rupture and compressive strength presented r values below 0.9. First and second derivative pretreatments provided a slight increase in correlation values for the properties in question. Calibrations for different plank faces did not present a defined variation pattern. Solid wood and ground wood presented similar correlation values for all properties.")
