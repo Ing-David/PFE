@@ -46,7 +46,8 @@ def agrovoc_types():
 
     qres = g.query("""PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                      SELECT ?type WHERE {?node a ?type.}""")
+                      PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+                      SELECT ?type WHERE {?node skos:broader ?type.}""")
     column_names = ["type"]
     df_types = pd.DataFrame([row for row in qres], columns = column_names)
     df_types.to_csv("agrovoc-type.tsv",sep="\t", index=False, header=None)
