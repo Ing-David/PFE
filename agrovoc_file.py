@@ -20,10 +20,6 @@ def agrovoc_entity():
                   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                   SELECT ?entity WHERE {
                   ?entity a skos:Concept.
-                  ?entity skosxl:prefLabel ?pl.
-                  ?pl skosxl:literalForm ?label_l.
-                  FILTER langMatches( lang(?label_l), "EN" )
-                  BIND (STR(?label_l)  AS ?label)
                   }""")   
     column_names = ["URI"]
     df_entities = pd.DataFrame([row for row in qres], columns = column_names)
