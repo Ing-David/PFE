@@ -11,21 +11,21 @@ import pandas as pd
 g = rdflib.Graph()
 g.parse("agrovoc_2021-03-02_core.rdf")
 
-#create agrovoc entity(URI and Label) for each concept into tsv file
+#create agrovoc entity (URI) for each concept into tsv file
 def agrovoc_entity():
 
     qres = g.query("""PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
                   PREFIX skosxl:<http://www.w3.org/2008/05/skos-xl#>
                   PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                  SELECT ?entity ?label WHERE {
+                  SELECT ?entity WHERE {
                   ?entity a skos:Concept.
                   ?entity skosxl:prefLabel ?pl.
                   ?pl skosxl:literalForm ?label_l.
                   FILTER langMatches( lang(?label_l), "EN" )
                   BIND (STR(?label_l)  AS ?label)
                   }""")   
-    column_names = ["URI","Label"]
+    column_names = ["URI"]
     df_entities = pd.DataFrame([row for row in qres], columns = column_names)
     df_entities.to_csv("agrovoc-entity.tsv",sep="\t", index=False, header=None)
 
