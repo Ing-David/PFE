@@ -8,7 +8,7 @@ MAX_N_POSS_TRAIN = 100
 N_NEGS = 10
 SAMPLE_NEGS = True
 TYPE_OPT = 'mean'
-
+# hyper-parameters of the model
 parser = argparse.ArgumentParser()
 parser.add_argument("--mode", type=str, help="train or eval", default='train')
 parser.add_argument("--model_path", type=str, help="model path to save/load", default='model')
@@ -32,7 +32,7 @@ parser.add_argument("--margin", type=float, default=0.1)
 parser.add_argument("--kl_coef", type=float, default=5 if not sup_train else 0)
 parser.add_argument("--noise_prior", type=float, default=0.9)
 
-#data_path = 'data/freebase/el_annotation/el_annotated_170k.json'
+data_path = 'data/agrovoc/el_annotation/'
 '''
 if sup_train:
     data_path = 'data/EL/AIDA/train.json'

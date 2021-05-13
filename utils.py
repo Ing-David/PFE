@@ -128,12 +128,17 @@ def load_voca_embs(voca_path, embs_path, normalization=True, add_pad_unk=True, l
 def make_equal_len(lists, fill_in=0, to_right=True):
     lens = [len(l) for l in lists]
     max_len = max(1, max(lens))
+    # add element to the right hand side
     if to_right:
         if fill_in is None:
+            # add last element in each list multiple times to match with the size of max_len
             eq_lists = [l + [l[-1].copy() if isinstance(l[-1], list) else l[-1]] * (max_len - len(l)) for l in lists]
         else:
+            # make all lists inside a list with equal size(the max size) by adding the int fill_in to fulfilled the list
             eq_lists = [l + [fill_in] * (max_len - len(l)) for l in lists]
+        # put weight values 1 to the elements that exist in each list and add 0 to all lists to match the max_len size
         mask = [[1.] * l + [0.] * (max_len - l) for l in lens]
+    # add element to the left hand side
     else:
         if fill_in is None:
             eq_lists = [[l[0].copy() if isinstance(l[0], list) else l[0]] * (max_len - len(l)) + l for l in lists]
