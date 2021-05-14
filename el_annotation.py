@@ -120,7 +120,7 @@ def fichier_json(text_string, name_file_json, limited_line):
 
 def csv_to_json(fichier_csv,name_file_json,limited_line):
     '''
-    function to convert from csv that are already extract to json file for training
+    function to convert from csv that are already extracted to json file for training
     '''
     file_read = pd.read_csv(fichier_csv)
     for line, column in file_read.iterrows():
