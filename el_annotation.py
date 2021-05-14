@@ -5,12 +5,13 @@ from agrovoc import Agrovoc
 from vocabulary import Vocabulary
 import el_hyperparams as hp
 import pandas as pd
+import en_core_web_md
 # accessing hyper-parameters
 args = hp.parser.parse_args()
 # directory of data
 datadir = args.datadir
 # spacy with eng
-nlp = spacy.load('en_core_web_md')
+nlp = en_core_web_md.load()
 # agrovoc's rdf
 agrovoc = Agrovoc(lang="en")
 
