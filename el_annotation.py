@@ -12,7 +12,7 @@ datadir = 'data/agrovoc'
 # spacy with eng
 nlp = en_core_web_md.load()
 
-def fichier_json(text_string):
+def fichier_json(text_string,entities_id_list):
     """
     function to generate json file by input raw text
     arg text_string: input text string
@@ -84,7 +84,7 @@ def fichier_json(text_string):
                     # generate 10 negative candidates
                     for i in range(0, 10):
                         # random all concepts id in the entIdList
-                        m = random.sample(entIdList, 1)
+                        m = random.sample(entities_id_list, 1)
                         # convert from list of one element to integer
                         n = int(m[0])
                         # avoid positive concepts
@@ -125,7 +125,7 @@ def csv_to_json(fichier_csv, name_file_json, limited_line):
     sentences = 0
     for line, column in tqdm(file_read.iterrows()):
         if column['body_grobid'] != "":
-            value, count = fichier_json(column['body_grobid'])
+            value, count = fichier_json(column['body_grobid'],entIdList)
         if sentences + count <= limited_line:
             sentences += count
             jsons.append(value)
