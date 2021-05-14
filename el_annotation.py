@@ -5,14 +5,17 @@ from agrovoc import Agrovoc
 from vocabulary import Vocabulary
 import el_hyperparams as hp
 import pandas as pd
+import en_core_web_md
+
 # accessing hyper-parameters
 args = hp.parser.parse_args()
 # directory of data
 datadir = args.datadir
 # spacy with eng
-nlp = spacy.load('en_core_web_md')
+nlp = en_core_web_md.load()
 # agrovoc's rdf
 agrovoc = Agrovoc(lang="en")
+
 
 def fichier_json(text_string, name_file_json, limited_line):
     """
@@ -109,23 +112,30 @@ def fichier_json(text_string, name_file_json, limited_line):
                 dict_phrase["mentions"].append(dict_mention)
         # check if there is at least one mention in a sentence
         if len(dict_phrase["mentions"]) > 0:
-            # write into json file
-            with open(name_file_json, 'a') as f:
-                num = sum(1 for line in open(name_file_json))
-                if num < limited_line:
-                    json.dump(dict_phrase, f)
-                    f.write('\n')
-                else:
-                    break
+            return json.dumps(dict_phrase), len(sentences)
+        else:
+            return "", 0
 
-def csv_to_json(fichier_csv,name_file_json,limited_line):
+
+def csv_to_json(fichier_csv, name_file_json, limited_line):
     '''
     function to convert from csv that are already extracted to json file for training
     '''
+    from tqdm.notebook import tqdm
     file_read = pd.read_csv(fichier_csv)
-    for line, column in file_read.iterrows():
+    file_read['body_grobid'] = file_read['body_grobid'].astype('str')
+    jsons = []
+    sentences = 0
+    for line, column in tqdm(file_read.iterrows()):
         if column['body_grobid'] != "":
-            fichier_json(column['body_grobid'],name_file_json,limited_line)
+            value, count = fichier_json(column['body_grobid'], name_file_json)
+        if sentences + count <= limited_line:
+            sentences += count
+            jsons.append(value)
+        else:
+            break
+    with open(name_file_json, 'w') as json_file:
+        json_file.writelines(jsons)
 
 
-csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_4_100_limit.csv",'el_annotated.json',170000)
+csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_4_100_limit.csv", 'el_annotated.json', 170000)
