@@ -128,4 +128,4 @@ def csv_to_json(fichier_csv,name_file_json,limited_line):
             fichier_json(column['body_grobid'],name_file_json,limited_line)
 
 
-csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_4_100_limit.csv",'el_annotated.py',170000)
+csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_4_100_limit.csv",'el_annotated.json',170000)
