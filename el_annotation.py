@@ -3,30 +3,14 @@ import json
 import random
 from agrovoc import Agrovoc
 from vocabulary import Vocabulary
-import el_hyperparams as hp
 import pandas as pd
 import en_core_web_md
+from tqdm.notebook import tqdm
 
-# accessing hyper-parameters
-args = hp.parser.parse_args()
 # directory of data
-datadir = args.datadir
+datadir = 'data/agrovoc'
 # spacy with eng
 nlp = en_core_web_md.load()
-# agrovoc's rdf
-agrovoc = Agrovoc(lang="en")
-# access dictionary of agrovoc with correspond id for searching the index location of id for each candidate(
-# positive and negative)
-voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
-# get the entIdList for random negative candidates
-ent2nameId = {}
-with open('data/agrovoc/agrovoc-entity.tsv', 'rt') as f:
-    g = f.read()
-    h = filter(None, g.split("\n"))
-    for i in h:
-        ent2nameId[voca_ent.word2id.get(i)] = i
-entIdList = list(ent2nameId.keys())
-
 
 def fichier_json(text_string):
     """
@@ -121,7 +105,20 @@ def csv_to_json(fichier_csv, name_file_json, limited_line):
     '''
     function to convert from csv that are already extracted to json file for training
     '''
-    from tqdm.notebook import tqdm
+    # agrovoc's rdf
+    agrovoc = Agrovoc(lang="en")
+    # access dictionary of agrovoc with correspond id for searching the index location of id for each candidate(
+    # positive and negative)
+    voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
+    # get the entIdList for random negative candidates
+    ent2nameId = {}
+    with open('data/agrovoc/agrovoc-entity.tsv', 'rt') as f:
+        g = f.read()
+        h = filter(None, g.split("\n"))
+        for i in h:
+            ent2nameId[voca_ent.word2id.get(i)] = i
+    entIdList = list(ent2nameId.keys())
+
     file_read = pd.read_csv(fichier_csv)
     file_read['body_grobid'] = file_read['body_grobid'].astype('str')
     jsons = []
