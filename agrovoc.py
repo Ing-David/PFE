@@ -69,13 +69,9 @@ class Agrovoc:
         dictionary_loader.load()
 
         if lang == 'fr':
-            self.concept_recognizer = IntersStemConceptRecognizer(dictionary_loader,
-                                                                  "data/stopwordsfr.txt",
-                                                                  "data/termination_termsfr.txt")
+            self.concept_recognizer = IntersStemConceptRecognizer(dictionary_loader)
         else:
-            self.concept_recognizer = IntersStemConceptRecognizer(dictionary_loader,
-                                                                  "data/stopwordsen.txt",
-                                                                  "data/termination_termsen.txt")
+            self.concept_recognizer = IntersStemConceptRecognizer(dictionary_loader)
 
         self.concept_recognizer.initialize()
 
