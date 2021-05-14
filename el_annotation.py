@@ -124,9 +124,9 @@ def csv_to_json(fichier_csv,name_file_json,limited_line):
     function to convert from csv that are already extracted to json file for training
     '''
     file_read = pd.read_csv(fichier_csv)
+    file_read['body_grobid'] = file_read['body_grobid'].astype('str')
     for line, column in file_read.iterrows():
-        if column['body_grobid'] != "":
+        if str(column['body_grobid']) != "":
             fichier_json(column['body_grobid'],name_file_json,limited_line)
-
 
 csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_4_100_limit.csv",'el_annotated.json',170000)
