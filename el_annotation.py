@@ -15,26 +15,26 @@ datadir = args.datadir
 nlp = en_core_web_md.load()
 # agrovoc's rdf
 agrovoc = Agrovoc(lang="en")
+# access dictionary of agrovoc with correspond id for searching the index location of id for each candidate(
+# positive and negative)
+voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
+# get the entIdList for random negative candidates
+ent2nameId = {}
+with open('data/agrovoc/agrovoc-entity.tsv', 'rt') as f:
+    g = f.read()
+    h = filter(None, g.split("\n"))
+    for i in h:
+        ent2nameId[voca_ent.word2id.get(i)] = i
+entIdList = list(ent2nameId.keys())
 
 
-def fichier_json(text_string, name_file_json, limited_line):
+def fichier_json(text_string):
     """
     function to generate json file by input raw text
     arg text_string: input text string
     arg name_file: input the name for the json file
     arg limited_line: input how many lines to write into the json file
     """
-    # access dictionary of agrovoc with correspond id for searching the index location of id for each candidate(
-    # positive and negative)
-    voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
-    # get the entIdList for random negative candidates
-    ent2nameId = {}
-    with open('data/agrovoc/agrovoc-entity.tsv', 'rt') as f:
-        g = f.read()
-        h = filter(None, g.split("\n"))
-        for i in h:
-            ent2nameId[voca_ent.word2id.get(i)] = i
-    entIdList = list(ent2nameId.keys())
     # convert to text_doc
     text_doc = nlp(text_string)
     # list of sentences
@@ -128,7 +128,7 @@ def csv_to_json(fichier_csv, name_file_json, limited_line):
     sentences = 0
     for line, column in tqdm(file_read.iterrows()):
         if column['body_grobid'] != "":
-            value, count = fichier_json(column['body_grobid'], name_file_json)
+            value, count = fichier_json(column['body_grobid'])
         if sentences + count <= limited_line:
             sentences += count
             jsons.append(value)
