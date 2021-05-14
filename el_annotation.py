@@ -82,7 +82,7 @@ def fichier_json(text_string):
                 if len(list_positive_can) > 0:
                     list_neg_can = []
                     # generate 10 negative candidates
-                    for i in range(0, hp.N_NEGS):
+                    for i in range(0, 10):
                         # random all concepts id in the entIdList
                         m = random.sample(entIdList, 1)
                         # convert from list of one element to integer
