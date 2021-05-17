@@ -24,13 +24,13 @@ There are some modules that you need to install. If you use `pip` in your enviro
 
 In order to generate the training data you can follow the instructions as below:
 
-First, you need to clone the repositoty and go into the master branch by using the commad line:
-
-`git clone https://github.com/Ing-David/PFE.git && cd PFE && git checkout master`
-
-Create a folder to store all your requirement data(i.e. yourfolder/data/..) Here my main folder is `PFE`:
+First, create a folder to store all your requirement data(i.e. yourfolder/data/..) Here my main folder is `PFE`:
 
 `mkdir -p PFE/data/{glove,agrovoc/el_annotation,EL}`
+
+Then, you need to clone the repositoty and go into the master branch by using the commad line:
+
+`git clone https://github.com/Ing-David/PFE.git && cd PFE && git checkout master`
 
 Download the RDF format of agrovoc and move it into `PFE/data` by using the command line:
 
