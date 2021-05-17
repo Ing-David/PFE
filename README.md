@@ -8,13 +8,38 @@ A Python implementation of ACL2019 paper
 
 We implement this method by using the knowledge base [Agrovoc](https://agrovoc.fao.org/agrovocReleases/agrovoc_2021-05-04_core.rdf.zip) in the RDF format and the raw text for training set(i.e. non annotated corpus) from [Agritrop](https://agritrop.cirad.fr/) of Cirad. We used the scientific publications in pdf format. Here is the example of a [pdf format](http://agritrop.cirad.fr/557447/1/document_557447.pdf). In order to extract the raw text from the pdfs format, we use the tools [CERMINE](https://github.com/CeON/CERMINE) and [GROBID](https://github.com/kermitt2/grobid).
 
+# Installation
+
+There are some modules that you need to install. If you use pip in your environment:
+
+`!pip install rdflib
+!pip install git+https://github.com/twktheainur/pyclinrec.git
+!pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.0.0/en_core_web_md-3.0.0.tar.gz
+!python -c 'import nltk; nltk.download("stopwords"); nltk.download("punkt" )'`
+
+
+
+
+
 # Data
 
 In order to generate the training data
 
-First, you need to unzip the agrovoc's dictionary by using the command line:
+First, you need to clone the repositoty and go into the master branch by using the commad line:
+
+`!git clone https://github.com/Ing-David/PFE.git && cd PFE && git checkout master`
+
+Create a folder to store all your requirement data(i.e. yourfolder/data/..) Here my main folder is `PFE`:
+
+`!mkdir -p PFE/data/glove`
+
+Go into the folder `PFE` and unzip agrovoc's dictionary by the using the command line:
 
 `tar -xjf agrovoc_files.tar.bz`
+
+
+
+
 
 
 
