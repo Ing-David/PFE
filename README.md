@@ -20,7 +20,7 @@ There are some modules that you need to install. If you use `pip` in your enviro
 
 `!python -c 'import nltk; nltk.download("stopwords"); nltk.download("punkt" )'`
 
-# Data
+# Training Data
 
 In order to generate the training data in the google colab
 
@@ -48,9 +48,27 @@ Move json file of training set into `data/el_annotation` consider we are in the 
 
 `mv el_annotated.json PFE/data/el_annotation/el_annotated.json`
 
+# Glove data
 
+When we are in the folder `PFE`, download the glove's file, unzip it by using the command line:
 
+`!wget http://nlp.stanford.edu/data/glove.840B.300d.zip && unzip glove.840B.300d.zip`
 
+Generate the file `glove.word` and `word_embeddings.npy` by using the command line in colab:
+
+`!cd PFE && python glove.py`
+
+Move glove's data into folder glove. Consider we are in folder `PFE` by using the command line:
+
+`mv glove.word PFE/data/glove/glove.word`
+
+`mv word_embeddings.npy PFE/data/glove/word_embeddings.npy`
+
+# Training data
+
+To train, using the command line:
+
+`!cd PFE && python el_main.py` 
 
 
 
