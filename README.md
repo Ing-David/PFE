@@ -66,7 +66,7 @@ Move glove's data into folder glove. Consider we are in folder `PFE` by using th
 
 # Training data
 
-To train, using the command line:
+To train in colab, using the command line:
 
 `!cd PFE && python el_main.py` 
 
