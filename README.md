@@ -44,6 +44,10 @@ To generate the training set based on Agritrop corpus using the command line:
 
 `!cd PFE && python el_annotation.py`
 
+Move json file of training set into `data/el_annotation` consider we are in the folder `PFE` by using the command:
+
+`mv el_annotated.json PFE/data/el_annotation/el_annotated.json`
+
 
 
 
