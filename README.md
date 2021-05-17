@@ -20,7 +20,7 @@ There are some modules that you need to install. If you use `pip` in your enviro
 
 `python -c 'import nltk; nltk.download("stopwords"); nltk.download("punkt" )'`
 
-# Training Data
+# Generate Training Data
 
 In order to generate the training data you can follow the instructions as below:
 
@@ -66,7 +66,7 @@ Move glove's data into folder glove by using the command line:
 
 `mv word_embeddings.npy PFE/data/glove/word_embeddings.npy`
 
-# Training data
+# Training
 
 Consider we are in the folder `PFE`
 
