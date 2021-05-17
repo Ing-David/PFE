@@ -12,21 +12,17 @@ We implement this method by using the knowledge base [Agrovoc](https://agrovoc.f
 
 There are some modules that you need to install. If you use pip in your environment:
 
-`!pip install rdflib
+`!pip install rdflib`
 
-!pip install git+https://github.com/twktheainur/pyclinrec.git
+`!pip install git+https://github.com/twktheainur/pyclinrec.git`
 
-!pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.0.0/en_core_web_md-3.0.0.tar.gz
+`!pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.0.0/en_core_web_md-3.0.0.tar.gz`
 
-!python -c 'import nltk; nltk.download("stopwords"); nltk.download("punkt" )'`
-
-
-
-
+`!python -c 'import nltk; nltk.download("stopwords"); nltk.download("punkt" )'`
 
 # Data
 
-In order to generate the training data
+In order to generate the training data in the google colab
 
 First, you need to clone the repositoty and go into the master branch by using the commad line:
 
@@ -34,11 +30,19 @@ First, you need to clone the repositoty and go into the master branch by using t
 
 Create a folder to store all your requirement data(i.e. yourfolder/data/..) Here my main folder is `PFE`:
 
-`!mkdir -p PFE/data/glove`
+`!mkdir -p PFE/data/{glove,agrovoc/el_annotation,EL}`
 
-Go into the folder `PFE` and unzip agrovoc's dictionary by the using the command line:
+Download the RDF format of agrovoc and move it into `PFE/data` by using the command line:
 
-`tar -xjf agrovoc_files.tar.bz`
+`!wget https://agrovoc.fao.org/agrovocReleases/agrovoc_2021-05-04_core.rdf.zip && unzip agrovoc_2021-05-04_core.rdf.zip && mv agrovoc_2021-05-04_core.rdf PFE/data/agrovoc_2021-03-02_core.rdf`
+
+Go into the folder `PFE/data/agrovoc` and unzip agrovoc's dictionary by the using the command line:
+
+`!cd PFE/data/agrovoc && tar -xjf agrovoc_files.tar.bz`
+
+To generate the training set based on Agritrop corpus using the command line:
+
+`!cd PFE && python el_annotation.py`
 
 
 
