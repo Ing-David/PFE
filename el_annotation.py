@@ -125,7 +125,7 @@ def csv_to_json(fichier_csv, name_file_json, limited_line):
     sentences = 0
     for line, column in tqdm(file_read.iterrows()):
         if column['body_grobid'] != "":
-            value, count = fichier_json(column['body_grobid'],entIdList)
+            value, count = fichier_json(column['body_grobid'],entIdList, agrovoc)
         if sentences + count <= limited_line:
             sentences += count
             jsons.append(value)
