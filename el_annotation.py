@@ -1,7 +1,7 @@
 import spacy
 import json
 import random
-from agrovoc import Agrovoc
+from annotation import Agrovoc
 from vocabulary import Vocabulary
 import pandas as pd
 import en_core_web_md
@@ -12,7 +12,7 @@ datadir = 'data/agrovoc'
 # spacy with eng
 nlp = en_core_web_md.load()
 
-def fichier_json(text_string,entities_id_list):
+def fichier_json(text_string,entities_id_list, agrovoc):
     """
     function to generate json file by input raw text
     arg text_string: input text string
