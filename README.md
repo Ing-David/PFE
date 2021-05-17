@@ -36,7 +36,7 @@ Download the RDF format of agrovoc and move it into `PFE/data` by using the comm
 
 `!wget https://agrovoc.fao.org/agrovocReleases/agrovoc_2021-05-04_core.rdf.zip && unzip agrovoc_2021-05-04_core.rdf.zip && mv agrovoc_2021-05-04_core.rdf PFE/data/agrovoc_2021-03-02_core.rdf`
 
-Go into the folder `PFE/data/agrovoc` and unzip agrovoc's dictionary by the using the command line:
+Go into the folder `PFE/data/agrovoc` and unzip agrovoc's dictionary by using the command line:
 
 `!cd PFE/data/agrovoc && tar -xjf agrovoc_files.tar.bz`
 
