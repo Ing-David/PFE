@@ -28,7 +28,7 @@ First, create a folder to store all your requirement data(i.e. yourfolder/data/.
 
 `mkdir -p PFE/data/{glove,agrovoc/el_annotation,EL}`
 
-Then, you need to clone the repositoty and go into the master branch by using the commad line:
+Then, go into `PFE` folder and clone the repositoty, go into the master branch by using the commad line:
 
 `git clone https://github.com/Ing-David/PFE.git && cd PFE && git checkout master`
 
