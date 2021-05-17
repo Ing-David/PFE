@@ -14,7 +14,7 @@ In order to generate the training data
 
 First, you need to unzip the agrovoc's dictionary by using the command line:
 
-`tar -xjf agrovoc_files.tar.bz
+`tar -xjf agrovoc_files.tar.bz`
 
 
 
