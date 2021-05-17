@@ -22,7 +22,7 @@ There are some modules that you need to install. If you use `pip` in your enviro
 
 # Training Data
 
-In order to generate the training data in the google colab
+In order to generate the training data you can follow the instructions as below:
 
 First, you need to clone the repositoty and go into the master branch by using the commad line:
 
@@ -50,15 +50,17 @@ Move json file of training set into `data/el_annotation` consider we are in the 
 
 # Glove data
 
-When we are in the folder `PFE`, download the glove's file, unzip it by using the command line:
+Consider we are in the folder `PFE`
+
+Download the glove's file, unzip it by using the command line:
 
 `wget http://nlp.stanford.edu/data/glove.840B.300d.zip && unzip glove.840B.300d.zip`
 
 Generate the file `glove.word` and `word_embeddings.npy` by using the command line in colab:
 
-`cd PFE && python glove.py`
+`python glove.py`
 
-Move glove's data into folder glove. Consider we are in folder `PFE` by using the command line:
+Move glove's data into folder glove by using the command line:
 
 `mv glove.word PFE/data/glove/glove.word`
 
@@ -66,9 +68,11 @@ Move glove's data into folder glove. Consider we are in folder `PFE` by using th
 
 # Training data
 
+Consider we are in the folder `PFE`
+
 To train in colab, using the command line:
 
-`cd PFE && python el_main.py` 
+`python el_main.py` 
 
 
 
