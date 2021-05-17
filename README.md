@@ -13,8 +13,11 @@ We implement this method by using the knowledge base [Agrovoc](https://agrovoc.f
 There are some modules that you need to install. If you use pip in your environment:
 
 `!pip install rdflib
+
 !pip install git+https://github.com/twktheainur/pyclinrec.git
+
 !pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.0.0/en_core_web_md-3.0.0.tar.gz
+
 !python -c 'import nltk; nltk.download("stopwords"); nltk.download("punkt" )'`
 
 
