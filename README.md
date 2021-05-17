@@ -10,7 +10,7 @@ We implement this method by using the knowledge base [Agrovoc](https://agrovoc.f
 
 # Installation
 
-There are some modules that you need to install. If you use pip in your environment:
+There are some modules that you need to install. If you use `pip` in your environment using the following commands:
 
 `!pip install rdflib`
 
