@@ -20,17 +20,17 @@ There are some modules that you need to install. If you use `pip` in your enviro
 
 `python -c 'import nltk; nltk.download("stopwords"); nltk.download("punkt" )'`
 
-# Training Data
+# Generate Training Data
 
-In order to generate the training data in the google colab
+In order to generate the training data you can follow the instructions as below:
 
-First, you need to clone the repositoty and go into the master branch by using the commad line:
-
-`git clone https://github.com/Ing-David/PFE.git && cd PFE && git checkout master`
-
-Create a folder to store all your requirement data(i.e. yourfolder/data/..) Here my main folder is `PFE`:
+First, create a folder to store all your requirement data(i.e. yourfolder/data/..) Here my main folder is `PFE`:
 
 `mkdir -p PFE/data/{glove,agrovoc/el_annotation,EL}`
+
+Then, go into `PFE` folder and clone the repositoty, go into the master branch by using the commad line:
+
+`git clone https://github.com/Ing-David/PFE.git && cd PFE && git checkout master`
 
 Download the RDF format of agrovoc and move it into `PFE/data` by using the command line:
 
@@ -50,25 +50,29 @@ Move json file of training set into `data/el_annotation` consider we are in the 
 
 # Glove data
 
-When we are in the folder `PFE`, download the glove's file, unzip it by using the command line:
+Consider we are in the folder `PFE`
+
+Download the glove's file, unzip it by using the command line:
 
 `wget http://nlp.stanford.edu/data/glove.840B.300d.zip && unzip glove.840B.300d.zip`
 
 Generate the file `glove.word` and `word_embeddings.npy` by using the command line in colab:
 
-`cd PFE && python glove.py`
+`python glove.py`
 
-Move glove's data into folder glove. Consider we are in folder `PFE` by using the command line:
+Move glove's data into folder glove by using the command line:
 
 `mv glove.word PFE/data/glove/glove.word`
 
 `mv word_embeddings.npy PFE/data/glove/word_embeddings.npy`
 
-# Training data
+# Training
+
+Consider we are in the folder `PFE`
 
 To train in colab, using the command line:
 
-`cd PFE && python el_main.py` 
+`python el_main.py` 
 
 
 
