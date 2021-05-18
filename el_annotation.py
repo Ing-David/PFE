@@ -112,7 +112,7 @@ def csv_to_json(fichier_csv, name_file_json, limited_line):
     voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
     # get the entIdList for random negative candidates
     ent2nameId = {}
-    with open('data/agrovoc/agrovoc-entity.tsv', 'rt') as f:
+    with open(datadir + '/agrovoc-entity.tsv', 'rt') as f:
         g = f.read()
         h = filter(None, g.split("\n"))
         for i in h:
