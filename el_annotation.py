@@ -96,7 +96,7 @@ def fichier_json(text_string,entities_id_list, voca_ent, agrovoc):
                 dict_phrase["mentions"].append(dict_mention)
         # check if there is at least one mention in a sentence
         if len(dict_phrase["mentions"]) > 0:
-            return json.dumps(dict_phrase), len(sentences)
+            return json.dumps(dict_phrase) + '\n', len(sentences)
         else:
             return "", 0
 
