@@ -12,7 +12,7 @@ datadir = 'data/agrovoc'
 # spacy with eng
 nlp = en_core_web_md.load()
 
-def fichier_json(text_string,entities_id_list, agrovoc):
+def fichier_json(text_string,entities_id_list, voca_ent, agrovoc):
     """
     function to generate json file by input raw text
     arg text_string: input text string
@@ -125,7 +125,7 @@ def csv_to_json(fichier_csv, name_file_json, limited_line):
     sentences = 0
     for line, column in tqdm(file_read.iterrows()):
         if column['body_grobid'] != "":
-            value, count = fichier_json(column['body_grobid'],entIdList, agrovoc)
+            value, count = fichier_json(column['body_grobid'],entIdList, voca_ent, agrovoc)
         if sentences + count <= limited_line:
             sentences += count
             jsons.append(value)
