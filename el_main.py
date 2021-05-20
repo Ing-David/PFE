@@ -247,17 +247,17 @@ def train():
 
     best_scores = {'prec': -1, 'rec': -1, 'f1': -1}
 
-    if args.kl_coef > 0:
-        print('*** dev ***')
-        test(dataset.dev)
-        print('*** test ***')
-        test(dataset.test)
+    #if args.kl_coef > 0:
+        #print('*** dev ***')
+        #test(dataset.dev)
+        #print('*** test ***')
+        #test(dataset.test)
 
-    print('===== noise_threshold=1 ====')
-    print('*** dev ***')
-    test(dataset.dev, noise_threshold=1)
-    print('*** test ***')
-    test(dataset.test, noise_threshold=1)
+    #print('===== noise_threshold=1 ====')
+    #print('*** dev ***')
+    #test(dataset.dev, noise_threshold=1)
+    #print('*** test ***')
+    #test(dataset.test, noise_threshold=1)
 
     for e in range(args.n_epochs):
         print('------------------------- epoch %d --------------------------' % (e))
@@ -270,25 +270,25 @@ def train():
             if start >= len(data):
                 print('%.6f\t\t\t\t\t' % (total_loss / len(data)))
                 save = False
-                if args.kl_coef > 0:
-                    print('*** dev ***')
-                    prec, rec, f1 = test(dataset.dev)
-                    print('*** test ***')
-                    test(dataset.test)
+                #if args.kl_coef > 0:
+                    #print('*** dev ***')
+                    #prec, rec, f1 = test(dataset.dev)
+                    #print('*** test ***')
+                    #test(dataset.test)
 
-                    if best_scores['f1'] <= f1:
-                        best_scores = {'prec': prec, 'rec': rec, 'f1': f1}
-                        save = True
+                    #if best_scores['f1'] <= f1:
+                    #    best_scores = {'prec': prec, 'rec': rec, 'f1': f1}
+                    #    save = True
 
-                print('===== noise_threshold=0 ====')
-                print('*** dev ***')
-                prec, rec, f1 = test(dataset.dev, noise_threshold=1)
-                print('*** test ***')
-                test(dataset.test, noise_threshold=1)
+                #print('===== noise_threshold=0 ====')
+                #print('*** dev ***')
+                #prec, rec, f1 = test(dataset.dev, noise_threshold=1)
+                #print('*** test ***')
+                #test(dataset.test, noise_threshold=1)
 
-                if args.kl_coef == 0 and best_scores['f1'] <= f1:
-                    best_scores = {'prec': prec, 'rec': rec, 'f1': f1}
-                    save = True
+                #if args.kl_coef == 0 and best_scores['f1'] <= f1:
+                #    best_scores = {'prec': prec, 'rec': rec, 'f1': f1}
+                #    save = True
 
                 if save:
                     print('save model to', args.model_path)
