@@ -23,8 +23,11 @@ def fichier_json(text_string,entities_id_list, voca_ent, agrovoc):
     text_doc = nlp(text_string)
     # list of sentences
     sentences = list(text_doc.sents)
+    # list to store each phrase in an integral text
+    sents_dict = []
     # loop through each phrase
     for sentence in sentences:
+        # dictionary for each phrase
         dict_phrase = {}
         string_sentence = str(sentence)
         # annotated concepts for each phrase
@@ -96,9 +99,17 @@ def fichier_json(text_string,entities_id_list, voca_ent, agrovoc):
                 dict_phrase["mentions"].append(dict_mention)
         # check if there is at least one mention in a sentence
         if len(dict_phrase["mentions"]) > 0:
-            return json.dumps(dict_phrase) + '\n', len(sentences)
+            sents_dict.append(dict_phrase)
+        # if not skip
         else:
-            return "", 0
+            continue
+            
+    output = ""
+    
+    for dict_phrase in sents_dict:
+        output += json.dumps(dict_phrase) + "\n"
+
+    return output, len(sentences)
 
 
 def csv_to_json(fichier_csv, name_file_json, limited_line):
