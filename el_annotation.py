@@ -85,7 +85,7 @@ def fichier_json(text_string,entities_id_list, voca_ent, agrovoc):
                 if len(list_positive_can) > 0:
                     list_neg_can = []
                     # generate 10 negative candidates
-                    for i in range(0, 10):
+                    for i in range(0, 50):
                         # random all concepts id in the entIdList
                         m = random.sample(entities_id_list, 1)
                         # convert from list of one element to integer
@@ -95,6 +95,9 @@ def fichier_json(text_string,entities_id_list, voca_ent, agrovoc):
                             # avoid negative concepts that already existed in the list
                             if n not in [k for k in list_neg_can]:
                                 list_neg_can.append(n)
+                                # check if the list already contained 10 candidates 
+                                if len(list_neg_can) == 10:
+                                    break
                     dict_mention["negatives"] = list_neg_can
                 dict_phrase["mentions"].append(dict_mention)
         # check if there is at least one mention in a sentence
