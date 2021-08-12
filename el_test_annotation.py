@@ -23,6 +23,7 @@ def add_uri(id_number):
 
     str_id = str(id_number)
     s = "http://aims.fao.org/aos/agrovoc/c_" + str_id
+    
     return s
 
 
@@ -31,6 +32,14 @@ def individual_tokenOffset(text, pattern):
     Function to get the offset of a mention in an individual sentence, useful with the offset of tool annotation by dictionary
     :param text: The input sentence
     :param pattern: The list of pattern (i.e a word/mention we want to find its offset in the sentence)
+
+    Example using::
+
+    tokens = ["corn"]
+    pattern = re.compile(fr'(?<!\w)(?:{"|".join(sorted(map(re.escape, tokens), key=len, reverse=True))})(?!\w)(?!\.\b)', re.I )
+    offsets = individual_tokenOffset("Ceci est une wheat phrase corn.",pattern)
+
+    [{'word': 'corn', 'IndividualOffsetBegin': 26, 'IndividualOffsetEnd': 30}]
     """
 
     items = []
@@ -175,8 +184,8 @@ def json_test_file(text_file, brat_file, output_json):
     """
     Function to generate the json file for testing the model dl4el
     :param text_file: The text file (.txt)
-    :param brat_file: The output file from the BRAT's tool (.ann) :param output_json: The name of the output json file,
-    the name should not be changed if we want a file with continuous line
+    :param brat_file: The output file from the BRAT's tool (.ann) 
+    :param output_json: The name of the output json file, the name should not be changed if we want a file with continuous line
     """
 
     # Agrovoc's rdf
@@ -264,7 +273,7 @@ def json_test_file(text_file, brat_file, output_json):
 
         # check if there is at least one mention in a sentence
         if len(dict_phrase["mentions"]) > 0:
-            # write into Temperary dict_phrase into json file
+            # write temperary dict_phrase into json file
             with open(output_json, 'a') as f:
                 json.dump(dict_phrase, f)
                 f.write('\n')

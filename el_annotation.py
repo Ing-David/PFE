@@ -1,23 +1,24 @@
-import spacy
 import json
 import random
 from annotation import Agrovoc
 from vocabulary import Vocabulary
 import pandas as pd
 import en_core_web_md
-from tqdm.notebook import tqdm
+from tqdm.autonotebook import tqdm
 
 # directory of data
 datadir = 'data/agrovoc'
 # spacy with eng
 nlp = en_core_web_md.load()
 
-def fichier_json(text_string,entities_id_list, voca_ent, agrovoc):
+
+def fichier_json(text_string, entities_id_list, voca_ent, agrovoc):
     """
-    function to generate json file by input raw text
-    arg text_string: input text string
-    arg name_file: input the name for the json file
-    arg limited_line: input how many lines to write into the json file
+    Function to generate json file by input raw text
+    :param text_string: input text string
+    :param entities_id_list: List id of concepts/entities
+    :param voca_ent: vocabulary of the concepts
+    :param agrovoc: Agrovoc thesaurus
     """
     # convert to text_doc
     text_doc = nlp(text_string)
@@ -95,7 +96,7 @@ def fichier_json(text_string,entities_id_list, voca_ent, agrovoc):
                             # avoid negative concepts that already existed in the list
                             if n not in [k for k in list_neg_can]:
                                 list_neg_can.append(n)
-                                # check if the list already contained 10 candidates 
+                                # check if the list already contained 10 candidates
                                 if len(list_neg_can) == 10:
                                     break
                     dict_mention["negatives"] = list_neg_can
@@ -106,18 +107,22 @@ def fichier_json(text_string,entities_id_list, voca_ent, agrovoc):
         # if not skip
         else:
             continue
-            
+
     output = ""
-    
+    count_json_line = 0
     for dict_phrase in sents_dict:
         output += json.dumps(dict_phrase) + "\n"
+        count_json_line += 1
 
-    return output, len(sentences)
+    return output, count_json_line
 
 
 def csv_to_json(fichier_csv, name_file_json, limited_line):
     '''
-    function to convert from csv that are already extracted to json file for training
+    Function to convert from csv that are already extracted to json file for training
+    :param fichier_csv: File csv of Agritrop
+    :param name_file_json: Name of json file
+    :param limited_line: Number of limited line in json file
     '''
     # agrovoc's rdf
     agrovoc = Agrovoc(lang="en")
@@ -136,17 +141,64 @@ def csv_to_json(fichier_csv, name_file_json, limited_line):
     file_read = pd.read_csv(fichier_csv)
     file_read['body_grobid'] = file_read['body_grobid'].astype('str')
     jsons = []
-    sentences = 0
-    for line, column in tqdm(file_read.iterrows()):
+    current_line = 0
+
+    sentence_progress_bar = tqdm()
+    publication_progress_bar = tqdm(file_read.iterrows())
+
+    for line, column in publication_progress_bar:
+
+        publication_progress_bar.set_description("Processing %dth publication" % line)
+        # check if body_grobid is not an empty string
         if column['body_grobid'] != "":
-            value, count = fichier_json(column['body_grobid'],entIdList, voca_ent, agrovoc)
-        if sentences + count <= limited_line:
-            sentences += count
-            jsons.append(value)
+            value, line_publication = fichier_json(column['body_grobid'], entIdList, voca_ent, agrovoc)
+
+        # check if the number of sentences in each publication is less than the limited lines
+        if line_publication < limited_line:
+            # check if current lines are less than the limited lines
+            if current_line < limited_line:
+                # check if the sum of current lines and new lines from a publication are less than limited lines
+                if current_line + line_publication < limited_line:
+                    jsons.append(value)
+                    list_value = value.splitlines()
+                    current_line += len(list_value)
+                # if not, fill some lines from new lines of a publication to current lines to match with the limited
+                # lines
+                else:
+                    list_value = value.splitlines()
+                    limited_sentence = list_value[:limited_line - current_line]
+                    limited_value = "\n".join(limited_sentence)
+                    jsons.append(limited_value)
+                    current_line += len(limited_sentence)
+
         else:
+            # check if current lines are less than the limited lines then fill some lines to match with limited line
+            if current_line < limited_line:
+                list_value = value.splitlines()
+                limited_sentence = list_value[:limited_line - current_line]
+                limited_value = "\n".join(limited_sentence)
+                jsons.append(limited_value)
+                current_line += len(limited_sentence)
+
+        # description for sentences
+        sentence_progress_bar.set_description(
+            "Processing the %dth sentence out of %d sentences" % (current_line, limited_line))
+
+        # current lines equal limited lines then break
+        if current_line == limited_line:
             break
+
+    if current_line < limited_line:
+        print("Out of publications to produce sentences.")
+        print("The total number of sentences in json file is %d" % current_line)
+
+    else:
+        print("Program Finished.")
+
+    # write into json file
     with open(name_file_json, 'w') as json_file:
         json_file.writelines(jsons)
 
+csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_1000_limit.csv", 'el_annotated_170k.json', 170000)
 
-csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_4_100_limit.csv", 'el_annotated.json', 170000)
+
