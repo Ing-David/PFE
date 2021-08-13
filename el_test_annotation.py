@@ -18,12 +18,11 @@ nlp = en_core_web_md.load()
 def add_uri(id_number):
     """
     Function to add the domain name of agrovoc
-    :param id_number: The URI of a concept
+    :param id_number: The id of a concept
     """
 
     str_id = str(id_number)
     s = "http://aims.fao.org/aos/agrovoc/c_" + str_id
-    
     return s
 
 
@@ -32,14 +31,6 @@ def individual_tokenOffset(text, pattern):
     Function to get the offset of a mention in an individual sentence, useful with the offset of tool annotation by dictionary
     :param text: The input sentence
     :param pattern: The list of pattern (i.e a word/mention we want to find its offset in the sentence)
-
-    Example using::
-
-    tokens = ["corn"]
-    pattern = re.compile(fr'(?<!\w)(?:{"|".join(sorted(map(re.escape, tokens), key=len, reverse=True))})(?!\w)(?!\.\b)', re.I )
-    offsets = individual_tokenOffset("Ceci est une wheat phrase corn.",pattern)
-
-    [{'word': 'corn', 'IndividualOffsetBegin': 26, 'IndividualOffsetEnd': 30}]
     """
 
     items = []
@@ -152,8 +143,10 @@ def list_dict_mention(text_file, brat_file):
     for dict_concept in list_dict_concept:
         for index, phrase in enumerate(list_phrase):
             j = word_tokenize(phrase)
+            # verify if the sentence is in the list of sentences and if the mention offsets are in between the
+            # sentence that we want to find and get that sentence
             if contents[dict_concept['offset_start']:dict_concept['offset_end']] in j and (
-                    offset_phrase[index][0] < dict_concept['offset_start'] and dict_concept['offset_end'] <
+                    offset_phrase[index][0] <= dict_concept['offset_start'] and dict_concept['offset_end'] <=
                     offset_phrase[index][1]):
                 dict_concept['original_sentence'] = list_phrase[index]
 
@@ -163,7 +156,7 @@ def list_dict_mention(text_file, brat_file):
             if (dictionary_concept['original_sentence'] == phrase):
                 dictionary_concept['sentence_id'] = index_phrase
 
-    # loop to add URI complete to each mention
+    # loop to add completed URI to each mention
     for concept_dict in list_dict_concept:
         concept_dict["concept_id"] = add_uri(concept_dict["concept_id"])
 
@@ -184,8 +177,8 @@ def json_test_file(text_file, brat_file, output_json):
     """
     Function to generate the json file for testing the model dl4el
     :param text_file: The text file (.txt)
-    :param brat_file: The output file from the BRAT's tool (.ann) 
-    :param output_json: The name of the output json file, the name should not be changed if we want a file with continuous line
+    :param brat_file: The output file from the BRAT's tool (.ann) :param output_json: The name of the output json file,
+    the name should not be changed if we want a file with continuous line
     """
 
     # Agrovoc's rdf
@@ -273,7 +266,7 @@ def json_test_file(text_file, brat_file, output_json):
 
         # check if there is at least one mention in a sentence
         if len(dict_phrase["mentions"]) > 0:
-            # write temperary dict_phrase into json file
+            # write into Temperary dict_phrase into json file
             with open(output_json, 'a') as f:
                 json.dump(dict_phrase, f)
                 f.write('\n')
