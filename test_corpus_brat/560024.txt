@@ -1,0 +1,343 @@
+INTRODUCTION Traditional leafy vegetables (TLVs) are plants whose leaves are socially accepted, used and consumed *Corresponding author. E-mail: adansi2001@gmail.com or agrobreed.fast@gmail.com.  (Shippers, 2000) . In the Republic of Benin, they occur as cultivated and semi-cultivated crops or weedy and wild plants, with ecological, social and cultural values, playing a significant role in the daily food and nutritional requirements of local people mainly in rural areas, but more increasingly in urban zones. Recent surveys implemented throughout the country revealed 187 species of TLVs of interest, among which are Acmella uliginosa and Justicia tenella  (Dansi et al., 2008a . A. uliginosa and J. tenella are distributed throughout Africa  (Shippers, 2000)  where they are known at both cultivated and wild state. In Benin, these neglected and underutilized species (NUS) are locally cultivated mainly in the northern part of the country, where they are intensively consumed  (Dansi et al., 2008b; Adéoti et al., 2009) . A. uliginosa is a key nutraceutical for local rural populations. It is used as an antibiotic, which stimulates milk production and facilitates the elimination of blood clots in women after delivery . J. tenella is also an appreciated leafy vegetable. The leaves are cooked and consumed as spinach. For medicinal purposes, the leaves are used to treat cardiac disorder, diarrhoea, fever and indigestion  (Denton, 2004; Dansi et al., 2008c) . The plant possesses anti-inflammatory activity and is also used as antidepressant  (Sanmugapriya et al., 2005) . Thus, is of paramount importance that the agro biodiversity of these important NUS be precisely characterised with the use of modern molecular tools. Genetic resour-ces must be preserved based on this accurate characterization for the benefit of local populations. The assessment of intraspecific genetic diversity and the understanding of its structure are a prerequisite for any further action. To the best of our knowledge, such information has never been reported on these species. There are now a number of molecular markers which have proven very efficient in assessing plant genetic diversity  (Santoni et al., 2000) . Among them, amplified fragment length polymorphism (AFLP)  (Vos et al., 1995)  has been found to be the most appropriate in many cases. AFLPs were described as a powerful and efficient approach in population genetics and diversity analysis, molecular taxonomic classification, gene mapping and marker-assisted breeding for various crops  (Ayele et al., 1999; Carr et al., 2003; Uptmoor et al., 2003) . AFLP analysis provides an effective means of covering large area of the genome in a single assay  (Ayad et al., 1997; Milbourne et al., 1997; Zhang et al., 1999; Muminovic et al., 2004) . It is highly reproducible and discriminative  (Rafalski and Tingey, 1993; Savelkoul et al., 1999; Soleimani et al., 2002) , and generate a virtually unlimited number of genetic markers  (Blears et al., 1998; Gaudeul et al., 2000) . AFLP has been already used to assess genetic diversity in many crops such as hibiscus  (Tiang et al., 2003) , peach  (Xu et al., 2006) , linseed  (Adugna et al., 2006) , soybean  (Tara Satyavathi et al., 2006) , Rice  (Mackill et al., 1996) , wheat  (Shoaib and Arabi, 2006) , sesame  (Laurentin and Karlovsky, 2007)  and fonio  (Adoukonou-Sagbadja et al., 2007) . In this study, we used AFLP markers to assess the genetic diversity and analyse the relationship among accessions of A. uliginosa and J. tenella collected from different agroecological zones of Benin, West Africa. 
+ MATERIALS AND METHODS 
+ Plant material The plant materials under study consists of seventeen accessions of A. uliginosa and fourteen accessions of J. tenella collected from various villages  (Table 1 ) located in the northern part of Benin  (Adeoti et al., 2009) . Accessions were maintained as field collections at the Biological Control Station of the International Institute of Tropical Agriculture (IITA) based in Cotonou, Benin. 
+ DNA extraction In order to take into account possible individual genetic variability within each accession, total genomic DNA was extracted from bulked young leaves (100 to 200 mg FW per accession) collected from ten 2-to 3-week-old plants. DNA from freshly collected material was extracted following the MATAB (mixed alkyltriméthylammonium bromide) procedure according to  Doyle and Doyle (1990) . After RNAse treatment, DNA content was fluorometrically quantified (GENIOS PLUS TECAN Scientific Instruments) using Hoechst 33258 dye and diluted to 25 ng/µl working solution. 
+ AFLP protocol AFLP analysis was performed as originally described by  Vos et al. (1995)  with minor modifications. Here, 250 ng of genomic DNA (10 µl of working solution) were digested using EcoRI and MseI restriction enzymes and the generated fragments were ligated with double-stranded site-specific adapters using T4 DNA ligase. Following ligation, a pre-amplification was carried out with primers containing one selective nucleotide cytosine and adenine for MseI and EcoRI primers, respectively. PCR was performed for 30 cycles which consisted of 1 min at 94°C, 1 min at 56°C, and 1 min at 72°C with final extension for 3 min at 72°C. Resulting PCR products were 10 times diluted with sterile double distilled water and used as templates for the selective amplification step. This was carried out with a couple of selective primers (EcoRI/MseI) containing three selective nucleotides at the side. EcoRI was labelled with fluorescent dye. Selective amplification was performed on two steps in a total volume of 20 µl containing 5 µl of diluted pre-selective PCR product, 2 µl of each primer at 1 pmole/µl for EcoANN and 5 pmole/µl for MseCNN and 0.2 µl of 1 U of Taq polymerase. The first step of selective amplification consisted of 12 cycles, 3 min at 94°C, 45 s at 94°C, 45 s at 65°C and 1 min at 72°C for final extension. The second step was performed for 25 cycles which consisted of 45 s at 94°C, 45 s at 56°C, 1 min at 72°C and 3 min at 72°C. The PCR products of selective amplification were diluted 10 times and an aliquot (2 µl) of diluted solution was mixed with 18 µl of a ROXlabeled internal size standard (AMM 524). Then the mixture was denaturated for 5 min at 95°C, loaded and separated on an ABI PRISM 3130X Genetic Analyzer sequencer (Applied Biosystems). 
+ Scoring and analysis of AFLP data Electrophoregram generated by the sequencer were analysed using the GeneMapper version 3.7 software package  (Applied Biosystem, 2004) . Clear and unambiguous peaks were considered as AFLP markers and scored as present (1) or absent (0) in order to generate a binary data matrix. The total number of scored markers and the number and percentage of polymorphic markers were determined for each primer pair used. Polymorphic markers were used for further data analysis. With the binary matrix (0, 1) compiled, pairwise relatedness between all accessions was esti-   (Perrier and Jacquemoud-Collet, 2006 ) and the Neighbor-joining method, a dendrogram was generated with the aim of analysing the relationship between accessions. The binary matrix was also used to undertake a factorial coordinate analysis (FCA) with the same software in order to obtain a graphical representation of the genetic diversity patterns existing among accessions. 
+ RESULTS 
+ Diversity among A. uliginosa accessions A total of four pairs of primer combinations were screened. Among these, only three generated useful amplification products with a high polymorphism; these were selected for DNA profiling. Sequences of selected primers, total number of generated markers and associated polymorphism are shown in  Table 2 . The number of amplicons obtained per primer combination ranged from 51 to 88 and the percentage of polymorphic amplicons generated by each primer combination ranged from 30 to 71%  (Table 2) . A total of 224 amplicons (50 to 500 pb) was generated, from which 50.50% (114 amplicons) were found to be polymorphic. The genetic dissimilarity index calculated between accessions ranged from 0.01 to 0.67  (Table 3 ). The lowest value was obtained between AA12 collected at Perporiyakou 2 and AA11 collected at Koupagou, while the highest value was calculated between AA1 and AA7 sampled at Boukoumbé and Péporiyakou1, respectively. The generated dendrogram based on the dissimilarity matrix  (Table 3)  using the    
+ Diversity among J. tenella accessions Five primers combinations were used to assess the genetic diversity among J. tenella accessions  (Table 2) . A total of 418 fragments were produced among which, only 144 were found to be polymorphic. The average polymorphic rate was 34%. The number of amplicons per primer combination ranged from 60 to 93 and the percentage of polymorphic amplicons varied from 16 to 49%  (Table 2 ). The dissimilarity indexes among accessions varied from 0.17 to 0.62  (Table 4)    similarity index (the highest dissimilarity) was found between the accession collected at Boroyerou (County of Borgou) and the one sampled at Dangoussar (County of Atakora). The highest similarity index was calculated between the individual taken at Péporiyakou (Atakora) and the one collected at Sonoumon (Atakora). The dendrogram revealed three genetic groups, designated as I, II and III  (Figure 4) . Apart from the group III which joins two accessions from the County of Borgou, the other two groups are composed of samples from both Borgou and Atakora. 
+ DISCUSSION The amplified fragment length polymorphism (AFLP) analysis revealed a high level of similarity between accessions of A. uliginosa. This is an indication of low genetic diversity among the collected accessions. Cluster II of the UPGMA dendrogram (  Figure 1 ) based on the dissimilarity matrix assembles individuals from Dangoussar, Kawado and Cobly, three geographically distinct bordering villages of Togo (  Figure 3) . Somehow, these results are in agreement with the farmers' assumptions which depict this species as originating from Togo  (Adéoti et al., 2009) . Three accessions from this cluster which were collected at Péporiyakou, Boukoumbé and Tchakalakou seem to be genetically different. They probably originate from another ancient introduction of the species into Benin from Burkina Faso. A second hypothesis suggests the existence of pure specimen or hybrids from Acmella oleracea, a wild relative of A. uliginosa which is well known by farmers. Nevertheless, a precise morphological examination of these three samples by taxonomists from the National Herbarium of Benin confirmed their identity as A. uliginosa, which makes more plausible our first hypothesis. In fact, the Wama, Ditamari and Natimba ethnic groups from these villages are all originating from both Burkina Faso (mainly) and Togo  (Adam and Boco, 1993) . The use of this species by the Gourmantché ethnic group (from Burkina Faso), the recent findings on the multiple origins of fonio in Benin  (Adoukonou-Sagbadja et al., 2006; Adoukonou-Sagbadja et al., 2007; Dansi et al., 2010)  as well as the grouping of Benin ethnic groups based on their origin with regard to the leafy vegetables species they consume  (Dansi et al., 2008a) , concomitantly support this hypothesis. Then diversification observed among A. uliginosa' accessions could be related to people migration through this part of country. Contrary to A. uliginosa, no clear genetic structuring could be obtained within the accessions of J. tenella  (Figure 4 ) despite the high level of amplicons generated per primer. Other AFLP markers could be tested to confirm once again this result. The two major clusters assemble individuals collected from Atakora as well as those from Borgou. Therefore, the accessions collected from the Northwest were not genetically very different from the ones collected from the Northeast. This result was rather expected when our previous report is considered  (Adéoti et al., 2009 ). Indeed, we described this species as mainly located in the Northeast with a spread towards the Western region resulting from the migration of people. 
+ Conclusion Results from the present study confirm the robustness and the suitability of the AFLP approach for plant diversity analysis and for the assessment of genetic relationship among individuals of a given species collected from different locations. We have applied this technique to two different neglected and underutilized species from Benin (A. uliginosa L. and J. tenella (Nees) T.) for the first time. More investigations are needed to clarify the origin (single or multiple) of A. uliginosa in Benin taking into account accessions from Togo and Burkina Faso. Likewise, other molecular markers such as ISSR or microsatellites could be useful to deepen the genetic relationship among accessions of these two species. The present study will be extended to two morphologically close species of TLVs (Sesamum radiatum and Ceratotheca sesamoides) in order to examine their genetic relationship and to explore the relationship between ecology (soil, climate) and genetic diversity. 
+ Abbreviations AFLP, Amplified fragment length polymorphism; TLVs, traditional leafy vegetables; NUS, underutilized species. joining approach of the UPGMA method showed three distinct clusters (Figure 1): 1. Cluster I contains accessions collected at Djougou,Borondy, Bellefoungou (County of Donga) and at Souo-mou, Tiele and Pam Pam (East of the County of Atakora). 2. Cluster 2 groups together accessions from Dangoussar, Cobly and Kawado located along the Benin/Togo border. 3. Cluster 3 joins individuals collected at Perporiyakou1, Boukoumbé and Tchakalakou situated at the centre of the County of Atakora. Axis 1 of the factorial coordinate analysis (FCA) separates the accessions analysed into two groups (Figure 2) of which one is exactly cluster 2 and the second one, the other accessions (Cluster 1 and Cluster 3) which are not structured into differentiated groups. 
+ Figure 1 . 1 Neighbor-joining analysis of A. uliginosa accessions. The dendrogram was generated from UPGMA cluster analysis of dissimilarity data. 
+ Figure 2 . 2 Factorial coordinate analysis for A. uliginosa accessions as generated by DARwin software using dissimilarity coefficient matrix calculated from AFLP data. 
+ Figure 3 .Figure 4 . 34 Sampling sites for A. uliginosa (L.) and J. tenella (Nees) T in Northern Benin. Neighbor-joining analysis of J. tenella accessions. The dendrogram was generated from UPGMA cluster analysis of dissimilarity data. 
+ Table 1 . 1 Studied accessions of A. uliginosa and J. tenella analysed and corresponding collecting sites. Species 
+Accession 
+number 
+
+Collecting 
+sites 
+County 
+Region 
+
+Acmella 
+uliginosa 
+
+AA1 
+Boukoumbé 
+Atacora 
+Northwest 
+AA2 
+Koutagou 
+Atacora 
+Northwest 
+AA3 
+Cobly 
+Atacora 
+Northwest 
+AA4 
+Souomou 1 
+Atacora 
+Northwest 
+AA5 
+Tiélé 
+Atacora 
+Northwest 
+AA6 
+Tchakalakou 
+Atacora 
+Northwest 
+AA7 
+Péporiyakou 1 
+Atacora 
+Northwest 
+AA8 
+Pam-Pam 
+Atacora 
+Northwest 
+AA9 
+Dangoussar 
+Atacora 
+Northwest 
+AA10 
+Bajoudè 
+Donga 
+Northwest 
+AA11 
+Koupagou 
+Atacora 
+Northwest 
+AA12 
+Péporiyakou 2 
+Atacora 
+Northwest 
+AA13 
+Souomou 2 
+Atacora 
+Northwest 
+DA1 
+Djougou 
+Donga 
+Northwest 
+DA2 
+Belléfoungou 
+Donga 
+Northwest 
+DA3 
+Borondy 
+Donga 
+Northwest 
+DA5 
+Kawado 
+Donga 
+Northwest 
+
+Justicia tenella 
+AJ1 
+Nouagou 
+Atacora 
+Northwest 
+AJ4 
+Péporiyakou 
+Atacora 
+Northwest 
+BJ1 
+Sonoumon 
+Borgou 
+Northeast 
+BJ2 
+Bori 
+Borgou 
+Northeast 
+BJ3 
+Wèrèkè 
+Borgou 
+Northeast 
+BJ4 
+Boroyerou 
+Borgou 
+Northeast 
+BJ5 
+Ina 
+Borgou 
+Northeast 
+DJ1 
+Nalohoun I 
+Atacora 
+Northwest 
+DJ2 
+Dangoussar 
+Atacora 
+Northwest 
+L1S 
+Gogounou 
+Borgou 
+Northeast 
+LJ2 
+Toumè 
+Borgou 
+Northeast 
+LJ3 
+Sérou 
+Borgou 
+Northeast 
+LJ4 
+Guéssou-sud 
+Borgou 
+Northeast 
+
+mated using Dice index of similarity (Dice, 1945). Using DARwin5 
+software package Version 5.0.158  
+ Table 2 . 2 Number of AFLP amplicons and corresponding rate of polymorphism for the two species under study. Species 
+Primer combination 
+Number of 
+amplicons 
+
+Number of polymorphic 
+amplicons 
+
+Percentage of 
+polymorphism (%) 
+
+A. uliginosa 
+EcoACT FAM / MseCAT 
+88 
+27 
+30 
+EcoAAG HEX / MseCTC 
+85 
+61 
+71 
+
+EcoACG TAM / MseCAG 
+51 
+26 
+50 
+
+J. tenella 
+EcoACT FAM / MseCAT 
+92 
+15 
+16 
+EcoACG TAM / MseCAG 
+92 
+45 
+49 
+
+EcoACG / MseCTA 
+93 
+31 
+33 
+Eco ACA / MseCAA 
+81 
+27 
+33 
+EcoAGG / MseCTC 
+60 
+26 
+43 
+
+ 
+ Table 3 . 3 Dissimilarity matrix between accessions of A. uliginosa as revealed by AFLP markers. AA1 AA2 AA3 AA4 AA5 AA6 AA7 AA8 AA9 AA10 AA11 AA12 AA13 DA1 DA2 DA3 
+
+AA2 
+0.41 
+
+AA3 
+0.41 0.04 
+AA4 
+0.51 0.08 0.10 
+
+AA5 
+0.48 0.05 0.09 0.06 
+
+AA6 
+0.52 0.22 0.19 0.23 0.23 
+
+ 
+ Table 4 . 4 Dissimilarity matrix of J. tenella accessions based on AFLP data. AJ1 
+AJ4 
+BJ1 
+BJ2 
+BJ3 
+BJ4 
+BJ5 
+DJ1 
+DJ2 
+L1S 
+LJ2 
+LJ3 
+LJ4 
+
+AJ4 
+0.52 
+
+BJ1 
+0.52 
+0.17 
+
+BJ2 
+0.52 
+0.40 
+0.37 
+
+BJ3 
+0.51 
+0.35 
+0.30 
+0.37 
+
+BJ4 
+0.51 
+0.37 
+0.32 
+0.42 
+0.34 
+BJ5 
+0.51 
+0.46 
+0.39 
+0.54 
+0.45 
+0.41 
+DJ1 
+0.51 
+0.44 
+0.45 
+0.48 
+0.47 
+0.44 
+0.45 
+
+DJ2 
+0.59 
+0.54 
+0.53 
+0.53 
+0.52 
+0.62 
+0.60 
+0.55 
+
+L1S 
+0.48 
+0.51 
+0.49 
+0.50 
+0.48 
+0.51 
+0.53 
+0.51 
+0.50 
+LJ2 
+0.56 
+0.23 
+0.24 
+0.44 
+0.37 
+0.38 
+0.45 
+0.48 
+0.55 
+0.50 
+
+LJ3 
+0.53 
+0.19 
+0.21 
+0.39 
+0.31 
+0.36 
+0.44 
+0.43 
+0.55 
+0.51 0.27 
+
+LJ4 
+0.55 
+0.26 
+0.29 
+0.46 
+0.36 
+0.39 
+0.47 
+0.50 
+0.55 
+0.52 0.32 
+0.27 
+
+LJ5 
+0.48 
+0.46 
+0.39 
+0.51 
+0.46 
+0.44 
+0.31 
+0.46 
+0.57 
+0.52 0.46 
+0.44 
+0.46

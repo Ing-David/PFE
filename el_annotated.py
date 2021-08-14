@@ -1,7 +1,7 @@
 import spacy
 import json
 import random
-from agrovoc import Agrovoc
+from agrovoc import SKOSAnnotator
 from vocabulary import Vocabulary
 import el_hyperparams as hp
 import en_core_web_md
@@ -13,7 +13,7 @@ datadir = args.datadir
 # spacy with eng
 nlp = en_core_web_md.load()
 # agrovoc's rdf
-agrovoc = Agrovoc(lang="en")
+agrovoc = SKOSAnnotator(lang="en")
 
 
 def fichier_json(text_string, name_file_json, limited_line):

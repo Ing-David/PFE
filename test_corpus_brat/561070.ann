@@ -1,0 +1,284 @@
+T1	Concept 171 175	main
+N1	 Reference T1 Agrovoc:http://aims.fao.org/aos/agrovoc/c_4523	Maine
+T2	Concept 285 291	fibres
+N2	 Reference T2 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2879	fibre
+T3	Concept 336 345	cellulose
+N3	 Reference T3 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1423	Cellulose
+T4	Concept 409 414	trait
+N4	 Reference T4 Agrovoc:http://aims.fao.org/aos/agrovoc/c_4835	Traite
+T5	Concept 430 441	orientation
+N5	 Reference T5 Agrovoc:http://aims.fao.org/aos/agrovoc/c_5406	Orientation
+T6	Concept 430 441	orientation
+N6	 Reference T6 Agrovoc:http://aims.fao.org/aos/agrovoc/c_5407	Oriente
+T7	Concept 457 466	cellulose
+N7	 Reference T7 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1423	Cellulose
+T8	Concept 642 646	Cave
+N8	 Reference T8 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1416	Cave
+T9	Concept 1157 1167	techniques
+N9	 Reference T9 Agrovoc:http://aims.fao.org/aos/agrovoc/c_14816	Technique
+T10	Concept 1382 1391	cellulose
+N10	 Reference T10 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1423	Cellulose
+T11	Concept 1460 1472	organization
+N11	 Reference T11 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50164	organe
+T12	Concept 1460 1472	organization
+N12	 Reference T12 Agrovoc:http://aims.fao.org/aos/agrovoc/c_49904	organisme
+T13	Concept 1548 1550	or
+N13	 Reference T13 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T14	Concept 1780 1787	Populus
+N14	 Reference T14 Agrovoc:http://aims.fao.org/aos/agrovoc/c_6116	Populus
+T15	Concept 1823 1828	Picea
+N15	 Reference T15 Agrovoc:http://aims.fao.org/aos/agrovoc/c_5851	Picea
+T16	Concept 1878 1881	Lin
+N16	 Reference T16 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2970	Lin
+T17	Concept 1903 1913	Eucalyptus
+N17	 Reference T17 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T18	Concept 2019 2036	Eucalyptus nitens
+N18	 Reference T18 Agrovoc:http://aims.fao.org/aos/agrovoc/c_32319	Eucalyptus nitens
+T19	Concept 2125 2135	Eucalyptus
+N19	 Reference T19 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T20	Concept 2289 2299	Eucalyptus
+N20	 Reference T20 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T21	Concept 2499 2519	Eucalyptus urophylla
+N21	 Reference T21 Agrovoc:http://aims.fao.org/aos/agrovoc/c_26492	Eucalyptus urophylla
+T22	Concept 2554 2565	diffraction
+N22	 Reference T22 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T23	Concept 2566 2575	technique
+N23	 Reference T23 Agrovoc:http://aims.fao.org/aos/agrovoc/c_14816	Technique
+T24	Concept 2578 2582	Cave
+N24	 Reference T24 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1416	Cave
+T25	Concept 2835 2837	or
+N25	 Reference T25 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T26	Concept 3076 3096	Eucalyptus urophylla
+N26	 Reference T26 Agrovoc:http://aims.fao.org/aos/agrovoc/c_26492	Eucalyptus urophylla
+T27	Concept 3151 3156	Congo
+N27	 Reference T27 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1811	Congo
+T28	Concept 3260 3271	composition
+N28	 Reference T28 Agrovoc:http://aims.fao.org/aos/agrovoc/c_331025	Composition
+T29	Concept 3744 3746	or
+N29	 Reference T29 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T30	Concept 3791 3793	or
+N30	 Reference T30 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T31	Concept 3851 3861	dimensions
+N31	 Reference T31 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2283	Dimension
+T32	Concept 3919 3920	A
+N32	 Reference T32 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T33	Concept 4170 4172	or
+N33	 Reference T33 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T34	Concept 4336 4337	A
+N34	 Reference T34 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T35	Concept 4416 4427	diffraction
+N35	 Reference T35 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T36	Concept 4438 4447	collected
+N36	 Reference T36 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1756	Collection
+T37	Concept 4489 4501	Technologies
+N37	 Reference T37 Agrovoc:http://aims.fao.org/aos/agrovoc/c_7644	technologie
+T38	Concept 4527 4536	radiation
+N38	 Reference T38 Agrovoc:http://aims.fao.org/aos/agrovoc/c_6422	Radiation
+T39	Concept 4609 4617	azimutal
+N39	 Reference T39 Agrovoc:http://aims.fao.org/aos/agrovoc/c_5ec37a2d	azimut
+T40	Concept 4761 4767	points
+N40	 Reference T40 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T41	Concept 4801 4805	Cave
+N41	 Reference T41 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1416	Cave
+T42	Concept 4896 4902	points
+N42	 Reference T42 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T43	Concept 5011 5015	Cave
+N43	 Reference T43 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1416	Cave
+T44	Concept 5217 5221	Cave
+N44	 Reference T44 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1416	Cave
+T45	Concept 5699 5709	Eucalyptus
+N45	 Reference T45 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T46	Concept 5778 5798	Eucalyptus urophylla
+N46	 Reference T46 Agrovoc:http://aims.fao.org/aos/agrovoc/c_26492	Eucalyptus urophylla
+T47	Concept 5830 5841	diffraction
+N47	 Reference T47 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T48	Concept 5952 5953	A
+N48	 Reference T48 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T49	Concept 6196 6207	diffraction
+N49	 Reference T49 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T50	Concept 6337 6342	T T T
+N50	 Reference T50 Agrovoc:http://aims.fao.org/aos/agrovoc/c_35335	Toxine t-2
+T51	Concept 6339 6342	T T
+N51	 Reference T51 Agrovoc:http://aims.fao.org/aos/agrovoc/c_16612	Lymphocyte-t
+T52	Concept 6363 6374	diffraction
+N52	 Reference T52 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T53	Concept 6375 6383	profiles
+N53	 Reference T53 Agrovoc:http://aims.fao.org/aos/agrovoc/c_c4457c2d	profil
+T54	Concept 6407 6413	points
+N54	 Reference T54 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T55	Concept 6750 6761	diffraction
+N55	 Reference T55 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T56	Concept 6938 6939	A
+N56	 Reference T56 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T57	Concept 7646 7656	Eucalyptus
+N57	 Reference T57 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T58	Concept 7766 7768	or
+N58	 Reference T58 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T59	Concept 7769 7775	clones
+N59	 Reference T59 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1678	clone
+T60	Concept 8257 8266	ascending
+N60	 Reference T60 Agrovoc:http://aims.fao.org/aos/agrovoc/c_394	Ascendance`
+T61	Concept 8408 8417	dimension
+N61	 Reference T61 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2283	Dimension
+T62	Concept 8461 8463	or
+N62	 Reference T62 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T63	Concept 8832 8842	Eucalyptus
+N63	 Reference T63 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T64	Concept 9108 9116	observed
+N64	 Reference T64 Agrovoc:http://aims.fao.org/aos/agrovoc/c_fc54b25b	observation
+T65	Concept 9415 9423	observed
+N65	 Reference T65 Agrovoc:http://aims.fao.org/aos/agrovoc/c_fc54b25b	observation
+T66	Concept 9724 9734	Eucalyptus
+N66	 Reference T66 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T67	Concept 9740 9746	traits
+N67	 Reference T67 Agrovoc:http://aims.fao.org/aos/agrovoc/c_4835	Traite
+T68	Concept 9754 9764	accordance
+N68	 Reference T68 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50153	Accord
+T69	Concept 9921 9938	Eucalyptus nitens
+N69	 Reference T69 Agrovoc:http://aims.fao.org/aos/agrovoc/c_32319	Eucalyptus nitens
+T70	Concept 10011 10017	clones
+N70	 Reference T70 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1678	clone
+T71	Concept 10115 10121	traits
+N71	 Reference T71 Agrovoc:http://aims.fao.org/aos/agrovoc/c_4835	Traite
+T72	Concept 10125 10134	important
+N72	 Reference T72 Agrovoc:http://aims.fao.org/aos/agrovoc/c_3815	Importation
+T73	Concept 10228 10237	according
+N73	 Reference T73 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50153	Accord
+T74	Concept 10602 10612	Eucalyptus
+N74	 Reference T74 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T75	Concept 10737 10739	or
+N75	 Reference T75 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T76	Concept 10792 10794	or
+N76	 Reference T76 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T77	Concept 10808 10814	mature
+N77	 Reference T77 Agrovoc:http://aims.fao.org/aos/agrovoc/c_4655	Maturation
+T78	Concept 11008 11019	diffraction
+N78	 Reference T78 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T79	Concept 11020 11028	profiles
+N79	 Reference T79 Agrovoc:http://aims.fao.org/aos/agrovoc/c_c4457c2d	profil
+T80	Concept 11052 11058	points
+N80	 Reference T80 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T81	Concept 11146 11151	point
+N81	 Reference T81 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T82	Concept 11186 11197	information
+N82	 Reference T82 Agrovoc:http://aims.fao.org/aos/agrovoc/c_330966	information
+T83	Concept 11214 11221	surface
+N83	 Reference T83 Agrovoc:http://aims.fao.org/aos/agrovoc/c_35328	Surface
+T84	Concept 11263 11269	points
+N84	 Reference T84 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T85	Concept 11309 11320	information
+N85	 Reference T85 Agrovoc:http://aims.fao.org/aos/agrovoc/c_330966	information
+T86	Concept 11359 11370	information
+N86	 Reference T86 Agrovoc:http://aims.fao.org/aos/agrovoc/c_330966	information
+T87	Concept 11372 11378	mainly
+N87	 Reference T87 Agrovoc:http://aims.fao.org/aos/agrovoc/c_4523	Maine
+T88	Concept 11474 11483	according
+N88	 Reference T88 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50153	Accord
+T89	Concept 11491 11497	points
+N89	 Reference T89 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T90	Concept 11683 11685	or
+N90	 Reference T90 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T91	Concept 11920 11921	A
+N91	 Reference T91 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T92	Concept 12109 12115	points
+N92	 Reference T92 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T93	Concept 12548 12553	point
+N93	 Reference T93 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T94	Concept 12722 12728	centre
+N94	 Reference T94 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50169	centre
+T95	Concept 12893 12904	information
+N95	 Reference T95 Agrovoc:http://aims.fao.org/aos/agrovoc/c_330966	information
+T96	Concept 12915 12925	Eucalyptus
+N96	 Reference T96 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T97	Concept 12949 12959	calculated
+N97	 Reference T97 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50119	calcul
+T98	Concept 13009 13015	points
+N98	 Reference T98 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T99	Concept 13037 13046	according
+N99	 Reference T99 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50153	Accord
+T100	Concept 13457 13458	A
+N100	 Reference T100 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T101	Concept 13504 13512	observed
+N101	 Reference T101 Agrovoc:http://aims.fao.org/aos/agrovoc/c_fc54b25b	observation
+T102	Concept 13617 13623	traits
+N102	 Reference T102 Agrovoc:http://aims.fao.org/aos/agrovoc/c_4835	Traite
+T103	Concept 13700 13717	Eucalyptus nitens
+N103	 Reference T103 Agrovoc:http://aims.fao.org/aos/agrovoc/c_32319	Eucalyptus nitens
+T104	Concept 13918 13928	morphology
+N104	 Reference T104 Agrovoc:http://aims.fao.org/aos/agrovoc/c_49903	morphologie
+T105	Concept 14037 14048	Picea abies
+N105	 Reference T105 Agrovoc:http://aims.fao.org/aos/agrovoc/c_5852	Picea abies
+T106	Concept 14043 14048	abies
+N106	 Reference T106 Agrovoc:http://aims.fao.org/aos/agrovoc/c_10	Abies
+T107	Concept 14052 14057	Karst
+N107	 Reference T107 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33509	Karst
+T108	Concept 14073 14076	Lin
+N108	 Reference T108 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2970	Lin
+T109	Concept 14112 14118	traits
+N109	 Reference T109 Agrovoc:http://aims.fao.org/aos/agrovoc/c_4835	Traite
+T110	Concept 14329 14339	Eucalyptus
+N110	 Reference T110 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T111	Concept 14388 14394	colors
+N111	 Reference T111 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2425	Colorant
+T112	Concept 14436 14448	concentrated
+N112	 Reference T112 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1801	Concentration
+T113	Concept 14534 14543	According
+N113	 Reference T113 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50153	Accord
+T114	Concept 15000 15011	diffraction
+N114	 Reference T114 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T115	Concept 15261 15263	or
+N115	 Reference T115 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T116	Concept 15381 15386	point
+N116	 Reference T116 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T117	Concept 15642 15644	or
+N117	 Reference T117 Agrovoc:http://aims.fao.org/aos/agrovoc/c_33067	Or
+T118	Concept 15656 15662	clones
+N118	 Reference T118 Agrovoc:http://aims.fao.org/aos/agrovoc/c_1678	clone
+T119	Concept 15675 15685	industries
+N119	 Reference T119 Agrovoc:http://aims.fao.org/aos/agrovoc/c_3848	Industrie
+T120	Concept 15735 15736	A
+N120	 Reference T120 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T121	Concept 15834 15854	Eucalyptus urophylla
+N121	 Reference T121 Agrovoc:http://aims.fao.org/aos/agrovoc/c_26492	Eucalyptus urophylla
+T122	Concept 16107 16115	observed
+N122	 Reference T122 Agrovoc:http://aims.fao.org/aos/agrovoc/c_fc54b25b	observation
+T123	Concept 16401 16412	diffraction
+N123	 Reference T123 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T124	Concept 16632 16638	centre
+N124	 Reference T124 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50169	centre
+T125	Concept 16704 16709	trait
+N125	 Reference T125 Agrovoc:http://aims.fao.org/aos/agrovoc/c_4835	Traite
+T126	Concept 16759 16779	Eucalyptus urophylla
+N126	 Reference T126 Agrovoc:http://aims.fao.org/aos/agrovoc/c_26492	Eucalyptus urophylla
+T127	Concept 16811 16822	diffraction
+N127	 Reference T127 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T128	Concept 16933 16934	A
+N128	 Reference T128 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T129	Concept 17146 17156	Eucalyptus
+N129	 Reference T129 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2683	Eucalyptus
+T130	Concept 17175 17176	A
+N130	 Reference T130 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T131	Concept 17222 17233	diffraction
+N131	 Reference T131 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T132	Concept 17280 17288	azimutal
+N132	 Reference T132 Agrovoc:http://aims.fao.org/aos/agrovoc/c_5ec37a2d	azimut
+T133	Concept 17308 17319	diffraction
+N133	 Reference T133 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50122	diffraction
+T134	Concept 17373 17374	A
+N134	 Reference T134 Agrovoc:http://aims.fao.org/aos/agrovoc/c_146	Aedes
+T135	Concept 17409 17429	Eucalyptus urophylla
+N135	 Reference T135 Agrovoc:http://aims.fao.org/aos/agrovoc/c_26492	Eucalyptus urophylla
+T136	Concept 17527 17536	according
+N136	 Reference T136 Agrovoc:http://aims.fao.org/aos/agrovoc/c_50153	Accord
+T137	Concept 17559 17579	Eucalyptus urophylla
+N137	 Reference T137 Agrovoc:http://aims.fao.org/aos/agrovoc/c_26492	Eucalyptus urophylla
+T138	Concept 17586 17592	Colors
+N138	 Reference T138 Agrovoc:http://aims.fao.org/aos/agrovoc/c_2425	Colorant
+T139	Concept 17892 17912	Eucalyptus urophylla
+N139	 Reference T139 Agrovoc:http://aims.fao.org/aos/agrovoc/c_26492	Eucalyptus urophylla
+T140	Concept 18183 18189	points
+N140	 Reference T140 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T141	Concept 18244 18250	Points
+N141	 Reference T141 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point
+T142	Concept 18732 18737	point
+N142	 Reference T142 Agrovoc:http://aims.fao.org/aos/agrovoc/c_b12823a4	point

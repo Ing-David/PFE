@@ -1,0 +1,148 @@
+(1) . However, no attempt was made to assess how much information on bird health in backyard poultry farms (which account for ≈95% of the total poultry population in Mali) actually reached EPIVET-Mali veterinarians and technicians. Therefore, we quantifi ed reporting of clinical signs of avian diseases, especially those suggesting HPAI, by poultry owners in Mali. We used a pilot-tested standardized quantitative and qualitative questionnaire to conduct face-toface interviews in 32 randomly selected villages in the southern half of Mali (which accounts for 98% of the poultry population). In each village, we conducted interviews in 4 randomly chosen households. No eligibility criteria were used for household selection because all village households had poultry. Interviews were repeated 6 times (approximately every 3 months) during November 2009-February 2011 in the same villages and whenever possible in the same households. If it was not possible to repeat an interview in a previously interviewed household (absence of the household chief), the neighboring household was interviewed. For each household, data were collected on number of sick and dead birds in the previous 3 months, clinical signs observed, and their notifi cation or lack thereof to veterinary authorities. Households in which birds showed >3 of the following clinical signs (diarrhea, respiratory disorder, nervous signs, cyanosis of the combs or wattles, and mortality rate >50%) were considered as having clinical signs suggesting HPAI. The study was approved by the Direction Nationale des Services Vétérinaires and traditional authorities in all 32 villages, and oral consent was obtained from the poultry owners before interviews. A total of 110-128 households were investigated at each study interval, depending on village accessibility and presence or absence of household chiefs  (Table) . We conducted 738 household investigations in 152 households (80 households were interviewed 6 times, 26 fi ve times, 11 four times, 21 three times, 7 two times, and 7 one time). Observation of sick poultry in the 3 months before the interview was reported in 44.6% of household investigations, and observation of signs suggesting HPAI was reported in 12.2%  (Table) . Notifi cation of veterinary authorities was reported in 13.5% of household investigations with sick poultry and in 17.4% of household investigations with signs suggesting HPAI  (Table) . When we considered the 80 households interviewed 6 times, observation of sick poultry and signs suggesting HPAI varied over time (p = 0.043 and p = 0.018, respectively, by Cochran Q test), whereas variation over time could not be tested for notifi cation because of an insuffi cient number of observations. When we considered all 738 household investigations as independent investigations, observation of sick poultry and signs suggesting HPAI varied over time (p = 0.008 and p<0.001, respectively, by χ 2 test), but reporting of sick poultry did not vary over time (p = 0.06, by χ 2 test). Reporting of signs of HPAI could not be tested. These results illustrate gaps in reporting signs suggesting HPAI by backyard poultry owners. Although these signs could also be those of Newcastle disease, which is present in Mali  (2) , these signs should be reported because HPAI and Newcastle disease are offi cially targeted by EPIVET-Mali. One survey attempted to similarly quantify the level of HPAI reporting in Africa. In Kwara State in Nigeria, 56.5% of respondents indicated that they would not notify offi cials if they suspected HPAI in their fl ocks (3). Reluctance of poultry owners to comply with notifi cation and culling obligations has also been reported in Indonesia  (4) . Several studies that assessed knowledge and practices of poultry workers with regard to avian infl uenza have been conducted in different countries, including developing countries (5,6). These studies were useful for better defi ning content of risk mitigation advice messages and the audience they should primarily target. In our survey, occurrence of disease in Mali varied over time, which was expected because of the seasonal pattern of many avian diseases, especially Newcastle disease, in western Africa (7). However, reporting of sick poultry did not vary over time despite seasonality of activities in rural areas. Lack of awareness of who to report to, fatalistic attitudes toward animal diseases, and mistrust toward the government and its compensation schemes are among the major constraints affecting the likelihood of HPAI signs being reported (3,6,8). However, approaches associating socioanthropology and epidemiology have recently been developed to help solve the problem posed by defi cient reporting (9). 
+ Acknowledgments We  thank     
+ Myxozoan Parasite in Brain of Critically Endangered Frog To the Editor: More than three quarters of critically endangered species of amphibians are threatened by infectious disease; several are already extinct  (1) . In 2010, the yellow-spotted bell frog (Litoria castanea), which was presumed to be extinct, was rediscovered in the Southern Tablelands of New South Wales, Australia. This species of frog had not been seen for 30 years, and a chytrid fungus, Batrachochytrium dendrobatidis, was thought to be the reason  (1, 2) . The number of frogs in the rediscovered population is estimated to be 100; if numbers are that low, the yellow-spotted bell frog is the most critically endangered frog in Australia. Several yellow-spotted bell frogs were collected for a captive breeding program at Taronga Zoo in Sydney, New South Wales, Australia. Generalized edema developed in a subadult male frog after 8 months of captivity in strict quarantine conditions. The frog subsequently died, and later an adult male frog was also found dead. Results of necropsy on both frogs at the Australian Registry of Wildlife Health revealed subcutaneous edema, intracoelomic fl uid, and swollen kidneys with pale foci. Histopathologic examination demonstrated chronic severe tubulonephropathy and acute severe encephalomalacia. Coalescing foci of hemorrhage and malacia were observed in the caudal brainstem and were associated with small multinucleated (1 × 1 μm) parasites forming plasmodia-like structures 10-20 μm in diameter  (Figure) . Plasmodia were present in large numbers  (1-5/40×  fi eld) in the spinal cord. Organisms that were morphologically consistent with myxozoan parasites detected in other frogs in Australia were found predominately within axons and were uncommonly present in vascular endothelial cells (3). Characteristic hepatic lesions, including lymphoplasmacytic hepatitis with biliary hyperplasia and loss of hepatocytes, were also present. The cause of death was renal failure, a common problem in aged frogs; however, these frogs were young, and therefore the cause of the renal changes was perplexing. We considered whether toxins (e.g., improperly cured polyvinyl chloride glue) or an infectious process might be possible causes. Staff in the zoo's breeding program were questioned and indicated that the opportunity for introduction of a toxin was low. In addition, results for virus isolation and fungal and bacterial cultures were negative. We retrospectively reexamined histologic sections of an endangered booroolong frog (Litoria booroolongensis) that had similar brain lesions and intralesional myxozoan parasites (3). Tissue samples were submitted to the Faculty of Veterinary Science, The University of Sydney, for identifi cation. DNA was extracted from brain tissues (20 mg) by using the PureLink DNA Kit (Invitrogen, Mulgrave, Victoria, Australia). To test for myxozoans, we used a highly Myxozoa-specifi c PCR to amplify the complete internal transcribed spacer of the ribosomal DNA (3). Myxozoanpositive amplicons were directly sequenced at Macrogen Inc. (Seoul, South Korea), analyzed by using the CLC Main Workbench (CLC bio, Aahrus, Denmark), and deposited in GenBank (accession nos. JN977605-09). PCR produced a 973-bp amplicon with DNA from brain and liver of the yellow-spotted bell frogs and the booroolong frog. DNA from the frogs showed 100% identity with each other, as did sequences from brain and liver. A BLASTN  (4)    
+ Letters Letters commenting on recent articles as well as letters reporting cases, outbreaks, or original research are welcome. Letters commenting on articles should contain no more than 300 words and 5 references; they are more likely to be published if submitted within 4 weeks of the original article's publication. Letters reporting cases, outbreaks, or original research should contain no more than 800 words and 10 references. They may have 1 Figure or  Table and  should not be divided into sections. All letters should contain material not previously published and include a word count. To the Editor: In response to infl uenza outbreaks caused by highly pathogenic avian infl uenza virus (HPAIV) throughout western Africa as of 2006, the National Veterinary Epidemiologic Surveillance Network of Mali (EPIVET-Mali) started conducting domestic and wild bird surveillance. No HPAI outbreaks were reported to the World Organisation for Animal Health. An evaluation survey conducted in 2009 enabled identifi cation and correction of some weaknesses in the organization and functioning of the network 7. Belkahla N, Kchir H, Maamouri N, 
+Ouerghi H, Haritz FB, Chouaib S. Reac-
+tivation of tuberculosis during dual ther-
+apy with pegylated interferon and riba-
+virin for chronic hepatitis C [in French]. 
+Rev Med Interne. 2010;31:e1-3. Epub 
+2010 Jun 3. http://dx.doi.org/10.1016/j. 
+revmed.2009.11.017 
+8. Farah R, Awad J. The association of inter-
+feron with the development of pulmonary 
+tuberculosis. Int J Clin Pharmacol Ther. 
+2007;45:598-600. 
+9. Puoti M, Babudieri S, Rezza G, Viale P, 
+Antonini MG, Maida I, et al. Use of pe-
+gylated interferons is associated with an 
+increased incidence of infections during 
+combination treatment of chronic hepati-
+tis C: a side effect of pegylation? Antivir 
+Ther. 2004;9:627-30. 
+10. Fried MW. Side effects of therapy of hepa-
+titis C and their management. Hepatology. 
+2002;36(Suppl1):S237-44. http://dx.doi. 
+org/10.1002/hep.1840360730 
+
+Address for correspondence Sergio Babudieri 
+
+U.O. di Malattie Infettive Università degli Studi 
+
+di Sassari via Enrico De Nicola n. 1 07100, 
+
+Sassari, Italy; email: babuder@uniss.it 
+
+Defi cient Reporting 
+in Avian Infl uenza 
+Surveillance, Mali 
+
+ 
+ This study was supported by the French Ministry of Foreign Affairs through the Ecology and Epidemiology of Avian Infl uenza and Newcastle Diseases in Developing Countries Project. Author affi liations: Centre de Coopération Internationale en Recherche Agronomique pour le Développement, Montpellier, France (S. Molia); Laboratoire Central Vétérinaire, Bamako, Mali (B. Kamissoko, A. Diakité); Abass Diarra, Kadiatou 
+Diarra Sissoko, Souleymane Magassa, 
+Idrissa Traoré, and Issa Traoré for 
+
+participating in fi eld investigations; the 
+Laboratoire Central Vétérinaire and 
+the Direction Nationale des Services 
+Vétérinaires for facilitating the survey; 
+and all poultry farmers for participating in 
+the study. 
+
+Sophie Molia, 
+Badian Kamissoko, 
+Maimouna Sanogo Sidibé, 
+Adama Diakité, 
+Mahmoudou Diall, 
+and Mamadou Racine N'Diaye 
+
+Direction 
+Nationale 
+des 
+Services 
+
+Vétérinaires, Bamako (M.S. Sidibé); and 
+
+Pan African Programme for the Control of 
+
+Epizootics-Mali, Bamako (M. Diall, M.R. 
+
+N'Diaye) 
+
+DOI: http://dx.doi.org/10.3201/eid1804.111102 
+Emerging Infectious Diseases • www.cdc.gov/eid • Vol. 18, No. 4, April 2012 
+
+ 
+ Table . . Observations and reporting of sick poultry and signs of influenza suggesting HPAI virus infection, Mali, 2009-2011* Date of 
+investigation 
+
+Total no. 
+households 
+investigated 
+
+No. with sick poultry/ 
+no. with information 
+on sick poultry (%) 
+
+No. with HPAI signs/ 
+no. with information 
+on signs (%) 
+
+No. with reported sick poultry/ 
+no. with sick poultry and 
+information on reporting (%) 
+3. Musa OI, Aderibigbe SA, Salaudeen GA, 
+Oluwole FA, Samuel SO. Community 
+awareness of bird fl u and the practice of 
+backyard poultry in a north-central state of 
+Nigeria. J Prev Med Hyg. 2010;51:146-
+51. 
+4. Pawitan JA. Averting avian infl uenza 
+pandemic: SOS from a developing coun-
+try. Lancet Infect Dis. 2006;6:756-7. 
+h t t p : / / d x . d o i . o rg / 1 0 . 1 0 1 6 / S 1 4 7 3 -
+3099(06)70638-7 
+5. Barennes H, Martinez-Aussel B, Vong-
+phrachanh P, Strobe M. Avian infl uenza 
+risk perceptions, Laos. Emerg Infect Dis. 
+2007;13:1126-8. 
+6. Fasina FO, Bisschop SP, Ibironke AA, 
+Meseko CA. Avian infl uenza risk per-
+ception among poultry workers, Nigeria. 
+Emerg Infect Dis. 2009;15:616-7. http:// 
+dx.doi.org/10.3201/eid1504.070159 
+7. Awan MA, Otte MJ, James AD. 
+The epidemiology of Newcastle dis-
+ease in rural poultry: a review. Avian 
+Pathol. 1994;23:405-23. http://dx.doi. 
+org/10.1080/03079459408419012 
+8. Kanamori S, Jimba M. Compensation for 
+avian infl uenza cleanup. Emerg Infect Dis. 
+2007;13:341-2. http://dx.doi.org/10.3201/ 
+eid1302.061391 
+9. Desvaux S, Figuié M. Formal and infor-
+mal surveillance systems: how to build 
+bridges? [in French]. Epidémiologie et 
+Santé Animale. 2011;59-60:352-5. 
+
+Address for correspondence: Sophie Molia, 
+
+Centre 
+de 
+Coopération 
+Internationale 
+
+en Recherche Agronomique pour le 
+
+Développement, Unité Propre de Recherche 
+
+Animal et Gestion Intégrée des Risques, 
+
+Campus International de Baillarguet, TA 
+
+C-22/E, 34398 Montpellier Cedex 5, France; 
+
+email: sophie.molia@cirad.fr 
+
+ 
+ search of Emerging Infectious Diseases • www.cdc.gov/eid • Vol. 18, No. 4, April 2012 693

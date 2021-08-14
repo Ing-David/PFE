@@ -1,0 +1,95 @@
+INTRODUCTION Wood density and the angle of its microfibrils in the secondary wall are of particular interest for breeding programs  (Raymond 2002)  since they are the two main factors affecting wood mechanical properties. Microfibril angle (MFA) is a property of the cell wall of wood fibres, which is made up of millions of strands of cellulose called microfibrils  (Fang et al. 2006 ). This elementary wood trait represents the orientation of crystalline cellulose in the cell wall along the fiber axis  (Andersson et al. 2000) . MFA has major effects on two key properties of wood: its stiffness and longitudinal shrinkage. For instance,  Cave (1968)  demonstrated that a reduction in MFA from 40° in the corewood to 10° in the outerwood increases the stiffness of the cell wall fivefold. This finding was confirmed by  Via et al. (2009) , who reported a fourfold increase in stiffness of longleaf pine when the microfibril angle dropped from 40° to 5°. The early optical measurements of MFA were extremely tedious, but currently a wide range of different methods are available to evaluate MFA in wood (reviewed by  Donaldson 2008) . Among all available techniques only X-ray diffractometry is suitable for quick MFA measurements for a large number of samples  (Evans et al. 1996; Evans 1999 ). X-ray diffractometry has been largely used thanks to the crystalline arrangement of cellulose microfibrils in the wood cell wall; it allows studying not only its organization (like MFA), but also its apparent crystal size  (Washusen and Evans 2001)  or its mechanical state  (Clair et al. 2006) . MFA and wood density presents a variable relationship  (Donaldson 2008) . For instance,  Fang et al. (2004)  reported significant correlation between MFA and wood density  (-0.45)  for Populus, while no correlation was found in Picea by  Bergander et al. (2002)  and in Taiwania by  Lin and Chiu (2007) . In Eucalyptus,  Evans et al. (2000)  reported no correlation between whole tree average density and MFA in 15-year-old Eucalyptus nitens. The radial variation and the correlation between MFA and density is still not clear in Eucalyptus requiring further studies. Therefore, the aims of this study were: i) to investigate the radial variation of microfibril angle (MFA) and wood density in Eucalyptus wood, and ii) to generate a better understanding about the correlation between MFA and wood density, as well as the influence of age on these relationships. Here, we used 2-mm tangential sections of Eucalyptus urophylla wood to evaluate the MFA by X-ray diffraction technique  (Cave 1966) . Each tangential section was cut as parallel as possible to the growth rings. Thus, the samples taken close to the pith presents a "curvature effect," while the tangential sections taken near the bark, parallel to the growth ring, showed little or no "curvature effect". Hence, an additional objective of this study was to verify the influence of the curvature effect on the repeatability of the XRD measurements. 
+ EXPERIMENTAL 
+ Wood Origin 40 breast height wood disks of 14-year-old Eucalyptus urophylla S.T. Blake trees from the progeny test in Republic of Congo were used in this study.  Hein et al. (2010)  presented details of sampling procedure and the chemical composition of the trees from the same progeny trial. 
+ Sampling Preparation From each disc, a pith to bark radial strip was removed by a vertical bandsaw. The radial strips were marked randomly but well distributed along the radial gradient on the strips in order to supply tangential sections, as parallel as possible to the growth rings for microfibril angle, and small samples for wood density measurements  (Fig. 1) . While from the large radial strips it was possible to take 4 or 5 samples (for instance,  Fig.1) , only two or three samples were removed from radial strips with small dimensions. The radial strips were classified in five classes (from A to E), depending on their relative radial position. The tangential sections cut from the region close to the pith presented the stronger "curvature effect", while the tangential sections cut near the bark, parallel to the growth ring, showed little or no curvature effect  (Fig. 1) . The samples were sectioned along to the wood strips in the same proportion as well as possible, but no sample was taken from class A because of operational limitations. 
+ Microfibril Angle Measurement All X-ray diffraction data were collected with a diffractometer (Gemini-S, Agilent Technologies, Yarnton, UK) with CuK α radiation. Images were integrated between 2θ = 21.5 and 23.5 along the whole 360° azimutal interval to plot the intensity diagram of the  (200)  plane. An automatic procedure allowed the detection of the 200 peaks and their inflexion points. The T parameter, as defined by  Cave (1966) , was measured as the half distance between intersections of tangents at inflexion points with the baseline. The results are given as the mean of values obtained for the two 200 peaks. As shown by  Cave (1966) , the T parameter is affected by the cross-sectional shape of the cells. Thus, as also reported by  Yamamoto et al. (1993)  and latter  Ruelle et al. (2007) , the corrective factor proposed by  Cave (1966)  cannot be used for all species but needs to be calibrated for each species. However, their works show that the T parameter allows comparison within a given species, which is the purpose of our study. In our study, we considered that the cross-sectional shape of the cells remain constant enough from pith to bark to allows comparison with a single T parameter within the species.  Figure 2  illustrates X-ray scattering patterns recorded in 2 mm tangential sections of Eucalyptus samples with contrasting T parameters. Sampling protocol in 14-year Eucalyptus urophylla. Tangential sections for X-ray diffraction measurement (a) and wood samples for basic density measurement (b) taken from the radial strips. Classes from A to E of the radial strips; the dotted lines represent the "curvature effect" on tangential section of wood due to the growth rings. The method proposed by  Yamamoto et al. (1993)  was applied in order to estimate the MFA based on their X-ray diffraction pattern. The formula gives an estimation of the mean MFA of woods based on their T value and is given by:             T T T MFA (1) Three X-ray diffraction profiles were recorded on three points, namely T 1 , T 2 , and T 3 , of each sample  (Fig. 1) . The estimated error of the repeatability of the T parameter measurements was 3%, on average, for T ranging from 14° to 29°, which correspond to ±0.6 degrees.   (200)  reflection. Dotted lines show the correspondence between the peak on the integrated pattern and the spot on the diffraction image. For each sample, integration yields two symmetric peaks located at 90° and 270°. The dotted line in red is the base line, and the red arrows are the T parameter. Sample A shows a narrow peak (T=15.4°), corresponding to a low MFA, while sample B shows a wide peak (T=37.4°) corresponding to a large MFA. 
+ Wood Density Measurement The offcut samples between the tangential sections (  Fig. 1 b)  were used for basic density measurements, which was determined by the ASTM D2395  (ASTM 2002)  procedures. 
+ RESULTS AND DISCUSSION The wood basic density and T parameter measurements  (Table 1 ) showed a range of variation of ca. 14.5%. The approach for conversion of the X-ray diffractometer pattern to microfibril angle is based on the T parameter, but the MFA had the higher coefficient of variation (17.1%). The range of variation of the investigated properties is crucial for Eucalyptus breeding programs, whereas the breeders are interesting in finding significant differences between progenies or clones.  
+ Radial Variability While data between 20 to 40% of radial distance represent the samples from class B, which correspond to the wood formed at the 4 th to 6 th year, the data from the last 20% (from 80 to 100%) correspond to the wood developed at approximately the 12 th , 13 th and 14 th years.  Figure 3  presents the variation of MFA and density as a function of the relative distance from the pith to bark for 14 radial strips. The samples were ranked by radial position in ascending order from 0.22 to 0.97 of their relative radial position, and the mean comparisons were performed for each class (B to E). Due to the small dimension of some radial strips, we removed only two or three tangential sections for MFA, and small wood samples for density from them and these data were not presented in the graphic. The mean MFA values of each class (B to E) were not statistically different by the Tukey test at P>0.01, while the mean basic density of wood significantly increased in a linear way from pith to bark. Thus, the radial variation of MFA in Eucalyptus wood is not statistically evident, because the large MFA variability between trees results in a large standard deviation within each class (for instance, in class B the MFA ranged from ca. 11° to ca. 19°). However, a decrease of MFA values from pith to bark can be observed.  Figure 3 -A reveals that, on average, the microfibril angles appears to be higher near the pith of the discs (Class B), decreasing radially towards to the bark (Class E). Such pattern of MFA variation occurred most frequently, but among the various strips we used (40), different trends could be observed. For instance, the MFA of samples 80, 87, 96, 103, and 153 slightly increased near to the bark. For basic density of wood, a linear increase from pith to bark was found  (Figure 3-B) , even if the variability of density between trees was taken into account. The patterns of radial variation of these Eucalyptus wood traits are in accordance with those reported in the literature. For instance,  Evans et al. (2000)  reported variation in MFA from 20° at the pith to 14° at the bark in 15-year-old Eucalyptus nitens.  Lima et al. (2004)  investigated 8-year-old E. grandis × E. urophylla clones, reporting that its MFA decreased slightly from pith to bark. The radial variation of these wood traits is important, because such properties are targeted in breeding programs to distinguish improved varieties according to their variance; however, frequently, the within-tree variability is higher than the between-trees variability. Regarding to this issue, the fundamental question should be posed: do trees producing low MFA in the first years of their development continue presenting low MFA over the years?  Evans et al. (2000)  reported variation patterns in MFA and density in Eucalyptus, showing that the trend lines for 29 E. nitens tend to be approximately parallel. This means that trees presenting high MFA or density when young will continue to having high MFA or density when mature. In this study,  Figure 3  shows the MFA and ρ for all ages, providing to the tree breeders clear evidences for ρ, but rough indications for MFA.  
+ Correlation among MFA Estimates Three X-ray diffraction profiles were recorded on three points of each tangential section  (Fig. 1) . Considering that the measurement at the central point (MFA 2 ) represents precisely the information of a tangential surface and that the measurement at the external points (MFA 1 and MFA 3 ) includes tangential information, but also radial (at least partially) information, mainly in samples near to the pith, it is interesting to analyze the correlation among the MFA values according to the points of measurement. The tangential sections cut near to the pith presented the stronger "curvature effect," whereas the samples near to the bark, parallel to the growth ring, showed little or no curvature effect  (Fig. 1) . Thus, at the outset, we expected to find higher deviation between MFA estimates in the samples cut near the pith, since its "curvature effect" is expected to be stronger. No sample was taken from class A because of the technical difficulty and risk of cutting tangential section from the remaining end of the radial strips.  Table 2  presents the correlation among MFA recorded at the three points of each wood section using all samples (Classes B to E). Although it is intuitive, due to the effect of distance between measurements the correlation MFA 1 /MFA 3 (0.82) was slightly lower than those for MFA 1 /MFA 2 (0.84) and MFA 2 /MFA 3 (0.91). The average between measurements 1 and 3 (MFA 1,3 ) were also strongly correlated with local measurements 1 (0.95), 2 (0.93), and 3 (0.96). The correlation between the measurement at point 2 (central) and the three averaged measurements (MFA 1,2,3 ) was very strong (0.97). This finding suggested that a single measurement of the T value, preferably at the centre of each tangential section, is enough to precisely evaluate the MFA of the tangential section. Three measurements are time-consuming and did not provide additional information on MFA in Eucalyptus wood. Additionally, we calculated the correlations among MFA recorded at the three points of each wood section according to the classes (B, C, D and E) where they were cut (not shown). The correlations between MFA's were always strong indicating that the Xray approach is a repeatable method and that the curvature effect plays a negligible role on the repeatability of measurements. 
+ Correlation among MFA and Density The density and MFA showed no significant correlation (r = ca. 0.11) when considering all classes  (Table 3) . A weak correlation between MFA and density was observed for samples from Class B (r = ca. -0.18) and Class C (r = ca. -0.13), but the relationships among these traits disappeared with age.   Evans et al. (2000)  compared MFA and density of 29 Eucalyptus nitens wood samples, finding good local relationships between MFA and density, but the whole tree average MFA and density yielded no correlation.  Bergander et al. (2002)  found no correlation between fiber morphology (i.e., average length, width, density) and mean fibril angle in wood samples of 100-year-old Norway spruce (Picea abies L. Karst.). Similarly,  Lin and Chiu (2007)  studied such wood traits in 20-year-old Taiwania (Taiwania cryptomerioides) trees and reported no significant relationship between microfibril angle and wood density.  Figure 4  shows the relationships between MFA and basic density of Eucalyptus wood, showing the classes of radial position by colors. While samples from class B (21-40%) are concentrated in the zone of low density, most samples from class E (81-100%) have high densities. According to  Donaldson (2008) , it seems likely that any relationship between MFA and density is entirely coincidental, since MFA is not related to fiber wall thickness. However, the amount of juvenile wood and latewood might be responsible for relationships in some cases since both MFA and density are related to these factors. The weak correlations between microfibril angle and density found in the present study seem to support such argument. The use of X-ray diffraction to evaluate MFA in woods has two substantial advantages: speed and accuracy sufficient for genetic studies. The T parameter measurements have an error of ca. 0.6 degrees (ca. 3%), but they are able to distinguish trees that produce wood with larger or smaller microfibril angles. For genetic studies, the absolute value of the property is of no matter. The interesting point is to know the relative value of the characteristic between trees, its variation within stem, and its stability. Since phenotyping tools are required in genetic studies and breeding programs, our results can be useful for selection of candidate genotypes or commercial clones in forestry industries from a large wood sampling. 
+ CONCLUDING REMARKS A decrease of microfibril angles from pith to bark could be verified for some of these 14-year-old Eucalyptus urophylla wood samples; however, some radial strips presented different patterns of variation. Due to the sampling procedure, the radial variation of MFA could not be statistically analyzed. For basic density, a linear significant increase from pith to bark was observed. There was no significant correlation between microfibril angle and density. The supposed "curvature effect" due to the growth rings had a negligible effect on the three measurements of tangential sections cut near to the pith. The relationships among the three MFA estimates by X-ray diffraction on each tangential section were strong. The high correlation between the MFA estimated at the central location and the three averaged MFA estimates suggests that a single measurement of the MFA value, preferably at the centre of each tangential section, is enough to precisely evaluate this trait. Fig. 1 . 1 Fig. 1. Sampling protocol in 14-year Eucalyptus urophylla. Tangential sections for X-ray diffraction measurement (a) and wood samples for basic density measurement (b) taken from the radial strips. Classes from A to E of the radial strips; the dotted lines represent the "curvature effect" on tangential section of wood due to the growth rings. 
+ Fig. 2 . 2 X-ray scattering patterns recorded in 2 mm tangential sections of Eucalyptus samples with low (A) and high (B) T parameter. Lower chart: full diffraction images. Upper chart: 1-D patterns obtained by azimutal integration of the diffraction image near the 
+ Fig. 3 . 3 Radial variation of MFA (A) and basic density (B) in 14-year-Eucalyptus urophylla wood for fourteen radial strips 
+ Fig. 4 . 4 Bi-dimensional plot for MFA 1,2,3 and basic density according to the age in 14-year-Eucalyptus urophylla wood. Colors indicate relative radial positions from pith (0) to bark (100). 
+ Table 1 . 1 Descriptive Statistics, including Average, Standard Deviation (SD), Minimum (Min), Maximum (Max) and Coefficient of Variation (CV) for Basic Density (ρ), T Parameter and Microfibril Angle (MFA) Measurements in 14-yearold Eucalyptus urophylla Wood Average 
+SD 
+Min 
+Max 
+CV (%) 
+No. of 
+samples 
+
+ρ (kg m -3 ) 
+547 
+79 
+372 
+742 
+14.4 
+175 
+
+T parameter (°) 
+19.7 
+2.87 
+14.6 
+28.7 
+14.6 
+175 
+
+MFA (°) 
+12.5 
+2.14 
+7.7 
+19.7 
+17.1 
+175 
+
+ 
+ Table 2 . 2 Above the Diagonal: Correlation among the MFA Estimated at points 1 (MFA 1 ), 2 (MFA 2 ) and 3 (MFA 3 ), the Average of Points 1 and 3 (MFA 1,3 ) and the 
+Average of Three Measurements (MFA 1,2,3 ) for all Samples. The correlations 
+were statistically significant at 99%. Below the Diagonal: Standard Error of the 
+Estimate 
+
+MFA 1 
+MFA 2 
+MFA 3 
+MFA 1,3 
+MFA 1,2,3 
+
+MFA 1 
+-
+0.84 
+0.82 
+0.95 
+0.93 
+
+MFA 2 
+1.15 
+-
+0.91 
+0.93 
+0.97 
+
+MFA 3 
+1.18 
+0.90 
+-
+0.96 
+0.96 
+
+MFA 1,3 
+0.64 
+0.88 
+0.62 
+-
+0.99 
+
+MFA 1,2,3 
+0.79 
+0.54 
+0.62 
+0.33 
+-
+
+ 
+ Table 3 . 3 Correlations between ρ with the MFA Estimated at point 2 (MFA 2 ) and

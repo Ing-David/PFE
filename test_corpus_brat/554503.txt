@@ -1,0 +1,126 @@
+INTRODUCTION More than 94% of world peanut (Arachis hypogaea L.) production comes from the rainfed crop grown largely by resource-poor farmers  (Dwivedi et al., 2003) . In such dry areas, the end of the rainy season is variable and late rains that may occur after peanut maturity can cause in *Corresponding author. Email: ousndoye@refer.sn. Tel: + 221 33 951 49 94. Fax: + 221 33 951 49 95. situ germination in peanut.  Gautreau (1984)  reported significant (20%) pod yield losses with the variety 55 -437 in field experimentation in Senegal.  Martin (1999)  found that in situ germination may cause more susceptibility to aflatoxin contamination in seeds thus, reducing the seed quality. The species A. hypogaea L. has been divided into two subspecies: A. hypogaea subsp. hypogaea and A. hypogaea subsp. fastigiata. In the subspecies A. hypogaea subsp. hypogaea var. hypogaea (Virginia and Runner market types) and var. hursita, varieties have long duration cycle and seeds are dormant. While in subspecies fastigiata involving var. fastigiata (Valencia market class) and var. vulgaris (Spanish market type), varieties are early-maturing but generally lack fresh seed dormancy  (Krapovickas and Gregory, 1994) . Spanish and Valencia varieties are currently the most commonly cultivated peanut varieties in dry areas, particularly in Africa and Asia where the shortening of the rainy season is a paramount constraint. However, these early-maturing varieties lack generally fresh seed dormancy and are prone to in situ germination. The growing trend of areas occupied by early-maturing varieties will still increase during the next coming decades since drought is now a worldwide abiotic constraint for peanut production. There is a need to develop short duration peanut varieties having fresh seed dormancy to prevent yield losses due to field sprouting in unpredictable rainfall environments. During the last decade, a few studies on the inheritance of fresh seed dormancy among Spanish type varieties were carried out. Depending on whether epistasis was detected or not in inheritance of the trait, breeders suggested different strategies of selection. In fact, the conclusions of these investigations were not consistent.  Khalfaoui (1991)  indicated that duplicated epistasis controls fresh seed dormancy.  Nautiyal et al. (1994)  found that the trait is quantitatively inherited; whereas  Kumar (1999)  has reported that the trait is under additivedominance control.  Upadhyaya and Nigam (1999)  studied different populations from many crosses and found that seed dormancy in that peanut-type is controlled by a single gene and dormancy allele is dominant. More recently,  Ndoye (2001)  studied three crosses between Spanish varieties and reported that beyond additive and dominance effects, there is duplicate epistasis in the control of fresh seed dormancy. Phenotyping for fresh seed dormancy in peanut can be reliably carried out at the field  (Khalfaoui, 1991)  or in vitro assay  (Upadhyaya and Nigam, 1999; Asibuo et al., 2008) . Our previous work gives strong evidence that field test and in vitro assay give similar results for fresh seed dormancy  (Faye et al., 2009 ) when seed germination tests are performed under right convenience of humidity, light and appropriated temperatures. Breeding for new varieties requires development and evaluation of a cross progeny. In self-pollinated crops (for example, cowpea, rice, cotton, common beans and groundnut), the breeding process starts commonly with hand pollination. Hybridization requires laborious manual emasculation and pollination as well as manual removing of non-crossed flowers. In groundnut, some underground uncolored flowers as fertile as external flowers may not be removed by the operator and produce undesirable self-pollinations. Therefore, distinguishing true F 1 hybrids from plants coming from inadvertent selfs is very impor-tant before deriving F 2 population and subsequent families. In groundnut, distinguishing true F 1 hybrids from inadvertent selfs may be easy to achieve base on plant morphology when dealing with crosses for which parents are much divergent. In contrast, for intrasubspecies crosses (e.g. Spanish x Spanish), true F 1 hybrids are not easily distinguishable from female parent using morphological characteristics. The purpose of this paper is to study the inheritance of fresh seed dormancy in a Spanish x Spanish cross. In this study, an F 2 population derived from true F 1 hybrids identified using microsatellite markers was compared with an F 2 , a BC 1 P 1 s and a BC 1 P 2S populations developed without conformity control of F 1 plants. 
+ MATERIALS AND METHODS 
+ Populations' development During the spring of the year 2006, one of the most susceptible in situ germination varieties (Fleur 11) cultivated in the "Senegalese peanut basin" was crossed to a dormant variety (73-30). The female parent Fleur 11 is non-dormant but high-yielding specie since it is very prolific and its underground uncolored flowers are remarkably numerous. The genotype 73-30 is a dormant variety and mediumyielding. Fleur 11 and 73-30 are both early-maturing varieties; they mature at 90 days after sowing (DAS). They have no common ancestor in their pedigree. The crosses were made as suggested by  Sudheer and Kumar (1996) . At harvest, the putative F1 seeds were randomly divided into two subsets before processing to the subsequent generations. One subset was assigned to molecular screen for identifying true hybrid F1 individuals (described below) using simple sequence repeat (SSR) markers. In that subset, once a plant was identified as true F1 hybrid (DNA extraction and microsatellite analysis), it was allowed to self-pollinate to give controlled F2 seeds. Another subset of putative F1 seeds was used to develop backcross progeny with each of the parents that is, BC1P1 [73-30 x F1 (Fleur 11 x 73-30)] and BC1P2 [Fleur 11 x F1 (Fleur 11 x 73-30)]. These backcross progenies and the remaining non controlled F1 seeds were planted at field station (Bambey, Senegal) and allowed to self-pollinate, then selfed backcross between BC1P1S, BC1P2S populations and an F2 population, respectively. These three populations were referred to as non-controlled populations in the present paper. 
+ DNA extraction A set of seventy eight (78) putative F1 plants were grown in pots filled with sandy soil along with five plants of each parent in the greenhouse at Regional Center for Studies on the Improvement of Plant Adaptation to Drought (CERAAS) near Thiès, Senegal. At 15 days after emergency, young leaves were harvested from each plant and immediately stored at 4°C in ice before DNA extraction. DNA was extracted from 100 mg of fresh leaves following a slightly modified mixed alkyl trimethylammonium bromide (MATAB) protocol  (Risterucci et al., 2000) . Briefly, leaves were ground in liquid nitrogen using a mortal and pestle and dissolved in 750 µl of MATAB buffer at 74°C. The samples were incubated for 20 min at 74°C and cooled for 5 min at room temperature. A volume of 750 µl of chloroform\isoamylalcohol (CIA) (24:1) was added to each sample and all samples were shaken gently until homogenization before centrifugation at 12000 rpm for 20 min. The supernatant was then harvested and the DNA precipitated with 600 µl of 2-propanol. After centrifugation, pellets were washed with 300 µl of 70% ethanol, air dried and dissolved in 500 µl of TE. 
+ Microsatellite analysis Ten SSRs (PM050, TC6E01, TC1E05, AC2C05, Seq4F10, TC11A04, TC1D02, TC3E05, TC11H06 and TC2D06) polymorphic between the parents were used to identify the true hybrid individuals. The primers used for the identification of true F1 hybrids are listed in  Table 1 . For a given SSR locus, the forward primer was designed with a 5'-end M13 tail (5'-CACGACGTTGTAAAACGAC-3'). Polymerase chain reaction (PCR) amplifications were performed in a MJ Research PTC-100 TM thermocycler (Waltham, MA, USA) or in an Eppendorf Mastercycler on 25 ng of DNA in a 10 µl final volume of buffer (10 mM Tris-HCl (pH 8), 100 mM KCl, 0.05% w/v gelatin, and 2.0 mM MgCl2) containing 0.1 µM of the M13-tailed primer, 0.1 µM of the other primer, 160 µM of dNTP, 1 U of Taq DNA polymerase (Life Technologies, USA.) and 0.1 µM of M13 primer-fluorescent dye IR700 or IR800 (MWG, Germany). The touchdown PCR programme used was as follow: initial denaturation at 95°C for 1 min; following by 10 cycles of 94°C for 30 s, Tm (+ 5°C, -0.5°C/cycle) for 1 min, and 72°C for 1 min. After these cycles, an additional round of 25 cycles of 94°C for 30 s, Tm for 1 min, and 72°C for 1 min and a final elongation step at 72°C for 8 min was performed. IR700 or IR800-labeled PCR products were diluted 7-fold and 5-fold respectively, subjected to electrophoresis in a 6.5% polyacrylamide gel and then sized by the IR fluorescence scanning system of the sequencer (LI-COR, USA). A plant was considered as true hybrid (H) if it has both alleles of the two parents for all ten primers tested while inadvertent selfs (S) had only the allele of the female parent  (Table 2) . 
+ Phenotyping for fresh seed dormancy Maturity of the seeds was assessed by scoring for blackening of the internal inner parenchyma of the pod  (Miller and Burns, 1971) . In the field test, seeds were treated with a fungicide (Granox) prior the planting. The non-controlled F2, BC1P1S and BC1P2S populations were phenotyped along with the parents (Fleur 11 and 73-30) using the method described by  Khalfaoui (1991)  for fresh seed dormancy at the experiment field of the research station (CNRA, Bambey-Senegal) where their mother-plants were cultivated. During the germination test, day mean temperature was 27°C. The soil was kept moist by regular watering. Eighty seeds randomly sampled from each non-controlled segregating population (F2, BC1P1S and BC1P2S) and from each parental population (Fleur 11 and 73-30) were phenotyped for fresh seed dormancy. The number of seeds that germinated was counted each day. Monitoring continued until all the seeds germinated (35 DAS). Seventy-six seeds from the F2 population derived from controlled F1 plants along with one hundred (100) seeds from each of the two parents were incubated at room temperature (30°C ± 1) for fresh seed dormancy test. The test was performed in Petri dishes using filter paper moistened with distilled water. Before the test, Petri dishes were washed with sodium hypochlorite (46°). Filter papers were kept moist with distilled water until all the seeds germinated (35 DAS). Seeds that had not germinated at 15 DAS were soaked for 6 h in 2-chloroethylphosphonic acid (10 -3 M) solution. This compound is known to be effective in breaking seed dormancy and was used to confirm the viability of the dormant seeds. This product, commonly called ethereal, is readily converted to ethylene  (Ketring and Morgan, 1971 ). After treatment with ethereal, treated seeds was returned to room temperature until they germinated for scoring. Compared on the phenotype of the parents, the segregating F2 seeds were classified as dormant or non-dormant. 
+ Statistical analysis The chi square ( 2 ) test was calculated to examine the goodnessof-fit between the observed and the expected ratios in all the populations at the probability p=0.05 level of significance. 
+ RESULTS AND DISCUSSION 
+ The percentage of true F 1 hybrids identified with SSR markers Of the seventy eight (78) putative F 1 plants tested, thirty eight (38) were true F 1 hybrids, corresponding to a percentage of 48%.  Figure 1  set out a profile of bands for detecting true F 1 hybrids with the primer AC2C05. This percentage of true F 1 hybrids indicated most likely that inadvertent selfs were collected at harvest, although caution was taken to remove underground uncolored flowers till 60 days after emergency. The average percentage of true F 1 hybrids found in this study was lower than the percentage (60 -70%) observed by  Gomez et al. (2008) . However, percentage of true hybrids in self-pollinated crops depends on the female parent used in the cross since the number of underground flowers may vary from one cultivar to another. Furthermore, the percentage of true-hybrids depends upon the climatic conditions as described by  Kotzamanidis (2006)  who observed in peanut a lower (16%) percentage of successful crosses under low temperatures. It was however noted that inadvertent selfs could be important for one or another reason in cross progenies of peanut. 
+ Segregation ratios for fresh seed dormancy in the different populations In the field test as well as in the Petri-dishes test, average day taken before germination was 5 days after sowing (DAS) for the seeds of the non-dormant parent (Fleur 11) while for the dormant parent (73-30), seeds germinated from 11 DAS to 35 DAS. This good level of dormancy of the donor parent 73-30 is a confirmatory of the investigations previously reported by  Gautreau (1984) ,  Khalfaoui (1991)  and  Ndoye (2001) . Therefore, in the heterogeneous populations studied here, seeds that germinated within 5 DAS were classified as non-dormant and those that took more days to germinate were classified as dormant. The chi square test performed on the F 2 population derived from true F 1 hybrids, assuming 3:1 (dormant: nondormant) ratio was not significant (P = 0.08), indicating that the trait is controlled by a single dominant gene  (Table 2) . These findings agreed with those previously reported by  Upadhyaya and Nigam (1999)  and  Asibuo et al. (2008) . In addition, the range of variation (2 -35 DAS) observed in this study  (Table 2)  for the dormancy duration is consistent with the observed range of variation by  Upadhyaya and Nigam (1999)  although they used different parents. The frequency distribution curve of fresh seed dormancy was bimodal, indicating that the trait can be treated in a qualitative fashion  (Figure 2) .  Figure 2  brought out clearly two statistic modes, one (at 1 -5 DAS) corresponding to the non-dormant seeds and the second (from 16 -20 DAS) to the dormant seeds. This finding corroborated with the segregation ratio that a single gene controls fresh seed dormancy in Spanish x Spanish crosses.  Mather (1949) ,  Lynch and Walsh (1998)  argued that when the frequency distribution curve of a given trait is bimodal, the trait under study is   
+ Segregation of F 2 and selfed backcross (BC1P1S and BC1P2S) seeds from non-controlled F 1 plants Although the temperature varied slightly from one study to another; the range of variation for the number of days taken before germination (2 -35) in the laboratory test as well as in the field test were very similar. Consequently, seeds in segregating generations (F 2 , BC 1 P 1S and BC 1 P 2S ) were classified using the same criterion than in the controlled F 2 population. Phenotypic data from the populations (F 2 , BC 1 P 1S and BC 1 P 2S ) which were developed from non-tested F 1 individuals were also investigated  (Table 3) . For the selfed backcross BC 1 P 1S and BC 1 P 2S , the chi square test was performed assuming a 7: 1 and 3: 5 (dormant: nondormant) ratio, respectively. The chi square value was highly significant (P < 0.0001) for the F 2 and BC 1 P 1S populations in comparison to the expected ratios, but not for the BC 1 P 2S population. In the F 2 population, inadvertent selfs from the putative F 1 plants are probably the major source of the deviation from the expected ratio. The phenotypic data showed thirty nine (39) germinated seeds out of 80 seeds leading to a neat deviation from the expected ratio (3: 1). The expected ratio was most probably biased due to self inadvertent seeds among the putative F 1 self pollinated to develop that F 2 population. In the selfed backcross BC 1 P 1S population, the source of deviation could be attributed to inadvertent selfs in the F 1 as well as in the BC 1 P 1 [73-30 x F 1 (Fleur 11 x 73-30)] because the recurrent parent 73-30 was used as female parent  (Table 3) . Therefore, the source of deviation was most likely caused by the bias in the F 1 generation. Although much care was taken to remove them, abundant underground uncolored flowers observed in the female parent induced a shift in the expected ratios between dormant and non-dormant seeds. In contrast to the F 2 and BC 1 P 1S populations in the BC 1 P 2S population, the chi square test was not significant (p > 0.05); that means that actual phenotypic data fitted the expected ratio  (Table 3) . Good fit between observed and expected ratios in that population could be explained by mere chance since the sampling of putative F 1 used to develop the subsequent generations was at random. So the ratio may depend upon the percentage of self inadvertent plants collected at the harvest of the cross progeny, particularly the F 1 generation. The results of the present study revealed that deviation from the expected proportions in non-controlled populations (F 2 and BC 1 P 1S ) is most likely due to self inadvertent selfs during the populations' development. In the context of the contradictory conclusions about the inheritance of fresh seed dormancy in peanut among Spanish crosses, this may be prominently a consequence of the presence of inadvertent selfs in phenotyped populations. In our knowledge, except  Upadhyaya and Nigam (1999) , most of the few available previous reports on the inheritance of fresh seed dormancy among crosses of Spanish-type peanut (Arachis hypogaea, L.) did not mention precautions used to discard these problematic inadvertent selfs from populations under study. In fact, inadvertent selfed flowers may be one of the causes of the misleading conclusions reported on the inheritance of fresh seed dormancy among Spanish-type varieties. Beside the inadvertent selfs, various non-genetic factors such as environmental factors that have been extensively studied by  Toole et al. (1964)  and recently reviewed by Finch-Savage and Metzger (2006) could obscure the phenotyping work. However, the average to high heritabilities observed in this and other studies  (Khalfaoui, 1991; Ndoye, 2001)  indicated that environmental factors can be overcome. 
+ Conclusion This study has given more evidence that fresh seed dormancy in Spanish x Spanish crosses is controlled by single dominant gene. Therefore, fresh seed dormancy in Spanish varieties is qualitative in nature. Pedigree selection from an F 2 population could be suggested to be an effective strategy to obtain peanut lines with earliness and fresh seed dormancy. The variety 73-30 could be used as donor parent in breeding programs. This work has outlined the importance of microsatellite markers for identifying true F 1 hybrids in cross progenies in self-pollinated crops. Since then, many SSR markers are now published in peanut. Future work will be the identification of SSR markers linked to the gene controlling fresh seed dormancy in Spanish-type peanut by using a bulk segregation analysis approach. Figure 1 . 1 Microsatellite marker survey of a subset of 44 F1 putative hybrids using primer pair AC2C05. a = Female parent allele (Fleur 11); b = male parent (73-30) allele; H = hybrid; S = inadvertent self. 
+ Figure 2 . 2 Frequency distribution for fresh seed dormancy of the F2 individuals (n = 76) derived from true hybrid F1 individuals. 
+ Table 1 . 1 List of peanut microsatellite markers used to identify true F1 hybrids.Table 2. Chi square value and probability of goodness of fit for a ratio of 3 dormant: 1 non-dormant in the F2 generation developed from true F1 hybrids. Name 
+Primer "Forward'' 5'-3' 
+Primer "Reverse'' 5'-3' 
+Motif 
+PM50 
+caattcatgatagtattttattcgaca 
+ctttctcctccccaatttga 
+(TAA)4 + (GA)19 
+TC6E01 
+cagcaaagagtcgtcagtcg 
+gaaagttcacttgagcaaattca 
+(GA)29 
+TC1E05 
+gaaggataagcaatcgtcca 
+ggatgggattgaacatttgg 
+(GA)30 
+AC2C05 
+caaggaagcgtgaattgttag 
+tgtggactatgcttgtcatgtt 
+(TG)17 
+Seq4F10 
+tgcgaaacccctaactgact 
+tctatgttgctgccgttgac 
+(TG)7 + (GA)8 
+TC11A04 
+actctgcatggatggctacag 
+catgttcggtttcaagtctcaa 
+(CT)16 + (CT)33 
+TC1D02 
+gatccaaaatctcgccttga 
+gctgctctgcacaacaagaa 
+(TC)30 
+TC3E05 
+tgaaagataggtttcggtgga 
+caaaccgaaggaggaacttg 
+(CT)26+(CA)7+ (CA)5 
+TC11H06 
+ccatgtgaggtatcagtaaagaaagg ccaccaacaacattggatgaat 
+(AG)34 
+TC2D06 
+agggggagtcaaaggaaaga 
+tcacgatcccttctccttca 
+(AG)30 
+
+Data 
+Phenotype 
+Total 
+Range 
+(days) 
+
+Chi square 
+χ 
+χ χ 
+χ 
+
+2 
+
+Probability 
+value 
+Dormant 
+Non-dormant 
+
+Expected 
+57 
+19 
+76 
+2 -35 
+3.40 
+p > 0.05 
+Actual 
+49 
+27 
+76 
+
+ 
+ Table 3 . 3 Chi square value and probability of goodness of fit for the expected ratios in the developed populations derived from non tested F1 hybrids. Generation 
+Expected ratio 
+(dormant: non-dormant) 
+Total 
+Observed values 
+Chi square 
+χ 
+χ χ 
+χ 
+
+2 
+
+Probability 
+value 
+Dormant Non-dormant 
+F2 
+3 :1 
+80 
+41 
+39 
+24.06 
+p < 0.0001 
+BC1P1S 
+7 :1 
+80 
+55 
+25 
+25.71 
+p < 0.0001 
+BC1P2S 
+3 :5 
+80 
+37 
+43 
+2.76 
+p > 0.05 
+
+qualitative in nature.

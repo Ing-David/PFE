@@ -1,0 +1,272 @@
+INTRODUCTION Properties relating to wood resistance include bend strength, also known as modulus of rupture, compressive strength, tensile strength, shear strength, stiffness, among others. And properties relating to wood elasticity include modulus of elasticity, Poisson coefficient, plasticity and resilience  (KOLLMANN & CÔTÉ JUNIOR 1968) . Strength in compression parallel to grain is the maximum load in the direction of the length a sample is ANDRADE, C. R. et al. capable of sustaining  (KOLLMANN & COTÊ JÚNIOR 1968) . Modulus of rupture reflects a sample's ability to resist deformation when it is subjected to bending and is equivalent to the maximum moment shown by the sample  (GREEN et al. 1999) .  Klock (2000)  reports that high MOE values indicate a material's high strength and low deformation characteristics, which means it will qualify for structural works. Typically, mechanical characterization of wood is done by destructive analysis of samples, using specific equipment that involves extensive, standard-based testing routines and capable of providing reliable results. However, this type of assessment requires a long lead time between preparing samples and arriving at final values for the relevant property. Many researches have been conducted into alternative methods for fast and reliable wood characterization that, along with traditional methods, can result both in analysis quality and time gains. Among recently developed nondestructive methods for wood characterization is the near infrared spectroscopy technique (NIRS). According to  Baillères et al. (2002) , near infrared spectroscopy is a noninvasive analysis technique for organic materials, largely used by various manufacturing companies, forest sector included, in quality control and process monitoring tasks. The above method can offer advantages in relation to traditional methods, as it is considered nondestructive and fast (one minute or less per sample)  (PASQUINI 2003) . The basic principle is measuring absorbance spectra in the near infrared region of relevant samples, which then have their properties determined by traditional destructive analysis in a laboratory. NIR spectra are then subjected to regression analysis by the partial least square method (PLS), which is the most common method in calibration for model construction, using spectral signals  (GELADI & KOWALSKI 1986 ). Once the model has been calibrated for a given property, calibration should be tested for accuracy by a process known as validation. Model validation can be accomplished in two ways, namely external validation and cross validation  (MARTENS & NAES 1996) . External validation is considered simpler, yet it has the disadvantage of requiring another sample set, implying use of spectral measurement and conventional analysis and thus increasing time on task and procedure costs  (SOTELO 2006) . In cross validation, samples awaiting validation are the same samples used in the calibration test. Some samples are set aside, a model is constructed with the remaining samples and prediction is done in relation to samples initially set aside. This type of validation is recommended where a small number of samples is involved. Several works have demonstrated the use potential of near infrared spectroscopy to determine wood properties, as, for example, studies developed by  Fujimoto et al. (2008)  and  Schimleck et al. (1999)  into density and also into strength and stiffness properties.  Viana et al. (2009) , by using NIRS technique for predicting the morfological characteristics and basic density, found interesting results.  Hein (2010)  found similar results for basic density in Eucalyptus hybrids. Studies were also conducted into mechanical strength  (THUMM & MEDER 2001) . While studying E. grandis and E. urophylla,  Hein et al. (2009)  evaluated estimation of strength and elasticity in compression parallel to grain and found coefficients of determination of cross validation of 0.78 and 0.75 respectively. Ribeiro  (2009)  used the same technique to predict physical and mechanical properties of softwoods and hardwoods and found it to be a very effective technique, economically and practically speaking.  Kelley et al. (2004)  demonstrated the use potential of the NIRS technique to reliably predict mechanical properties of wood. Being a noninvasive technique, the use of NIRS to investigate mechanical properties of wood is extremely promising, potentially translating as considerable gains in time and resources (wood). With that said,  Pasquini (2003)  reports that where measurements are taken in diffuse reflectance mode, the NIRS technique can pose some problems, e.g. light dispersion and inaccuracies, due to differences in sample thickness. Therefore, using techniques that will help reduce, eliminate or standardize the effect of unwanted factors on spectra and yet maintain the spectroscopic information unchanged  (SIESLER et al. 2002)  is extremely important. Examples of such techniques include first and second derivative and multiplicative signal correction methods. This research used the NIRS technique to estimate mechanical properties of wood from a Eucalyptus urophylla hybrid, as determined by static bending and compression parallel to grain testing. 
+ MATERIAL AND METHODS 
+ Biological material and sampling An Eucalyptus urophylla hybrid aged 7 years was obtained from a commercial crop grown by V&M Florestal, Estimation of the mechanical properties of wood ... a company located in the municipality of Paraopeba, Minas Gerais state, Brazil. Sampling was done using a single tree divided into lengthwise and widthwise sections. The stem was divided into 5 logs, each log being 5 meters long. Each log section was divided into planks, each plank being 150 cm. This material was processed using a band saw and defect-free specimens were taken for static bending tests (25 x 25 x 410 mm in size) and compression parallel to grain tests (25 x 25 x 100 mm in size) from the outer, central and inner portions of the plank, with well-oriented radial and tangential faces. Mechanical tests were performed in a universal testing machine EMIC DL 30000. Tests were run according to the ASTM D 143 -94 standard (1997). 
+ NIR spectral acquisition For spectral acquisition, a Bruker MPA-R spectrometer was used, equipped with software Opus version 5.5. This equipment uses the Fourier transform and has an integrating sphere. Spectral acquisition was conducted in the 800 to 1,500 nm range, in diffuse reflectance mode, with spectral resolution of 8 cm -1 and 64 scans per reading. Readings were taken of solid wood spectra (on radial, tangential and transverse faces), then samples were ground and spectral readings were taken in ground wood retained in a 60-mesh sieve. The procedure of spectral acquisition is illustrated in  Figure 1 .   
+ Parameters of calibration, validation and model selection Software The Unscrambler ® version 9.1. was used as a calibration tool. Models were fitted using the partial least square regression method (PLS-1), with a maximum of 10 latent variables, and the value adopted for each model was suggested by the statistical program. The validation method used in this work was cross validation. To eliminate some of the noise and improve signal quality, first and second derivative pretreatments were applied to spectral information, using the algorithm proposed by  Savitzky & Golay (1964) . Second order polynomials were used with a spectral window of seven variables. A third pretreatment-multiplicative signal correction (MSC)-was also adopted to minimize the chance of any interference in solid wood spectral data. Outliers were detected by using the plot of Student's residuals as a parameter and were not included in model calibration. Model selection was based on the following criteria: (1st) higher correlation coefficient of cross validation (r); (2nd) higher ratio of deviation performance, (3rd) lower number of latent variables used in calibration and (4th) standard error of cross validation SECV. Values shown in  Table 1  for modulus of elasticity, strength in compression parallel to grain and modulus of rupture are similar to results found by  Hein et al. (2009) , who obtained 7848 MPa for modulus of elasticity in compression parallel to grain testing while investigating Eucalyptus grandis and E. urophylla at age 6.5 years.  Silva et al. (2005)  worked with Eucalyptus grandis at different ages and obtained 129230 kgf/cm 2 (equivalent to 12673 MPa) as means of modulus of elasticity in static bending testing.  Cruz et al. (2003)  assessed Eucalyptus clones at age 5.5 to 10.5 years and obtained 15044 MPa as mean of modulus of elasticity in static bending testing, and 7657 MPa as mean of modulus of elasticity in compression parallel to grain testing. 
+ RESULTS AND DISCUSSION 
+ Mechanical properties of wood 
+ Calibration of mechanical properties of wood Cell exposure in wood will differ depending on the face being assessed-radial (Rd), tangential (Tg) or transverse (Tr). It is thus expected, for instance, that the greater exposure of parenchyma cells on the radial face will produce different spectral information, and this information in turn can correlate positively or negatively with mechanical properties of wood  (HEIN et al. 2009 ). Based on this information, solid wood calibrations included all 3 faces-radial (Rd), tangential (Tg) and transverse (Tr)-, then an average spectral value of all three faces was worked out (mean), followed by new calibrations.  Table 2  summarizes best calibration results for mechanical properties of wood based on spectral information read on the radial, tangential and transverse faces of solid wood, in addition to spectral means. Results of cross validation correlation are similar to those found by  Hein et al. (2009) , who worked with Eucalyptus grandis and E. urophylla clones at age 6.5 years and reported a coefficient of determination (R²) of 0.75 in cross validation for modulus of elasticity (MOE) in compression parallel testing. For strength in compression parallel (CS), the model presented a R² p of 0.73 in cross validation. In static bending testing, the best observed values for modulus of elasticity were r=0.91 and RPD=2.5, using tangential face spectra. The best observed values for modulus of rupture was the spectral mean of all three faces, with values r=0.75 and RPD=1.5.  So et al. (2002)  obtained good calibrations to estimate modulus of elasticity (R²=0.87) while performing bending tests in wood from Pinus taeda L. at ages 15 to 55 years. As regards use of pretreatments, best correlations were obtained when original spectra were used, except for compressive strength which had its best observed value when multiplicative signal correction was applied. Overall, best correlation values for compression parallel testing were obtained when using transverse face spectra, followed by tangential face and then radial face spectra. As for bending testing, best responses were observed when using tangential face spectra, followed by transverse face and then radial face. Differences in spectral information depending on the face measured-whether the radial, tangential or transverse section-are yet to be better established  (HEIN et al. 2009 ).  Fujimoto et al. (2008)  used spectral information from tangential (R² between 0.61 and 0.84) and radial (R² between 0.73 and 0.89) faces to estimate mechanical properties of two species of genus Larix and concluded that both spectra present the same overall tendency as to calibration. It should be noted that in this particular work calibrations for mechanical properties were based on a small number of samples (n), and also that new studies should be undertaken to investigate the influence of Estimation of the mechanical properties of wood ...  Table 2  -Summary of NIRS calibrations for mechanical properties in solid wood. spectra depending on the face measured, preferably with a larger number of samples and ensuring grain orientation is well defined throughout.  Figure 2  provides a correlation graph between estimated and measured modulus of elasticity in compression parallel to grain testing on the transverse face. There is a strong association between observed and predicted values, indicating the use potential of NIRS to estimate modulus of elasticity from solid wood.  Table 3  summarizes best calibration results for mechanical properties using ground wood spectra. 
+ Tabela 2 -Resumo das calibrações NIRS para as propriedades mecânicas da madeira sólida. 
+ Prop -Properties It was noted that modulus of elasticity in compression parallel testing presents the best value of cross validation correlation, with r=0.87 and RPD=2. Modulus of elasticity also presents the same number of latent variables and Outlier in both tests, compression and bending, LV=3 and Outlier=1. First and second derivative pretreatments provided the best correlation values overall. According to  Schimleck et al. (2003) , a RPD value higher than 1.5 is considered satisfactory for preliminary readings and predictions (screenings), and for tree selection in forest improvement programs. According to Tables 2 and 3, it can be said that calibrations obtained from solid wood spectra were slightly higher than calibrations obtained from ground wood spectra, considering both tests and each of the three properties being tested-MOE, CS and MOR. Cross validation correlations for mechanical properties using solid wood spectra and ground wood spectra overall presented positive values. However, these values can be improved if in future works a larger number of samples is included in the calibration lot.     
+ CONCLUSIONS Best correlation coefficients to estimate modulus of elasticity and compressive strength, in compression parallel to grain testing, were obtained when using original spectra from solid wood. Modulus of elasticity in static bending testing was best estimated when solid wood spectra were subjected to first derivative treatment, while modulus of rupture presented best calibrations when original spectra were used. Prop -Property, Treat -Treatment, r -Cross validation correlation, LV -Number of latent variables, Outlier -Number of discarded samples, SECV -Standard error of cross validation, RPD -Ratio of performance deviation, n -Total number of samples used, Comp. -Compression parallel to grain, MOE -Modulus of elasticity, CS -Strength in compression parallel to grain, MOR -Modulus of rupture, 1d -First derivative, 2d -Second derivative. Estimation of the mechanical properties of wood ... As for ground wood spectra, higher values of cross validation correlation were obtained when using first and second derivative pretreatments than when using original spectra. 
+ ACKNOWLEDGMENTS The authors wish to thank V&M Florestal for providing technical and financial support, and the Federal University of Lavras for providing laboratory facilities to carry out tests. 
+ BIBLIOGRAPHICAL REFERENCES Figure 1 - 1 Points of spectral acquisition in solid wood and portions used for ground wood readings. 
+ Figura 1 - 1 Pontos de aquisição espectral na madeira sólida e regiões utilizadas para a obtenção da madeira moída. 
+ , Treat -Treatment, r -Cross validation correlation, LV -Number of latent variables, Outlier -Number of discarded samples, SECV -Standard error of cross validation, RPD -Ratio of performance deviation, n -Total number of samples used, Comp. -Compression parallel to grain, Rd -Radial, Tg -Tangential, Tr -Transverse, Mean -Spectral mean of 3 faces, MOE -Modulus of elasticity, CS -Strength in compression parallel to grain, MOR -Modulus of rupture, osd -Original spectral data, 1d -First derivative, 2d -Second derivative, MSC -Multiplicative signal correction. 
+ Figure 2 - 2 Correlation graph between estimated and measured modulus of elasticity in compression parallel to grain testing on transverse face. 
+ Figura 2 - 2 Gráfico da correlação entre o módulo de elasticidade estimado e o medido no ensaio de compressão paralela às fibras, face transversal. 
+ Table 1 1 summarizes results of compression parallel to grain and static bending tests. ANDRADE, C. R. et al.Table 1 -Results of compression parallel to grain and static bending tests. Tabela 1 -Ensaio de compressão paralela às fibras e flexão estática. Test type 
+Prop. 
+Mean (MPa) 
+Sd 
+Min (MPa) 
+Max (MPa) 
+n 
+
+MOE 
+7934.0 
+1466.7 
+5388.3 
+10794.3 
+25 
+Compression parallel to grain 
+CS 
+52.1 
+6.9 
+40.1 
+63.6 
+25 
+
+MOE 
+15972.2 
+2751.1 
+11054.4 
+20178.1 
+19 
+Static bending 
+MOR 
+94.4 
+15.4 
+69.9 
+115.8 
+19 
+
+MOE -Modulus of elasticity; CS -Strength in compression parallel to grain; MOR -Modulus of rupture; Prop.-Property; 
+Sd -Standard deviation; Min -Minimum; Max -Maximum; n -Number of samples. 
+
+ 
+ Cerne, Lavras, v. 16, n. 3, p. 291-298, jul./set. 2010 ANDRADE, C. R. et al. Wood 
+Test type 
+Face 
+Prop 
+Treat 
+r 
+LV 
+Outlier 
+SECV 
+RPD 
+n 
+
+MOE 
+2d 
+0.72 
+3 
+0 
+996.4 
+1.5 
+25 
+Rd 
+CS 
+1d 
+0.74 
+5 
+0 
+4.5 
+1.5 
+25 
+
+MOE 
+1d 
+0.74 
+6 
+0 
+962.9 
+1.5 
+25 
+Tg 
+CS 
+1d 
+0.77 
+6 
+0 
+4.3 
+1.6 
+25 
+
+MOE 
+osd 
+0.91 
+3 
+0 
+566.2 
+2.6 
+25 
+Tr 
+CS 
+osd 
+0.89 
+5 
+0 
+3.1 
+2.2 
+25 
+
+MOE 
+osd 
+0.89 
+3 
+0 
+648.3 
+2.3 
+25 
+
+Comp. 
+
+Mean 
+CS 
+MSC 
+0.90 
+10 
+0 
+2.8 
+2.5 
+25 
+
+MOE 
+1d 
+0.71 
+1 
+0 
+1879.7 
+1.5 
+19 
+Rd 
+MOR 
+osd 
+0.44 
+1 
+0 
+13.6 
+1.1 
+19 
+
+MOE 
+osd 
+0.91 
+10 
+0 
+1099.9 
+2.5 
+19 
+Tg 
+MOR 
+MSC 
+0.74 
+6 
+0 
+10.6 
+1.5 
+19 
+
+MOE 
+1d 
+0.77 
+6 
+0 
+1764.1 
+1.6 
+19 
+Tr 
+MOR 
+MSC 
+0.65 
+10 
+0 
+13.0 
+1.2 
+19 
+
+MOE 
+1d 
+0.78 
+6 
+0 
+1680.2 
+1.6 
+19 
+
+Solid 
+
+Bending 
+
+Mean 
+MOR 
+osd 
+0.75 
+6 
+0 
+10.4 
+1.5 
+19 
+
+296 
+
+ 
+ Table 3 - 3 Summary of NIRS calibrations for mechanical properties in ground wood.Tabela 3 -Resumo das calibrações NIRS para as propriedades mecânicas da madeira moída. Wood 
+Test type 
+Prop 
+Treat 
+r 
+LV 
+Outlier 
+SECV 
+RPD 
+n 
+
+MOE 
+2d 
+0.82 
+3 
+1 
+866.3 
+1.7 
+25 
+Comp. 
+CS 
+1d 
+0.89 
+4 
+0 
+3.0 
+2.3 
+25 
+
+MOE 
+1d 
+0.87 
+3 
+1 
+1346.6 
+2.0 
+19 
+Ground 
+
+Bending 
+MOR 
+1d 
+0.72 
+5 
+0 
+10.7 
+1.4 
+19

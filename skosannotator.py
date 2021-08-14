@@ -8,7 +8,7 @@ from pyclinrec.recognizer import IntersStemConceptRecognizer
 logger = getLogger("Agrovoc")
 
 
-class Agrovoc:
+class SKOSAnnotator:
     def __init__(self, graph: Graph = None, thesaurus_path="data/agrovoc_2021-03-02_core.rdf", skos_xl_labels=True,
                  lang="fr"):
 
@@ -80,7 +80,7 @@ class Agrovoc:
         self.concept_recognizer.initialize()
 
     def find_keyword_matches(self, keyword):
-        matching_annotations = self.concept_recognizer.recognize(keyword)
+        _,_,matching_annotations = self.concept_recognizer.annotate(keyword)
         return_annotations = set()
         for matching_annotation in matching_annotations:
             delta = matching_annotation.end - matching_annotation.start
@@ -90,4 +90,4 @@ class Agrovoc:
         return return_annotations
 
     def annotate_text(self, text):
-        return self.concept_recognizer.recognize(text)
+        return self.concept_recognizer.annotate(text)
