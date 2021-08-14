@@ -1,0 +1,1 @@
+from .agrovoc import Agrovoc

@@ -1,46 +1,43 @@
-import spacy
 import json
 import random
+<<<<<<< HEAD
 from agrovoc import SKOSAnnotator
+=======
+from annotation import Agrovoc
+>>>>>>> abb8253131c9c7d8863a38d3f576564009b5b69d
 from vocabulary import Vocabulary
-import el_hyperparams as hp
 import pandas as pd
 import en_core_web_md
+from tqdm.autonotebook import tqdm
 
-# accessing hyper-parameters
-args = hp.parser.parse_args()
 # directory of data
-datadir = args.datadir
+datadir = 'data/agrovoc'
 # spacy with eng
 nlp = en_core_web_md.load()
+<<<<<<< HEAD
 # agrovoc's rdf
 agrovoc = SKOSAnnotator(lang="en")
+=======
+>>>>>>> abb8253131c9c7d8863a38d3f576564009b5b69d
 
 
-def fichier_json(text_string, name_file_json, limited_line):
+def fichier_json(text_string, entities_id_list, voca_ent, agrovoc):
     """
-    function to generate json file by input raw text
-    arg text_string: input text string
-    arg name_file: input the name for the json file
-    arg limited_line: input how many lines to write into the json file
+    Function to generate json file by input raw text
+    :param text_string: input text string
+    :param entities_id_list: List id of concepts/entities
+    :param voca_ent: vocabulary of the concepts
+    :param agrovoc: Agrovoc thesaurus
     """
-    # access dictionary of agrovoc with correspond id for searching the index location of id for each candidate(
-    # positive and negative)
-    voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
-    # get the entIdList for random negative candidates
-    ent2nameId = {}
-    with open('data/agrovoc/agrovoc-entity.tsv', 'rt') as f:
-        g = f.read()
-        h = filter(None, g.split("\n"))
-        for i in h:
-            ent2nameId[voca_ent.word2id.get(i)] = i
-    entIdList = list(ent2nameId.keys())
     # convert to text_doc
     text_doc = nlp(text_string)
     # list of sentences
     sentences = list(text_doc.sents)
+    # list to store each phrase in an integral text
+    sents_dict = []
     # loop through each phrase
     for sentence in sentences:
+        # dictionary for each phrase
         dict_phrase = {}
         string_sentence = str(sentence)
         # annotated concepts for each phrase
@@ -98,9 +95,9 @@ def fichier_json(text_string, name_file_json, limited_line):
                 if len(list_positive_can) > 0:
                     list_neg_can = []
                     # generate 10 negative candidates
-                    for i in range(0, hp.N_NEGS):
+                    for i in range(0, 50):
                         # random all concepts id in the entIdList
-                        m = random.sample(entIdList, 1)
+                        m = random.sample(entities_id_list, 1)
                         # convert from list of one element to integer
                         n = int(m[0])
                         # avoid positive concepts
@@ -108,34 +105,109 @@ def fichier_json(text_string, name_file_json, limited_line):
                             # avoid negative concepts that already existed in the list
                             if n not in [k for k in list_neg_can]:
                                 list_neg_can.append(n)
+                                # check if the list already contained 10 candidates
+                                if len(list_neg_can) == 10:
+                                    break
                     dict_mention["negatives"] = list_neg_can
                 dict_phrase["mentions"].append(dict_mention)
         # check if there is at least one mention in a sentence
         if len(dict_phrase["mentions"]) > 0:
-            return json.dumps(dict_phrase), len(sentences)
+            sents_dict.append(dict_phrase)
+        # if not skip
         else:
-            return "", 0
+            continue
+
+    output = ""
+    count_json_line = 0
+    for dict_phrase in sents_dict:
+        output += json.dumps(dict_phrase) + "\n"
+        count_json_line += 1
+
+    return output, count_json_line
 
 
 def csv_to_json(fichier_csv, name_file_json, limited_line):
     '''
-    function to convert from csv that are already extracted to json file for training
+    Function to convert from csv that are already extracted to json file for training
+    :param fichier_csv: File csv of Agritrop
+    :param name_file_json: Name of json file
+    :param limited_line: Number of limited line in json file
     '''
-    from tqdm.notebook import tqdm
+    # agrovoc's rdf
+    agrovoc = Agrovoc(lang="en")
+    # access dictionary of agrovoc with correspond id for searching the index location of id for each candidate(
+    # positive and negative)
+    voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
+    # get the entIdList for random negative candidates
+    ent2nameId = {}
+    with open(datadir + '/agrovoc-entity.tsv', 'rt') as f:
+        g = f.read()
+        h = filter(None, g.split("\n"))
+        for i in h:
+            ent2nameId[voca_ent.word2id.get(i)] = i
+    entIdList = list(ent2nameId.keys())
+
     file_read = pd.read_csv(fichier_csv)
     file_read['body_grobid'] = file_read['body_grobid'].astype('str')
     jsons = []
-    sentences = 0
-    for line, column in tqdm(file_read.iterrows()):
+    current_line = 0
+
+    sentence_progress_bar = tqdm()
+    publication_progress_bar = tqdm(file_read.iterrows())
+
+    for line, column in publication_progress_bar:
+
+        publication_progress_bar.set_description("Processing %dth publication" % line)
+        # check if body_grobid is not an empty string
         if column['body_grobid'] != "":
-            value, count = fichier_json(column['body_grobid'], name_file_json)
-        if sentences + count <= limited_line:
-            sentences += count
-            jsons.append(value)
+            value, line_publication = fichier_json(column['body_grobid'], entIdList, voca_ent, agrovoc)
+
+        # check if the number of sentences in each publication is less than the limited lines
+        if line_publication < limited_line:
+            # check if current lines are less than the limited lines
+            if current_line < limited_line:
+                # check if the sum of current lines and new lines from a publication are less than limited lines
+                if current_line + line_publication < limited_line:
+                    jsons.append(value)
+                    list_value = value.splitlines()
+                    current_line += len(list_value)
+                # if not, fill some lines from new lines of a publication to current lines to match with the limited
+                # lines
+                else:
+                    list_value = value.splitlines()
+                    limited_sentence = list_value[:limited_line - current_line]
+                    limited_value = "\n".join(limited_sentence)
+                    jsons.append(limited_value)
+                    current_line += len(limited_sentence)
+
         else:
+            # check if current lines are less than the limited lines then fill some lines to match with limited line
+            if current_line < limited_line:
+                list_value = value.splitlines()
+                limited_sentence = list_value[:limited_line - current_line]
+                limited_value = "\n".join(limited_sentence)
+                jsons.append(limited_value)
+                current_line += len(limited_sentence)
+
+        # description for sentences
+        sentence_progress_bar.set_description(
+            "Processing the %dth sentence out of %d sentences" % (current_line, limited_line))
+
+        # current lines equal limited lines then break
+        if current_line == limited_line:
             break
+
+    if current_line < limited_line:
+        print("Out of publications to produce sentences.")
+        print("The total number of sentences in json file is %d" % current_line)
+
+    else:
+        print("Program Finished.")
+
+    # write into json file
     with open(name_file_json, 'w') as json_file:
         json_file.writelines(jsons)
 
+csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_1000_limit.csv", 'el_annotated_170k.json', 170000)
 
-csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_4_100_limit.csv", 'el_annotated.json', 170000)
+

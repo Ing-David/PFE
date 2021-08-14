@@ -108,7 +108,7 @@ class ELEncoder(nn.Module):
             lens = input['masks'].long().sum(dim=1)
             assert(lens[0] == inp.shape[1])
 
-            inp = nn.utils.rnn.pack_padded_sequence(inp, lens, batch_first=True)
+            inp = nn.utils.rnn.pack_padded_sequence(inp, lens.cpu(), batch_first=True)
             # input inp into BiLSTM
             out, (ht, ct) = self.lstm(inp)
             out, _ = nn.utils.rnn.pad_packed_sequence(out, batch_first=True, total_length=lens[0])

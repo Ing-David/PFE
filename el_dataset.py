@@ -18,10 +18,10 @@ class ELDataset:
 
         print('load train set')
         self.train = self.read_from_file(data_path['train'], max_len=max_len)
-        print('load dev set')
-        self.dev = self.read_from_file(data_path['dev'], train=False, max_len=max_len)
-        print('load test set')
-        self.test = self.read_from_file(data_path['test'], train=False, max_len=max_len)
+#        print('load dev set')
+#        self.dev = self.read_from_file(data_path['dev'], train=False, max_len=max_len)
+#        print('load test set')
+#        self.test = self.read_from_file(data_path['test'], train=False, max_len=max_len)
 
     def read_from_file(self, path, format='json', train=True, max_len=100):
         pass
@@ -70,15 +70,19 @@ class ELDataset:
         for item in org:
             # copy all values from item into variables (tokens, m_loc...)
             tokens, m_loc, pos_wrt_m, sent, positives, negatives, ent, ner = deepcopy(item)
-
-            # condition for sampling the negative candidate
-            if hp.SAMPLE_NEGS:
-                negatives = random.sample(self.entIdList, hp.N_NEGS)
-            else:
-                if len(negatives) == 0:
-                    negatives = random.sample(self.entIdList, input['N_NEGS'])
+		
+            # if data is not the training set then random negative samples. Else, reuse the existed negative samples in
+            # training set
+            if data != self.train:
+                # condition for sampling the negative candidate
+                if hp.SAMPLE_NEGS:
+                    negatives = random.sample(self.entIdList, hp.N_NEGS)
                 else:
-                    negatives = negatives + [negatives[-1]] * (input['N_NEGS'] - len(negatives))
+                    if len(negatives) == 0:
+                        negatives = random.sample(self.entIdList, input['N_NEGS'])
+                    else:
+                        negatives = negatives + [negatives[-1]] * (input['N_NEGS'] - len(negatives))
+			
             # get ids of parents (skos:broader) of each candidate in the positive and negative list for each item
             neg_types = [self.triples['ent2typeId'][c] for c in negatives]
             pos_types = [self.triples['ent2typeId'][c] for c in positives]
@@ -131,9 +135,12 @@ class ELDataset:
             # with other entities in a batch
             input['cand_nb_ids'].append([len(input['cand_nb_ids'])] * len(nb_rs))
         # flatten to one list of nb_types of candidates in a batch
-        input['nb_types'] = [types for nb_t in input['nb_types'] for types in nb_t]
+        #nput['nb_types'] = [types for nb_t in input['nb_types'] for types in nb_t]
         # list contains the length of types that candidates(all items) have in a batch
         input['nb_n_types'] = [len(types) for types in input['nb_types']]
+
+	# flatten to one list of nb_types of candidates in a batch
+        #input['nb_types'] = [types for nb_t in input['nb_types'] for types in nb_t]
 
         # option to represent the list ids of number of types of candidates for all items in a batch
         if hp.TYPE_OPT == 'mean':

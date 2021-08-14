@@ -57,9 +57,9 @@ class EL(nn.Module):
         noise_scores = noise_scores * 3
 
         # compute scores as if no noise
-        # max(g(e,m,c)), e ∈ E−
-        best_pos_scores = scores[:, :input['N_POSS']].max(dim=1)[0]
         # max(g(e,m,c)), e ∈ E+
+        best_pos_scores = scores[:, :input['N_POSS']].max(dim=1)[0]
+        # max(g(e,m,c)), e ∈ E−
         best_neg_scores = scores[:, input['N_POSS']:].max(dim=1)[0]
         # max-margin loss l(m,c)
         diff = best_neg_scores + self.config['margin'] - best_pos_scores
