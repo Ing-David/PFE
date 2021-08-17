@@ -1,5 +1,6 @@
 import json
 import random
+import re
 <<<<<<< HEAD
 from agrovoc import SKOSAnnotator
 =======
@@ -12,8 +13,6 @@ from tqdm.autonotebook import tqdm
 
 # directory of data
 datadir = 'data/agrovoc'
-# spacy with eng
-nlp = en_core_web_md.load()
 <<<<<<< HEAD
 # agrovoc's rdf
 agrovoc = SKOSAnnotator(lang="en")
@@ -29,10 +28,9 @@ def fichier_json(text_string, entities_id_list, voca_ent, agrovoc):
     :param voca_ent: vocabulary of the concepts
     :param agrovoc: Agrovoc thesaurus
     """
-    # convert to text_doc
-    text_doc = nlp(text_string)
+    
     # list of sentences
-    sentences = list(text_doc.sents)
+    sentences = re.split(r'(?<=\.)\s+(?=[a-zA-Z])', text_string)
     # list to store each phrase in an integral text
     sents_dict = []
     # loop through each phrase
@@ -209,5 +207,3 @@ def csv_to_json(fichier_csv, name_file_json, limited_line):
         json_file.writelines(jsons)
 
 csv_to_json("corpus_titres_abstracts_corps_eng_articles-type_1_2_1000_limit.csv", 'el_annotated_170k.json', 170000)
-
-
