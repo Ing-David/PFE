@@ -8,7 +8,6 @@ from annotation import Agrovoc
 >>>>>>> abb8253131c9c7d8863a38d3f576564009b5b69d
 from vocabulary import Vocabulary
 import pandas as pd
-import en_core_web_md
 from tqdm.autonotebook import tqdm
 
 # directory of data
