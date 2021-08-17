@@ -4,24 +4,22 @@ import random
 from agrovoc import SKOSAnnotator
 from vocabulary import Vocabulary
 import el_hyperparams as hp
-import en_core_web_md
+import re
 
 # accessing hyper-parameters
 args = hp.parser.parse_args()
 # directory of data
 datadir = args.datadir
-# spacy with eng
-nlp = en_core_web_md.load()
 # agrovoc's rdf
 agrovoc = SKOSAnnotator(lang="en")
 
 
 def fichier_json(text_string, name_file_json, limited_line):
     """
-    function to generate json file by input raw text
-    arg text_string: input text string
-    arg name_file: input the name for the json file
-    arg limited_line: input how many lines to write into the json file
+    Function to generate json file by input raw text
+    :param text_string: input text string
+    :param name_file: input the name for the json file
+    :param limited_line: input how many lines to write into the json file
     """
     # access dictionary of agrovoc with correspond id for searching the index location of id for each candidate(
     # positive and negative)
@@ -34,10 +32,8 @@ def fichier_json(text_string, name_file_json, limited_line):
         for i in h:
             ent2nameId[voca_ent.word2id.get(i)] = i
     entIdList = list(ent2nameId.keys())
-    # convert to text_doc
-    text_doc = nlp(text_string)
     # list of sentences
-    sentences = list(text_doc.sents)
+    sentences = re.split(r'(?<=\.)\s+(?=[a-zA-Z])', text_string)
     # loop through each phrase
     for sentence in sentences:
         dict_phrase = {}
