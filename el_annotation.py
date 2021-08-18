@@ -36,7 +36,7 @@ def fichier_json(text_string, entities_id_list, voca_ent, agrovoc):
     for sentence in sentences:
         # dictionary for each phrase
         dict_phrase = {}
-        string_sentence = str(sentence)
+        string_sentence = sentence.lower()
         # annotated concepts for each phrase
         output = agrovoc.annotate_text(string_sentence)
         # all tokens of each phrase
@@ -78,7 +78,7 @@ def fichier_json(text_string, entities_id_list, voca_ent, agrovoc):
                 dict_mention["mention"] = [start, end]
                 # list id of positive candidates by comparing the string
                 list_id_pos_concept = [item[0] for item in list_id_tok if
-                                       item[1] == string_sentence[pos_tok[0]:pos_tok[1]]]
+                                       item[1].lower() == string_sentence[pos_tok[0]:pos_tok[1]]]
                 # list position of each annotated concept in the phrase(i.e. positive candidates) when we search in
                 # dictionary
                 list_positive_can = []
