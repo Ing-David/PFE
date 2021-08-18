@@ -70,19 +70,6 @@ class ELDataset:
         for item in org:
             # copy all values from item into variables (tokens, m_loc...)
             tokens, m_loc, pos_wrt_m, sent, positives, negatives, ent, ner = deepcopy(item)
-		
-            # if data is not the training set then random negative samples. Else, reuse the existed negative samples in
-            # training set
-            if data != self.train:
-                # condition for sampling the negative candidate
-                if hp.SAMPLE_NEGS:
-                    negatives = random.sample(self.entIdList, hp.N_NEGS)
-                else:
-                    if len(negatives) == 0:
-                        negatives = random.sample(self.entIdList, input['N_NEGS'])
-                    else:
-                        negatives = negatives + [negatives[-1]] * (input['N_NEGS'] - len(negatives))
-			
             # get ids of parents (skos:broader) of each candidate in the positive and negative list for each item
             neg_types = [self.triples['ent2typeId'][c] for c in negatives]
             pos_types = [self.triples['ent2typeId'][c] for c in positives]
