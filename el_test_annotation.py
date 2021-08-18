@@ -1,30 +1,16 @@
 import json
 from annotation import Agrovoc
 from vocabulary import Vocabulary
-import en_core_web_md
-from nltk.tokenize import word_tokenize
+from itertools import chain
 from collections import defaultdict
 from operator import itemgetter
 import re
 from tqdm.notebook import tqdm
+
 tqdm.pandas()
 
 # directory of data
 datadir = 'data/agrovoc'
-# spacy with eng
-nlp = en_core_web_md.load()
-
-
-def add_uri(id_number):
-    """
-    Function to add the domain name of agrovoc
-    :param id_number: The id of a concept
-    """
-
-    str_id = str(id_number)
-    s = "http://aims.fao.org/aos/agrovoc/c_" + str_id
-    
-    return s
 
 
 def individual_tokenOffset(text, pattern):
@@ -32,12 +18,6 @@ def individual_tokenOffset(text, pattern):
     Function to get the offset of a mention in an individual sentence, useful with the offset of tool annotation by dictionary
     :param text: The input sentence
     :param pattern: The list of pattern (i.e a word/mention we want to find its offset in the sentence)
-    
-    Example using::
-    tokens = ["corn"]
-    pattern = re.compile(fr'(?<!\w)(?:{"|".join(sorted(map(re.escape, tokens), key=len, reverse=True))})(?!\w)(?!\.\b)', re.I )
-    offsets = individual_tokenOffset("Ceci est une wheat phrase corn.",pattern)
-    [{'word': 'corn', 'IndividualOffsetBegin': 26, 'IndividualOffsetEnd': 30}]
     """
 
     items = []
@@ -48,6 +28,11 @@ def individual_tokenOffset(text, pattern):
         item['IndividualOffsetEnd'] = m.end()
         items.append(item)
     return items
+
+
+def contains_word(s, w):
+    s = re.sub('[):,.?!(]', '', s)
+    return (' ' + w + ' ') in (' ' + s + ' ')
 
 
 def list_dict_mention(text_file, brat_file):
@@ -65,7 +50,6 @@ def list_dict_mention(text_file, brat_file):
       'word': 'wheat',
       'concept_id': 'http://aims.fao.org/aos/agrovoc/c_8373',
       'original_sentence': 'Ceci est une wheat phrase corn.\n',
-      'sentence_id': 0,
       'start': 13,
       'end': 18},
      {'standoff_id': 2,
@@ -75,7 +59,6 @@ def list_dict_mention(text_file, brat_file):
       'word': 'corn',
       'concept_id': 'http://aims.fao.org/aos/agrovoc/c_12332',
       'original_sentence': 'Ceci est une wheat phrase corn.\n',
-      'sentence_id': 0,
       'start': 26,
       'end': 30},
      {'standoff_id': 3,
@@ -85,41 +68,36 @@ def list_dict_mention(text_file, brat_file):
       'word': 'barley',
       'concept_id': 'http://aims.fao.org/aos/agrovoc/c_823',
       'original_sentence': 'Ceci est une deuxième phrase barley.',
-      'sentence_id': 1,
       'start': 29,
       'end': 35}]
     """
 
-
     # looping through .txt files
     with open(text_file) as f:
-        list_phrase = f.readlines()
-        f.seek(0)
-        contents = f.read()
+        list_phrase = re.split(r'(?<=\.)\s+(?=[a-zA-Z])', f.read())
         list_length_phrase = []
 
-        # get the length of all phrases
-        for a in list_phrase:
-            list_length_phrase.append(len(a))
+    # get the length of all phrases
+    for a in list_phrase:
+        list_length_phrase.append(len(a))
 
-        offset_phrase = []
+    offset_phrase = []
 
-        # loop to get the offset of all phrases in the text (assume that each phrase separated by ' ')
-        for index, length_phrase in enumerate(list_length_phrase):
-            # first element in the list
-            if index == 0:
-                offset_phrase.append((0, length_phrase))
-                # second element and so on...
-            else:
-                offset_phrase.append(
-                    (sum(i for i in list_length_phrase[0:index]), sum(i for i in list_length_phrase[0:index + 1])))
+    # loop to get the offset of all phrases in the text (assume that each phrase separated by ' ')
+    for index, length_phrase in enumerate(list_length_phrase):
+        # first element in the list
+        if index == 0:
+            offset_phrase.append((0, length_phrase))
+        # second element and so on...
+        else:
+            offset_phrase.append(
+                (sum(i for i in list_length_phrase[0:index]), sum(i for i in list_length_phrase[0:index + 1])))
 
     # looping through .ann files in the data directory
     STANDOFF_ENTITY_PREFIX = 'T'
     STANDOFF_RELATION_PREFIX = 'N'
     entities = []
     relations = []
-    # process .ann file - place entities and relations into 2 seperate lists of tuples
     with open(brat_file, 'r') as document_anno_file:
         lines = document_anno_file.readlines()
         for line in lines:
@@ -130,13 +108,16 @@ def list_dict_mention(text_file, brat_file):
                 entity['entity_type'] = standoff_line[1].capitalize()
                 entity['offset_start'] = int(standoff_line[2])
                 entity['offset_end'] = int(standoff_line[3])
-                entity['word'] = standoff_line[4]
+                list_word = []
+                for i in range(4, len(standoff_line)):
+                    list_word.append(standoff_line[i])
+                entity['word'] = " ".join(list_word)
                 entities.append(entity)
 
             elif standoff_line[0][0] == STANDOFF_RELATION_PREFIX:
                 relation = {}
                 relation['standoff_id'] = int(standoff_line[0][1:])
-                relation['concept_id'] = standoff_line[3].split(":")[1]
+                relation['concept_id'] = standoff_line[3].replace("Agrovoc:", "")
                 relations.append(relation)
 
     # loop to merge dictionary of entities and relations
@@ -144,28 +125,37 @@ def list_dict_mention(text_file, brat_file):
     for l in (entities, relations):
         for elem in l:
             d[elem["standoff_id"]].update(elem)
+
     list_dict_concept = sorted(d.values(), key=itemgetter("standoff_id"))
 
     # loop to get the original sentence for each mention
     for dict_concept in list_dict_concept:
         for index, phrase in enumerate(list_phrase):
-            j = word_tokenize(phrase)
-            # verify if the sentence is in the list of sentences and if the mention offsets are in between the
-            # sentence that we want to find and get that sentence
-            if contents[dict_concept['offset_start']:dict_concept['offset_end']] in j and (
-                    offset_phrase[index][0] <= dict_concept['offset_start'] and dict_concept['offset_end'] <=
-                    offset_phrase[index][1]):
+
+            if (contains_word(phrase, dict_concept['word'])) and [
+                (offset_phrase[index][0] <= dict_concept['offset_start']) and (
+                        dict_concept['offset_end'] <= offset_phrase[index][1])]:
                 dict_concept['original_sentence'] = list_phrase[index]
+            else:
+                # check index of another sentence before the current sentence
+                if (contains_word(phrase, dict_concept['word'])) and [
+                    (offset_phrase[index - 1][0] <= dict_concept['offset_start']) and (
+                            dict_concept['offset_end'] <= offset_phrase[index - 1][1])]:
+                    dict_concept['original_sentence'] = list_phrase[index - 1]
 
-    # loop to get the sentence id for each concept
-    for index_phrase, phrase in enumerate(list_phrase):
-        for dictionary_concept in list_dict_concept:
-            if (dictionary_concept['original_sentence'] == phrase):
-                dictionary_concept['sentence_id'] = index_phrase
+                # check index of another sentence after the current sentence
+                elif (contains_word(phrase, dict_concept['word'])) and [
+                    (offset_phrase[index + 1][0] <= dict_concept['offset_start']) and (
+                            dict_concept['offset_end'] <= offset_phrase[index + 1][1])]:
+                    dict_concept['original_sentence'] = list_phrase[index + 1]
 
-    # loop to add completed URI to each mention
-    for concept_dict in list_dict_concept:
-        concept_dict["concept_id"] = add_uri(concept_dict["concept_id"])
+                    # In case some mention cannot find its original sentence
+    keys = set(chain.from_iterable(list_dict_concept))
+    for item in list_dict_concept:
+        item.update({key: "" for key in keys if key not in item})
+
+        # Remove all dictionary whose mention cannot find its original sentence or sentence id
+    list_dict_concept[:] = [d for d in list_dict_concept if d.get('original_sentence') != ""]
 
     # loop to get the offset of each mention for individual sentence
     for con_dict in list_dict_concept:
@@ -174,8 +164,15 @@ def list_dict_mention(text_file, brat_file):
         pattern = re.compile(
             fr'(?<!\w)(?:{"|".join(sorted(map(re.escape, tokens), key=len, reverse=True))})(?!\w)(?!\.\b)', re.I)
         offsets = individual_tokenOffset(text, pattern)
-        con_dict["start"] = offsets[0]["IndividualOffsetBegin"]
-        con_dict["end"] = offsets[0]["IndividualOffsetEnd"]
+        list_start_offset = []
+        list_end_offset = []
+
+        for offset in offsets:
+            list_start_offset.append(offset['IndividualOffsetBegin'])
+            list_end_offset.append(offset['IndividualOffsetEnd'])
+
+        con_dict["start"] = list_start_offset
+        con_dict["end"] = list_end_offset
 
     return list_dict_concept
 
@@ -185,12 +182,12 @@ def json_test_file(text_file, brat_file, output_json):
     Function to generate the json file for testing the model dl4el
     :param text_file: The text file (.txt)
     :param brat_file: The output file from the BRAT's tool (.ann) :param output_json: The name of the output json file,
-    the name should not be changed if we want a file with continuous line
+    the name should not be changed if we want a single file with continuous line
     """
-
     # Agrovoc's rdf
     agrovoc = Agrovoc(lang="en")
-    # access dictionary of agrovoc with correspond id for searching the index location of id for candidate positive and gold label(entity)
+    # access dictionary of agrovoc with correspond id for searching the index location of id for candidate positive
+    # and gold label(entity)
     voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
     # get the entIdList for random negative candidates
     ent2nameId = {}
@@ -199,21 +196,16 @@ def json_test_file(text_file, brat_file, output_json):
         h = filter(None, g.split("\n"))
         for i in h:
             ent2nameId[voca_ent.word2id.get(i)] = i
-    entIdList = list(ent2nameId.keys())
-    with open(text_file) as f:
-        list_phrase = f.readlines()
-        f.seek(0)
-        contents = f.read()
-
-    text = nlp(contents)
-    sentences = list(text.sents)
 
     list_dict_concept = list_dict_mention(text_file, brat_file)
 
-    # loop through each phrase
-    for index, sentence in tqdm(enumerate(sentences)):
+    list_line_json = []
+
+    # loop through each sentence from list_dict_concept
+    for index, sentence in tqdm(enumerate(list_dict_concept)):
+
         dict_phrase = {}
-        string_sentence = str(sentence)
+        string_sentence = sentence['original_sentence'].lower()
         # annotated concepts for each phrase
         output = agrovoc.annotate_text(string_sentence)
         # all tokens of each phrase
@@ -239,7 +231,8 @@ def json_test_file(text_file, brat_file, output_json):
         list_id_tok = [t for t in (set(tuple(i) for i in list_id_tok))]
         # remove the same mention index from the list
         list_pos_tok = list(dict.fromkeys(list_pos_tok))
-        # position of each annotated token in each phrase
+
+        # loop through each mention in a phrase
         for pos_tok in list_pos_tok:
             # dictionary mention
             dict_mention = {}
@@ -250,8 +243,12 @@ def json_test_file(text_file, brat_file, output_json):
             end = token_offset.index(end_index[0]) + 1
             # add the mention's position compare to original list of all tokens for each annotated token into the tmp list
             dict_mention["mention"] = [start, end]
-            # list id of positive candidates by comparing the string
-            list_id_pos_concept = [item[0] for item in list_id_tok if item[1] == string_sentence[pos_tok[0]:pos_tok[1]]]
+            mentioned_word = " ".join(dict_phrase["sentence"][start:end])
+
+            # list URI of positive candidates by comparing the string
+            list_id_pos_concept = [item[0] for item in list_id_tok if
+                                   item[1].lower() == string_sentence[pos_tok[0]:pos_tok[1]]]
+
             # list position of each annotated concept in the phrase(i.e. positive candidates) when we search in dictionary
             list_positive_can = []
             for i in list_id_pos_concept:
@@ -263,19 +260,34 @@ def json_test_file(text_file, brat_file, output_json):
             # check if there is at least one positive candidate
             if len(list_positive_can) > 0:
                 dict_mention["negatives"] = []
-                for dict_concept in list_dict_concept:
-                    #  check which sentence belongs to a mention and check if the offset start and end match
-                    if dict_concept["sentence_id"] == index and annotated_concepts[0]["start"] == dict_concept[
-                        "start"] and annotated_concepts[0]["end"] == dict_concept["end"]:
-                        # gold entity from BRAT
-                        dict_mention["entity"] = voca_ent.word2id.get(dict_concept["concept_id"])
+                if sentence['word'].lower() == mentioned_word.lower():
+                    dict_mention["entity"] = voca_ent.word2id.get(sentence['concept_id'])
+
             dict_phrase["mentions"].append(dict_mention)
+
+        # delete mention dictionary from list when gold label is not exist
+        dict_phrase['mentions'] = [d for d in dict_phrase['mentions'] if d.get('entity') != None]
 
         # check if there is at least one mention in a sentence
         if len(dict_phrase["mentions"]) > 0:
-            # write into Temperary dict_phrase into json file
-            with open(output_json, 'a') as f:
-                json.dump(dict_phrase, f)
-                f.write('\n')
+            list_line_json.append(dict_phrase)
 
-# json_test_file("test.txt", "test.ann", "test.json")
+    # remove duplicated dictionary from list
+    new_list_line_json = [x for n, x in enumerate(list_line_json) if list_line_json.index(x) == n]
+
+    my_dict = {}
+    for row in new_list_line_json:
+        key = ' '.join(row['sentence'])  # use sentence as key
+        if key in my_dict:
+            my_dict[key]['mentions'].extend(row['mentions'])
+        else:
+            my_dict[key] = row
+
+    ready_list_line_json = list(my_dict.values())
+
+    for line_json in ready_list_line_json:
+        with open(output_json, 'a') as f:
+            json.dump(line_json, f)
+            f.write('\n')
+
+#json_test_file("561070.txt", "561070.ann", "el_test.json")
