@@ -27,15 +27,9 @@ parser.add_argument("--type_embdim", type=int, default=50)
 parser.add_argument("--ent_embdim", type=int, default=100)
 
 parser.add_argument("--datadir", type=str, default='data/agrovoc/')
-parser.add_argument("--noise_threshold", type=float, default=0.75 if not sup_train else 1)
+parser.add_argument("--noise_threshold", type=float, default=0.75)
 parser.add_argument("--margin", type=float, default=0.1)
-parser.add_argument("--kl_coef", type=float, default=5 if not sup_train else 0)
+parser.add_argument("--kl_coef", type=float, default=5)
 parser.add_argument("--noise_prior", type=float, default=0.9)
 
 data_path = 'data/agrovoc/el_annotation/el_annotated_170k.json'
-'''
-if sup_train:
-    data_path = 'data/EL/AIDA/train.json'
-    SAMPLE_NEGS = False
-    N_NEGS = 100
-'''    
