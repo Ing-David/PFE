@@ -129,24 +129,24 @@ model.cuda()
 
 # for testing
 def test(data=None, noise_threshold=args.noise_threshold):
-    # check if data is None we take the dev set
+  
+    # check if data is None we take the test set
     if data is None:
-        data = dataset.dev
+        data = dataset.test
 
-    # two settings for testing phase
-
-    # all mentions are taken into account
-    n_correct_pred = 0
-    n_total_pred = 0
-    n_total = 0
-    # only mentions with Eplus containing the correct entity are considered
-    n_correct_pred_or = 0
-    n_total_pred_or = 0
-    n_total_or = 0
+    # list to store the precision, recall for each datapoint
+    list_precision = []
+    list_recall = []
+    # list to store the precision, recall for each datapoint when probability if a data point is noisy was considered
+    list_precision_noise = []
+    list_recall_noise = []
+    consider_datapoint = 0
+    total_datapoint = 0
+    eliminated_datapoint = 0
+    # gold entity
+    relevant_entity = 1
 
     start = 0
-
-    ner_acc = {}
 
     while True:
         if start >= len(data):
@@ -163,78 +163,103 @@ def test(data=None, noise_threshold=args.noise_threshold):
         scores = scores.cpu().detach().numpy()
 
         for pn, ent, sc, cn, ner in zip(p_noise, targets, scores, cands, ners):
-            if ner not in ner_acc:
-                ner_acc[ner] = {
-                    'total': 0,
-                    'total_or': 0,
-                    'total_pred': 0,
-                    'total_pred_or': 0,
-                    'correct_pred': 0,
-                    'correct_pred_or': 0
-                }
 
-            n_total += 1
-            ner_acc[ner]['total'] += 1
+            total_datapoint += 1
+            # When probability if a data point is noisy was considered, we measure the performance of the model for
+            # only some data points
+            if noise_threshold > 0:
+                if pn > noise_threshold:
+                    eliminated_datapoint +=1
+                    continue
+                else:
+                    if len(cn) == 1:
+                        if cn == ent:
+                            precision = 1
+                            recall = 1/relevant_entity
+                            list_precision_noise.append(precision)
+                            list_recall_noise.append(recall)
+                        else:
+                            precision = 0
+                            recall = 0
+                            list_precision_noise.append(precision)
+                            list_recall_noise.append(recall)
 
-            in_Eplus = ''
-            # cn: list of positive candidates
-            if ent in cn:
-                n_total_or += 1
-                ner_acc[ner]['total_or'] += 1
-                in_Eplus = '*'
-            # compare p_noise with the hyper-parameter noise_threshold
-            if pn > noise_threshold:
-                if data == dataset.test:
-                    pass  # print('-1' + in_Eplus, end='\t')
-                continue
-            n_total_pred += 1
-            ner_acc[ner]['total_pred'] += 1
+                    # Positive list contain more than one element
+                    else:
+                        # choose one entity from positive list based on the score
+                        potential_entity = cn[np.argmax(sc)]
 
-            if ent in cn:
-                n_total_pred_or += 1
-                ner_acc[ner]['total_pred_or'] += 1
+                        if potential_entity == ent:
+                            precision = 1/len(cn)
+                            recall = 1/relevant_entity
+                            list_precision_noise.append(precision)
+                            list_recall_noise.append(recall)
+                        else:
+                            precision = 0
+                            recall = 0
+                            list_precision_noise.append(precision)
+                            list_recall_noise.append(recall)
 
-            pred = cn[np.argmax(sc)]
-
-            if pred == ent:
-                n_correct_pred += 1
-                ner_acc[ner]['correct_pred'] += 1
-                n_correct_pred_or += 1
-                ner_acc[ner]['correct_pred_or'] += 1
-
-                if data == dataset.test:
-                    pass  # print('1' + in_Eplus, end='\t')
+            # When probability if a data point is noisy was not considered, we measure the performance of the model for all data points
             else:
-                if data == dataset.test:
-                    pass  # print('0' + in_Eplus, end='\t')
+                # Positive list contains only one element
+                if len(cn) == 1:
+                    if cn == ent:
+                        precision = 1
+                        recall = 1/relevant_entity
+                        list_precision.append(precision)
+                        list_recall.append(recall)
+                        consider_datapoint += 1
+                    else:
+                        precision = 0
+                        recall = 0
+                        list_precision.append(precision)
+                        list_recall.append(recall)
+                        consider_datapoint += 1
 
-        if data == dataset.test:
-            pass  # print()
+                # Positive list contain more than one element
+                else:
+                    # choose one entity from positive list based on the score
+                    potential_entity = cn[np.argmax(sc)]
+
+                    if potential_entity == ent:
+                        precision = 1/len(cn)
+                        recall = 1/relevant_entity
+                        list_precision.append(precision)
+                        list_recall.append(recall)
+                    else:
+                        precision = 0
+                        recall = 0
+                        list_precision.append(precision)
+                        list_recall.append(recall)
+
         # take another batch
         start = end
 
-    # precision, recall, and f1-score (All mentions are taken into account
-    prec = n_correct_pred / n_total_pred
-    rec = n_correct_pred / n_total
-    try:
-        f1 = 2 * (prec * rec) / (prec + rec)
-    except:
-        f1 = 0
-    print('all -- prec: %.2f\trec: %.2f\tf1: %.2f' % (prec * 100, rec * 100, f1 * 100))
+    # Average precision, recall, and f1-score for all data points
+    if noise_threshold > 0:
+        precision = np.mean(list_precision_noise)
+        recall = np.mean(list_recall_noise)
 
-    # precision, recall, and f1-score (Only mentions with E+ containing the correct entity are considered)
-    prec = n_correct_pred_or / n_total_pred_or
-    rec = n_correct_pred_or / n_total_or
-    try:
-        f1 = 2 * (prec * rec) / (prec + rec)
-    except:
-        f1 = 0
-    print('in E+', n_total_or / n_total * 100)
-    print('in E+ -- prec: %.2f\trec: %.2f\tf1: %.2f' % (prec * 100, rec * 100, f1 * 100))
+        try:
+            f1 = 2 * (precision * recall) / (precision + recall)
+        except:
+            f1 = 0
 
-    print('ner')
-    print(ner_acc)
-    return prec, rec, f1
+        #print('-- precision: %.2f\trecall: %.2f\tf1_score: %.2f' % (precision * 100, recall * 100, f1 * 100))
+
+    else:
+        precision = np.mean(list_precision)
+        recall = np.mean(list_recall)
+
+        try:
+            f1 = 2 * (precision * recall) / (precision + recall)
+        except:
+            f1 = 0
+
+        #print('-- precision: %.2f\trecall: %.2f\tf1_score: %.2f' % (precision * 100, recall * 100, f1 * 100))
+
+    return precision, recall, f1
 
 
 # for training
@@ -365,17 +390,28 @@ if __name__ == '__main__':
         train()
 
     elif args.mode == 'eval':
+
+        # Model MIL-ND
         if model.config['kl_coef'] > 0:
-            print('*** dev ***')
-            test(dataset.dev)
-            print('*** test ***')
-            test(dataset.test)
+            if model.config['noise_prior'] > 0:
+                print('===== test dataset with noise_threshold=0.75 (Model tau_MIL-ND) ====')
+                precision, recall, f1 = test(dataset.test, noise_threshold=args.noise_threshold)
+                print("Precision : ", precision)
+                print("Recall : ", recall)
+                print("f1_score : ", f1)
+            else: # without using probability to eliminate the data point potentially noisy
+                print('===== test dataset without noise_threshold (Model MIL-ND) ====')
+                precision, recall, f1 = test(dataset.test, noise_threshold=0)
+                print("Precision : ", precision)
+                print("Recall : ", recall)
+                print("f1_score : ", f1)
 
-        print('===== noise_threshold=0 ====')
-        print('*** dev ***')
-        test(dataset.dev, noise_threshold=1)
-        print('*** test ***')
-        test(dataset.test, noise_threshold=1)
-
+        # Model MIL
+        elif model.config['kl_coef'] == 0:
+            print('===== test dataset (Model MIL) ====')
+            precision, recall, f1 = test(dataset.test, noise_threshold=0)
+            print("Precision : ", precision)
+            print("Recall : ", recall)
+            print("f1_score : ", f1)
     else:
         assert (False)
