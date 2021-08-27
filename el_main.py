@@ -173,7 +173,7 @@ def test(data=None, noise_threshold=args.noise_threshold):
                     continue
                 else:
                     if len(cn) == 1:
-                        if cn == ent:
+                        if cn[0] == ent:
                             precision = 1
                             recall = 1/relevant_entity
                             list_precision_noise.append(precision)
@@ -204,7 +204,7 @@ def test(data=None, noise_threshold=args.noise_threshold):
             else:
                 # Positive list contains only one element
                 if len(cn) == 1:
-                    if cn == ent:
+                    if cn[0] == ent:
                         precision = 1
                         recall = 1/relevant_entity
                         list_precision.append(precision)
