@@ -129,12 +129,12 @@ model.cuda()
 
 # for testing
 def test(data=None, noise_threshold=args.noise_threshold):
-  
     # check if data is None we take the test set
     if data is None:
         data = dataset.test
 
-    # list to store the precision, recall for each datapoint
+    # Mentions with Eplus containing the correct entity are considered
+        # list to store the precision, recall for each datapoint
     list_precision = []
     list_recall = []
     # list to store the precision, recall for each datapoint when probability if a data point is noisy was considered
@@ -143,8 +143,6 @@ def test(data=None, noise_threshold=args.noise_threshold):
     consider_datapoint = 0
     total_datapoint = 0
     eliminated_datapoint = 0
-    # gold entity
-    relevant_entity = 1
 
     start = 0
 
@@ -169,13 +167,13 @@ def test(data=None, noise_threshold=args.noise_threshold):
             # only some data points
             if noise_threshold > 0:
                 if pn > noise_threshold:
-                    eliminated_datapoint +=1
+                    eliminated_datapoint += 1
                     continue
                 else:
                     if len(cn) == 1:
-                        if cn[0] == ent:
+                        if cn == ent:
                             precision = 1
-                            recall = 1/relevant_entity
+                            recall = 1
                             list_precision_noise.append(precision)
                             list_recall_noise.append(recall)
                         else:
@@ -190,8 +188,8 @@ def test(data=None, noise_threshold=args.noise_threshold):
                         potential_entity = cn[np.argmax(sc)]
 
                         if potential_entity == ent:
-                            precision = 1/len(cn)
-                            recall = 1/relevant_entity
+                            precision = 1
+                            recall = 1
                             list_precision_noise.append(precision)
                             list_recall_noise.append(recall)
                         else:
@@ -204,9 +202,9 @@ def test(data=None, noise_threshold=args.noise_threshold):
             else:
                 # Positive list contains only one element
                 if len(cn) == 1:
-                    if cn[0] == ent:
+                    if cn == ent:
                         precision = 1
-                        recall = 1/relevant_entity
+                        recall = 1
                         list_precision.append(precision)
                         list_recall.append(recall)
                         consider_datapoint += 1
@@ -223,8 +221,8 @@ def test(data=None, noise_threshold=args.noise_threshold):
                     potential_entity = cn[np.argmax(sc)]
 
                     if potential_entity == ent:
-                        precision = 1/len(cn)
-                        recall = 1/relevant_entity
+                        precision = 1
+                        recall = 1
                         list_precision.append(precision)
                         list_recall.append(recall)
                     else:
@@ -260,7 +258,6 @@ def test(data=None, noise_threshold=args.noise_threshold):
         #print('-- precision: %.2f\trecall: %.2f\tf1_score: %.2f' % (precision * 100, recall * 100, f1 * 100))
 
     return precision, recall, f1
-
 
 # for training
 def train():
