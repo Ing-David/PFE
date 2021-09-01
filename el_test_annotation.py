@@ -34,7 +34,6 @@ def contains_word(s, w):
     s = re.sub('[):,.?!(]', '', s)
     return (' ' + w + ' ') in (' ' + s + ' ')
 
-
 def list_dict_mention(text_file, brat_file):
     """
     Function to generate the list of dictionary contains each mention's properties
@@ -71,10 +70,12 @@ def list_dict_mention(text_file, brat_file):
       'start': 29,
       'end': 35}]
     """
-
     # looping through .txt files
     with open(text_file) as f:
-        list_phrase = re.split(r'(?<=\.)\s+(?=[a-zA-Z])', f.read())
+
+        first_list_phrase = re.split(r'(?<=\.)\s+(?=[a-zA-Z])', f.read())
+        new_string = " ".join(first_list_phrase)
+        list_phrase = re.split(r'(?<=\.)\s+(?=[a-zA-Z])', new_string)
         list_length_phrase = []
 
     # get the length of all phrases
@@ -91,7 +92,8 @@ def list_dict_mention(text_file, brat_file):
         # second element and so on...
         else:
             offset_phrase.append(
-                (sum(i for i in list_length_phrase[0:index]), sum(i for i in list_length_phrase[0:index + 1])))
+                (sum(i for i in list_length_phrase[0:index]) + index,
+                 sum(i for i in list_length_phrase[0:index + 1]) + index))
 
     # looping through .ann files in the data directory
     STANDOFF_ENTITY_PREFIX = 'T'
@@ -132,24 +134,11 @@ def list_dict_mention(text_file, brat_file):
     for dict_concept in list_dict_concept:
         for index, phrase in enumerate(list_phrase):
 
-            if (contains_word(phrase, dict_concept['word'])) and [
-                (offset_phrase[index][0] <= dict_concept['offset_start']) and (
-                        dict_concept['offset_end'] <= offset_phrase[index][1])]:
+            if contains_word(phrase, dict_concept['word']) and offset_phrase[index][0] <= dict_concept[
+                'offset_start'] and dict_concept['offset_end'] <= offset_phrase[index][1]:
                 dict_concept['original_sentence'] = list_phrase[index]
-            else:
-                # check index of another sentence before the current sentence
-                if (contains_word(phrase, dict_concept['word'])) and [
-                    (offset_phrase[index - 1][0] <= dict_concept['offset_start']) and (
-                            dict_concept['offset_end'] <= offset_phrase[index - 1][1])]:
-                    dict_concept['original_sentence'] = list_phrase[index - 1]
 
-                # check index of another sentence after the current sentence
-                elif (contains_word(phrase, dict_concept['word'])) and [
-                    (offset_phrase[index + 1][0] <= dict_concept['offset_start']) and (
-                            dict_concept['offset_end'] <= offset_phrase[index + 1][1])]:
-                    dict_concept['original_sentence'] = list_phrase[index + 1]
-
-                    # In case some mention cannot find its original sentence
+    # In case some mention cannot find its original sentence
     keys = set(chain.from_iterable(list_dict_concept))
     for item in list_dict_concept:
         item.update({key: "" for key in keys if key not in item})
@@ -182,12 +171,11 @@ def json_test_file(text_file, brat_file, output_json):
     Function to generate the json file for testing the model dl4el
     :param text_file: The text file (.txt)
     :param brat_file: The output file from the BRAT's tool (.ann) :param output_json: The name of the output json file,
-    the name should not be changed if we want a single file with continuous line
+    the name should not be changed if we want a file with continuous line
     """
     # Agrovoc's rdf
     agrovoc = Agrovoc(lang="en")
-    # access dictionary of agrovoc with correspond id for searching the index location of id for candidate positive
-    # and gold label(entity)
+    # access dictionary of agrovoc with correspond id for searching the index location of id for candidate positive and gold label(entity)
     voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
     # get the entIdList for random negative candidates
     ent2nameId = {}
@@ -202,7 +190,7 @@ def json_test_file(text_file, brat_file, output_json):
     list_line_json = []
 
     # loop through each sentence from list_dict_concept
-    for index, sentence in tqdm(enumerate(list_dict_concept)):
+    for index, sentence in enumerate(list_dict_concept):
 
         dict_phrase = {}
         string_sentence = sentence['original_sentence'].lower()
@@ -258,15 +246,17 @@ def json_test_file(text_file, brat_file, output_json):
             # tmp list of index for positive candidates
             dict_mention["positives"] = list_positive_can
             # check if there is at least one positive candidate
-            if len(list_positive_can) > 0:
-                dict_mention["negatives"] = []
-                if sentence['word'].lower() == mentioned_word.lower():
-                    dict_mention["entity"] = voca_ent.word2id.get(sentence['concept_id'])
+
+            dict_mention["negatives"] = []
+
+            # if there is a gold label for each mention
+            if sentence['word'].lower() == mentioned_word.lower():
+                dict_mention["entity"] = voca_ent.word2id.get(sentence['concept_id'])
+            # No gold label , -1 by default
+            elif sentence['word'].lower() != mentioned_word.lower():
+                dict_mention["entity"] = -1
 
             dict_phrase["mentions"].append(dict_mention)
-
-        # delete mention dictionary from list when gold label is not exist
-        dict_phrase['mentions'] = [d for d in dict_phrase['mentions'] if d.get('entity') != None]
 
         # check if there is at least one mention in a sentence
         if len(dict_phrase["mentions"]) > 0:
