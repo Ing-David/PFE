@@ -29,9 +29,19 @@ def annotate_local(annotator: SKOSAnnotator, text):
     _, _, annotations = annotator.annotate_text(text)
     annotations = sorted(annotations, key=lambda x: x.start)
     current_annotation_index = 1
+    start_prev = -1
+    end_prev = 0
     for annotation in annotations:
-        brat_ann += f"T{current_annotation_index}\tConcept {annotation.start} {annotation.end}\t{annotation.matched_text}" + "\n"
+        if not (start_prev == annotation.start and end_prev == annotation.end):
+            if (start_prev == annotation.start and end_prev != annotation.end) or (
+                    start_prev != annotation.start and end_prev == annotation.end):
+                annotation_type = "SubConcept"
+            else:
+                annotation_type = "Concept"
+            brat_ann += f"T{current_annotation_index}\t{annotation_type} {annotation.start} {annotation.end}\t{annotation.matched_text}" + "\n"
         brat_ann += f"N{current_annotation_index}\t Reference T{current_annotation_index} Agrovoc:{annotation.concept_id}\t{list(annotation.concept.labels)[0]}" + "\n"
+        start_prev = annotation.start
+        end_prev = annotation.end
         current_annotation_index += 1
     return brat_ann
 
