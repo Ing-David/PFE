@@ -291,7 +291,7 @@ def train():
         while True:
             if start >= len(data):
                 print('%.6f\t\t\t\t\t' % (total_loss / len(data)))
-                save = False
+                save = True
                 #if args.kl_coef > 0:
                     #print('*** dev ***')
                     #prec, rec, f1 = test(dataset.dev)
