@@ -163,7 +163,7 @@ def test(data=None, noise_threshold=args.noise_threshold):
         for pn, ent, sc, cn, ner in zip(p_noise, targets, scores, cands, ners):
 
             total_datapoint += 1
-            # When probability if a data point is noisy was considered, we measure the performance of the model for
+            # probability if a data point is noisy was considered, we measure the performance of the model for
             # only some data points
             if noise_threshold > 0:
                 if pn > noise_threshold:
@@ -171,7 +171,7 @@ def test(data=None, noise_threshold=args.noise_threshold):
                     continue
                 else:
                     if len(cn) == 1:
-                        if cn == ent:
+                        if cn[0] == ent:
                             precision = 1
                             recall = 1
                             list_precision_noise.append(precision)
@@ -202,7 +202,7 @@ def test(data=None, noise_threshold=args.noise_threshold):
             else:
                 # Positive list contains only one element
                 if len(cn) == 1:
-                    if cn == ent:
+                    if cn[0] == ent:
                         precision = 1
                         recall = 1
                         list_precision.append(precision)
@@ -225,11 +225,13 @@ def test(data=None, noise_threshold=args.noise_threshold):
                         recall = 1
                         list_precision.append(precision)
                         list_recall.append(recall)
+                        consider_datapoint += 1
                     else:
                         precision = 0
                         recall = 0
                         list_precision.append(precision)
                         list_recall.append(recall)
+                        consider_datapoint += 1
 
         # take another batch
         start = end
@@ -238,6 +240,7 @@ def test(data=None, noise_threshold=args.noise_threshold):
     if noise_threshold > 0:
         precision = np.mean(list_precision_noise)
         recall = np.mean(list_recall_noise)
+        datapoint_count = total_datapoint - eliminated_datapoint
 
         try:
             f1 = 2 * (precision * recall) / (precision + recall)
@@ -249,6 +252,7 @@ def test(data=None, noise_threshold=args.noise_threshold):
     else:
         precision = np.mean(list_precision)
         recall = np.mean(list_recall)
+        datapoint_count = consider_datapoint
 
         try:
             f1 = 2 * (precision * recall) / (precision + recall)
@@ -257,7 +261,7 @@ def test(data=None, noise_threshold=args.noise_threshold):
 
         #print('-- precision: %.2f\trecall: %.2f\tf1_score: %.2f' % (precision * 100, recall * 100, f1 * 100))
 
-    return precision, recall, f1
+    return precision, recall, f1, total_datapoint, datapoint_count
 
 # for training
 def train():
@@ -381,7 +385,6 @@ def train():
             total_loss += loss * (end - start)
             start = end
 
-
 if __name__ == '__main__':
     if args.mode == 'train':
         train()
@@ -392,13 +395,17 @@ if __name__ == '__main__':
         if model.config['kl_coef'] > 0:
             if model.config['noise_prior'] > 0:
                 print('===== test dataset with noise_threshold=0.75 (Model tau_MIL-ND) ====')
-                precision, recall, f1 = test(dataset.test, noise_threshold=args.noise_threshold)
+                precision, recall, f1, total_datapoint, datapoint_count = test(dataset.test, noise_threshold=args.noise_threshold)
+                print("Total datapoint :", total_datapoint)
+                print("Considered datapoint : ", datapoint_count)
                 print("Precision : ", precision)
                 print("Recall : ", recall)
                 print("f1_score : ", f1)
             else: # without using probability to eliminate the data point potentially noisy
                 print('===== test dataset without noise_threshold (Model MIL-ND) ====')
-                precision, recall, f1 = test(dataset.test, noise_threshold=0)
+                precision, recall, f1, total_datapoint, datapoint_count = test(dataset.test, noise_threshold=0)
+                print("Total datapoint :", total_datapoint)
+                print("Considered datapoint : ", datapoint_count)
                 print("Precision : ", precision)
                 print("Recall : ", recall)
                 print("f1_score : ", f1)
@@ -406,7 +413,9 @@ if __name__ == '__main__':
         # Model MIL
         elif model.config['kl_coef'] == 0:
             print('===== test dataset (Model MIL) ====')
-            precision, recall, f1 = test(dataset.test, noise_threshold=0)
+            precision, recall, f1, total_datapoint, datapoint_count = test(dataset.test, noise_threshold=0)
+            print("Total datapoint :", total_datapoint)
+            print("Considered datapoint : ", datapoint_count)
             print("Precision : ", precision)
             print("Recall : ", recall)
             print("f1_score : ", f1)
