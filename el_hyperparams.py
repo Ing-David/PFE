@@ -6,7 +6,7 @@ MAX_POS = 10
 MAX_N_POSS_TEST = 100
 MAX_N_POSS_TRAIN = 100
 N_NEGS = 10
-SAMPLE_NEGS = True
+SAMPLE_NEGS = False
 TYPE_OPT = 'mean'
 # hyper-parameters of the model
 parser = argparse.ArgumentParser()
