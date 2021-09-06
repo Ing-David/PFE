@@ -74,17 +74,14 @@ class ELDataset:
             neg_types = [self.triples['ent2typeId'][c] for c in negatives]
             pos_types = [self.triples['ent2typeId'][c] for c in positives]
             
-	    # condition for sampling the negative candidate
+	    # condition for sampling the negative candidates
             if hp.SAMPLE_NEGS:
                 negatives = random.sample(self.entIdList, hp.N_NEGS)
             else:
-                if data == self.train:
-                    if len(negatives) == 0:
-                        negatives = random.sample(self.entIdList, input['N_NEGS'])
-                    else:
-                        negatives = negatives + [negatives[-1]] * (input['N_NEGS'] - len(negatives))
+                if len(negatives) == 0:
+                    negatives = random.sample(self.entIdList, input['N_NEGS'])
                 else:
-                    negatives = negatives
+                    negatives = negatives + [negatives[-1]] * (input['N_NEGS'] - len(negatives))
 		
             # verify if the length of positive list exceed the define length
             if len(positives) > input['N_POSS']:
