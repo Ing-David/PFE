@@ -1,7 +1,5 @@
 import argparse
 
-sup_train=False
-
 MAX_POS = 10
 MAX_N_POSS_TEST = 100
 MAX_N_POSS_TRAIN = 100
