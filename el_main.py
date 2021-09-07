@@ -102,7 +102,7 @@ if args.mode == 'train':
 # evaluation step
 elif args.mode == 'eval':
     print('load model')
-    with open(args.model_path + '.config', 'r') as f:
+    with open(args.model_path + '/config', 'r') as f:
         config = json.load(f)
     print(config)
 
@@ -123,7 +123,7 @@ elif args.mode == 'eval':
         'noise_prior': config['noise_prior'],
         'margin': config['margin'],
     })
-    model.load_state_dict(torch.load(args.model_path + '.state_dict'))
+    model.load_state_dict(torch.load(args.model_path + '/state_dict'))
 
 model.cuda()
 
