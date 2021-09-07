@@ -63,9 +63,10 @@ class ELDataset:
         # find maximum number of positive candidates in a batch
         input['N_NEGS'] = max(input['real_n_negs'])
         # if the negative candidates don't exist then take the value of hyper-parameter
-        if input['N_NEGS'] == 0:
-            input['N_NEGS'] = hp.N_NEGS
-    # ITEM is the tuple of (id_word,(mention_start,mention_end),pos_wrt_m,sentence,pos_can,neg_can, entity_id,ner_id)
+        #if input['N_NEGS'] == 0:
+        #    input['N_NEGS'] = hp.N_NEGS
+	
+    	# ITEM is the tuple of (id_word,(mention_start,mention_end),pos_wrt_m,sentence,pos_can,neg_can, entity_id,ner_id)
         # loop each item in the batch org
         for item in org:
             # copy all values from item into variables (tokens, m_loc...)
