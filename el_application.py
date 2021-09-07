@@ -44,8 +44,7 @@ def read_json(path):
 
     return data
 
-
-def read_data(path, voca_word, format='json',  max_len=512):
+def read_data(path, voca_word, ent2typeId,  format='json',  max_len=512):
     """
         function to read raw data from file json and convert it to datapoint before entering in get_minibatch
         :param path: path to datapoint
@@ -87,9 +86,9 @@ def read_data(path, voca_word, format='json',  max_len=512):
                             [min(i - me + 1, hp.MAX_POS) for i in range(me, len(words))]
 
                 # list of positive candidate found in dict ent2typeId
-                positives = ment['positives']
+                positives = [c for c in ment['positives'] if c in ent2typeId]
                 # list of negative candidate found in dict ent2typeId
-                negatives = ment['negatives']
+                negatives = [c for c in ment['negatives'] if c in ent2typeId]
 
                 # list positive is empty then skip
                 if len(positives) == 0:
@@ -141,9 +140,7 @@ def get_minibatch(data, ent2typeId, voca_word, relId, h2rtId,  start, end):
     input['real_n_negs'] = [len(x[5]) for x in org]
     # find maximum number of positive candidates in a batch
     input['N_NEGS'] = max(input['real_n_negs'])
-    # if the negative candidates don't exist then take the value of hyper-parameter
-    if input['N_NEGS'] == 0:
-        input['N_NEGS'] = hp.N_NEGS
+    
     # ITEM is the tuple of (id_word,(mention_start,mention_end),pos_wrt_m,sentence,pos_can,neg_can, entity_id,ner_id)
     # loop each item in the batch org
     for item in org:
@@ -402,13 +399,13 @@ def application_entity_linking(text, batchsize = 5):
             f.write('\n')
 
         with open(tmp.name) as f:
-            datapoint = read_data(f.name, voca_word)
+            datapoint = read_data(f.name, voca_word, ent2typeId)
             data.append(datapoint[0])
 
     logger.info("Total data point to process in the model: ", len(data))
 
     logger.info('load model')
-    with open(args.model_path + '.config', 'r') as f:
+    with open(args.model_path + '/config', 'r') as f:
         config = json.load(f)
 
     model = EL(config={
@@ -428,7 +425,7 @@ def application_entity_linking(text, batchsize = 5):
         'noise_prior': config['noise_prior'],
         'margin': config['margin'],
     })
-    model.load_state_dict(torch.load(args.model_path + '.state_dict'))
+    model.load_state_dict(torch.load(args.model_path + '/state_dict'))
 
     model.cuda()
 
@@ -478,10 +475,3 @@ def application_entity_linking(text, batchsize = 5):
 
 #text_to_annotate = "...."
 #output = application_entity_linking(text=text_to_annotate,batchsize = 5)
-
-
-
-
-
-
-
