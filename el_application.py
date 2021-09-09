@@ -449,10 +449,14 @@ def application_entity_linking(text, batchsize = 5):
         scores = scores.cpu().detach().numpy()
 
         for pn, ent, sc, cn, ner in zip(p_noise, targets, scores, cands, ners):
-
-            potential_entity = cn[np.argmax(sc)]
-            decided_entity.append(voca_ent.id2word[potential_entity])
-
+            
+            if len(cn) == 1:
+                potential_entity = cn[0]
+                decided_entity.append(voca_ent.id2word[potential_entity])
+            else:
+                potential_entity = cn[np.argmax(sc)]
+                decided_entity.append(voca_ent.id2word[potential_entity])
+            
     # Loop to get the entity decided by the model
     for entered_model, gold_entity in zip(enter_model, decided_entity):
         entered_model['agrovoc_uri'] = [gold_entity]
@@ -473,5 +477,10 @@ def application_entity_linking(text, batchsize = 5):
 
     return output
 
-#text_to_annotate = "...."
-#output = application_entity_linking(text=text_to_annotate,batchsize = 5)
+'''
+import pandas as pd
+dataset_agritrop = pd.read_csv("corpus_eng_articles-type_1_2_1000_limit.csv", index_col = 0)
+abstract_text = dataset_agritrop['RESUM'][11]
+output = application_entity_linking(text=abstract_text,batchsize = 5)
+print(output)
+'''
