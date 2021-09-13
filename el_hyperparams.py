@@ -1,18 +1,16 @@
 import argparse
 
-sup_train=False
-
 MAX_POS = 10
 MAX_N_POSS_TEST = 100
 MAX_N_POSS_TRAIN = 100
 N_NEGS = 10
-SAMPLE_NEGS = True
+SAMPLE_NEGS = False
 TYPE_OPT = 'mean'
 # hyper-parameters of the model
 parser = argparse.ArgumentParser()
 parser.add_argument("--mode", type=str, help="train or eval", default='train')
 parser.add_argument("--model_path", type=str, help="model path to save/load", default='model')
-parser.add_argument("--n_epochs", type=int, help="number of epochs", default=20 if not sup_train else 50)
+parser.add_argument("--n_epochs", type=int, help="number of epochs", default=100)
 parser.add_argument("--batchsize", type=int, help="batchsize", default=50)
 parser.add_argument("--max_len", type=int, help="max sentence length", default=100)
 
