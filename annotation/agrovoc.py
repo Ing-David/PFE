@@ -8,6 +8,26 @@ from pyclinrec.recognizer import IntersStemConceptRecognizer
 logger = getLogger("Agrovoc")
 
 
+def generate_brat_normalization_database(string_entries, target_file="brat_norm_db.txt", remove_uris=True):
+    concept_dictionary = {}
+    for item in string_entries:
+        if remove_uris:
+            key = item[0].split("/")[-1].split("_")[1]
+        else:
+            key = item[0]
+        if key not in concept_dictionary:
+            concept_dictionary[key] = []
+        concept_dictionary[key] = item[1]
+    with open(target_file, "w") as target_handler:
+        for key in concept_dictionary.keys():
+            values = concept_dictionary[key]
+            entry = f"{key}"
+            for value in values:
+                entry += f"\tname:Name:{value}"
+            entry += '\n'
+            target_handler.write(entry)
+
+
 class SKOSAnnotator:
     def __init__(self, graph: Graph = None, thesaurus_path="data/agrovoc_2021-03-02_core.rdf", skos_xl_labels=True,
                  lang="fr"):
@@ -65,20 +85,21 @@ class SKOSAnnotator:
 
         for result in alt_labels:
             string_entries.append((str(result[0]), str(result[1])))
+        generate_brat_normalization_database(string_entries, remove_uris=True)
         dictionary_loader = StringDictionaryLoader(string_entries)
         dictionary_loader.load()
 
         if lang == 'fr':
             self.concept_recognizer = IntersStemConceptRecognizer(dictionary_loader, "data/stopwordsfr.txt",
-                                                 "data/termination_termsfr.txt")
+                                                                  "data/termination_termsfr.txt")
         else:
             self.concept_recognizer = IntersStemConceptRecognizer(dictionary_loader, "data/stopwordsen.txt",
-                                                 "data/termination_termsen.txt")
+                                                                  "data/termination_termsen.txt")
 
         self.concept_recognizer.initialize()
 
     def find_keyword_matches(self, keyword):
-        _,_,matching_annotations = self.concept_recognizer.annotate(keyword)
+        _, _, matching_annotations = self.concept_recognizer.annotate(keyword)
         return_annotations = set()
         for matching_annotation in matching_annotations:
             delta = matching_annotation.end - matching_annotation.start

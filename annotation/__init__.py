@@ -1,1 +1,1 @@
-from .agrovoc import Agrovoc
+from .agrovoc import SKOSAnnotator

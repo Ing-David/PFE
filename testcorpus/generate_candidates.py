@@ -1,12 +1,11 @@
 import logging
 
-from skosannotator import SKOSAnnotator
-
-
 # -k
 # 2ae951bf-2d83-42a7-944a-295a843d3307
 # -u
 # "http://localhost:8081/"
+from annotation.agrovoc import SKOSAnnotator
+
 
 def query_agroportal(base_uri, apikey, acronym, text):
     data = {
@@ -39,7 +38,8 @@ def annotate_local(annotator: SKOSAnnotator, text):
             else:
                 annotation_type = "Concept"
             brat_ann += f"T{current_annotation_index}\t{annotation_type} {annotation.start} {annotation.end}\t{annotation.matched_text}" + "\n"
-        brat_ann += f"N{current_annotation_index}\t Reference T{current_annotation_index} Agrovoc:{annotation.concept_id}\t{list(annotation.concept.labels)[0]}" + "\n"
+        final_id = annotation.concept_id.split("/")[-1].split("_")[1]
+        brat_ann += f"N{current_annotation_index}\t Reference T{current_annotation_index} Agrovoc:{final_id}\t{list(annotation.concept.labels)[0]}" + "\n"
         start_prev = annotation.start
         end_prev = annotation.end
         current_annotation_index += 1

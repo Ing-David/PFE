@@ -1,5 +1,5 @@
 import json
-from annotation import Agrovoc
+from annotation.agrovoc import SKOSAnnotator
 from vocabulary import Vocabulary
 from itertools import chain
 from collections import defaultdict
@@ -174,7 +174,7 @@ def json_test_file(text_file, brat_file, output_json):
     the name should not be changed if we want a file with continuous line
     """
     # Agrovoc's rdf
-    agrovoc = Agrovoc(lang="en")
+    agrovoc = SKOSAnnotator(lang="en")
     # access dictionary of agrovoc with correspond id for searching the index location of id for candidate positive and gold label(entity)
     voca_ent, _ = Vocabulary.load(datadir + '/agrovoc-entity.tsv', normalization=False, add_pad_unk=False)
     # get the entIdList for random negative candidates
@@ -280,4 +280,4 @@ def json_test_file(text_file, brat_file, output_json):
             json.dump(line_json, f)
             f.write('\n')
 
-#json_test_file("561070.txt", "561070.ann", "el_test.json")
+json_test_file("test_corpus_brat/561070.txt", "561070.ann", "el_test.json")
