@@ -17,7 +17,7 @@ def generate_brat_normalization_database(string_entries, target_file="brat_norm_
             key = item[0]
         if key not in concept_dictionary:
             concept_dictionary[key] = []
-        concept_dictionary[key] = item[1]
+        concept_dictionary[key].append(item[1])
     with open(target_file, "w") as target_handler:
         for key in concept_dictionary.keys():
             values = concept_dictionary[key]
