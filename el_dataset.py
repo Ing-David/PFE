@@ -20,8 +20,8 @@ class ELDataset:
         self.train = self.read_from_file(data_path['train'], max_len=max_len)
 #        print('load dev set')
 #        self.dev = self.read_from_file(data_path['dev'], train=False, max_len=max_len)
-#        print('load test set')
-#        self.test = self.read_from_file(data_path['test'], train=False, max_len=max_len)
+        print('load test set')
+        self.test = self.read_from_file(data_path['test'], train=False, max_len=max_len)
 
     def read_from_file(self, path, format='json', train=True, max_len=100):
         pass
