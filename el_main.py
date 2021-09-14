@@ -394,7 +394,7 @@ if __name__ == '__main__':
         # Model MIL-ND
         if model.config['kl_coef'] > 0:
             if args.noise_threshold > 0:
-                print('===== test dataset with noise_threshold=0.75 (Model tau_MIL-ND) ====')
+                print('===== test dataset with noise_threshold='+ args.noise_threshold +' (Model tau_MIL-ND) ====')
                 precision, recall, f1, total_datapoint, datapoint_count = test(dataset.test, noise_threshold=args.noise_threshold)
                 print("Total datapoint :", total_datapoint)
                 print("Considered datapoint : ", datapoint_count)
