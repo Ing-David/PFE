@@ -34,6 +34,7 @@ def contains_word(s, w):
     s = re.sub('[):,.?!(]', '', s)
     return (' ' + w + ' ') in (' ' + s + ' ')
 
+
 def list_dict_mention(text_file, brat_file):
     """
     Function to generate the list of dictionary contains each mention's properties
@@ -195,16 +196,14 @@ def json_test_file(text_file, brat_file, output_json):
         dict_phrase = {}
         string_sentence = sentence['original_sentence'].lower()
         # annotated concepts for each phrase
-        output = agrovoc.annotate_text(string_sentence)
+        token_offset, tokens, annotations = agrovoc.annotate_text(string_sentence)
         # all tokens of each phrase
-        dict_phrase["sentence"] = output[1]
+        dict_phrase["sentence"] = tokens
         # list mention for each phrase
         dict_phrase["mentions"] = []
-        # The offsets for each token
-        token_offset = output[0]
         # list of annotated concepts
         annotated_concepts = []
-        for annot_concept in output[2]:
+        for annot_concept in annotations:
             value = vars(annot_concept)
             annotated_concepts.append(value)
         # access position of each annotations
@@ -279,5 +278,6 @@ def json_test_file(text_file, brat_file, output_json):
         with open(output_json, 'a') as f:
             json.dump(line_json, f)
             f.write('\n')
+
 
 json_test_file("test_corpus_brat/561070.txt", "561070.ann", "el_test.json")
