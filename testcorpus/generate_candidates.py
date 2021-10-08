@@ -90,7 +90,7 @@ if args.agroportal:
     base_uri = args.base_uri[0]
 else:
     dump_path = args.dump[0]
-    annotator = SKOSAnnotator(thesaurus_path=dump_path)
+    annotator = SKOSAnnotator(thesaurus_path=dump_path, lang="en")
 corpus_in = args.corpus[0]
 output_dir = args.output_dir[0]
 limit = args.limit[0]

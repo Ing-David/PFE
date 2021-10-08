@@ -97,74 +97,57 @@ def list_dict_mention(text_file, brat_file):
                  sum(i for i in list_length_phrase[0:index + 1]) + index))
 
     # looping through .ann files in the data directory
-    STANDOFF_ENTITY_PREFIX = 'T'
-    STANDOFF_RELATION_PREFIX = 'N'
-    entities = []
-    relations = []
+    entries = []
     with open(brat_file, 'r') as document_anno_file:
-        lines = document_anno_file.readlines()
-        for line in lines:
-            standoff_line = line.split()
-            if standoff_line[0][0] == STANDOFF_ENTITY_PREFIX:
-                entity = {}
-                entity['standoff_id'] = int(standoff_line[0][1:])
-                entity['entity_type'] = standoff_line[1].capitalize()
-                entity['offset_start'] = int(standoff_line[2])
-                entity['offset_end'] = int(standoff_line[3])
-                list_word = []
-                for i in range(4, len(standoff_line)):
-                    list_word.append(standoff_line[i])
-                entity['word'] = " ".join(list_word)
-                entities.append(entity)
+        for line1, line2 in itertools.zip_longest(*[document_anno_file] * 2):
+            mention_line = line1.split()
+            concept_line = line2.split(
+                entity={}
+            entity['standoff_id'] = int(mention_line[0][1:])
+            entity['entity_type'] = mention_line[1].capitalize()
+            entity['offset_start'] = int(mention_line[2])
+            entity['offset_end'] = int(mention_line[3])
+            list_word = []
+            for i in range(4, len(mention_line)):
+                list_word.append(mention_line[i])
+            entity['word'] = " ".join(list_word)
+            entity['concept_id'] = concept_line[3].replace("Agrovoc:", "")
+            entries.append(entity)
 
-            elif standoff_line[0][0] == STANDOFF_RELATION_PREFIX:
-                relation = {}
-                relation['standoff_id'] = int(standoff_line[0][1:])
-                relation['concept_id'] = standoff_line[3].replace("Agrovoc:", "")
-                relations.append(relation)
+            sorted(entries, key=lambda x: x['offset_start'])
 
-    # loop to merge dictionary of entities and relations
-    d = defaultdict(dict)
-    for l in (entities, relations):
-        for elem in l:
-            d[elem["standoff_id"]].update(elem)
-
-    list_dict_concept = sorted(d.values(), key=itemgetter("standoff_id"))
-
-    # loop to get the original sentence for each mention
-    for dict_concept in list_dict_concept:
-        for index, phrase in enumerate(list_phrase):
-
-            if contains_word(phrase, dict_concept['word']) and offset_phrase[index][0] <= dict_concept[
+            # loop to get the original sentence for each mention
+            for dict_concept in entries:
+                print(dict_concept)
+            for index, phrase in enumerate(list_phrase):
+                if
+            contains_word(phrase, dict_concept['word']) and offset_phrase[index][0] <= dict_concept[
                 'offset_start'] and dict_concept['offset_end'] <= offset_phrase[index][1]:
-                dict_concept['original_sentence'] = list_phrase[index]
+            dict_concept['original_sentence'] = list_phrase[index]
 
-    # In case some mention cannot find its original sentence
-    keys = set(chain.from_iterable(list_dict_concept))
-    for item in list_dict_concept:
-        item.update({key: "" for key in keys if key not in item})
+            final_concepts = []
+            # loop to get the offset of each mention for individual sentence
+            for con_dict in entries:
+                if
+            "original_sentence" in con_dict:
+            text = con_dict["original_sentence"]
+            tokens = [con_dict['word']]
+            pattern = re.compile(
+                fr'(?<!\w)(?:{"|".join(sorted(map(re.escape, tokens), key=len, reverse=True))})(?!\w)(?!\.\b)', re.I)
+            offsets = individual_tokenOffset(text, pattern)
+            list_start_offset = []
+            list_end_offset = []
 
-        # Remove all dictionary whose mention cannot find its original sentence or sentence id
-    list_dict_concept[:] = [d for d in list_dict_concept if d.get('original_sentence') != ""]
-
-    # loop to get the offset of each mention for individual sentence
-    for con_dict in list_dict_concept:
-        text = con_dict["original_sentence"]
-        tokens = [con_dict['word']]
-        pattern = re.compile(
-            fr'(?<!\w)(?:{"|".join(sorted(map(re.escape, tokens), key=len, reverse=True))})(?!\w)(?!\.\b)', re.I)
-        offsets = individual_tokenOffset(text, pattern)
-        list_start_offset = []
-        list_end_offset = []
-
-        for offset in offsets:
-            list_start_offset.append(offset['IndividualOffsetBegin'])
+            for offset in offsets:
+                list_start_offset.append(offset['IndividualOffsetBegin'])
             list_end_offset.append(offset['IndividualOffsetEnd'])
 
-        con_dict["start"] = list_start_offset
-        con_dict["end"] = list_end_offset
+            con_dict["start"] = list_start_offset
+            con_dict["end"] = list_end_offset
+            final_concepts.append(con_dict)
 
-    return list_dict_concept
+    return final_concepts
+
 
 
 def json_test_file(text_file, brat_file, output_json):
